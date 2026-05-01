@@ -16,5 +16,20 @@ namespace IO_2026_SGGW
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatusFiles_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

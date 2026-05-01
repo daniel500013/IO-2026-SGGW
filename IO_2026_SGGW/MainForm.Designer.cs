@@ -28,20 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnWybierzXLSX = new System.Windows.Forms.Button();
+            this.btnSprawdz = new System.Windows.Forms.Button();
+            this.lblStatusFiles = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // btnWybierzXLSX
+            // 
+            this.btnWybierzXLSX.BackColor = System.Drawing.Color.White;
+            this.btnWybierzXLSX.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnWybierzXLSX.FlatAppearance.BorderSize = 2;
+            this.btnWybierzXLSX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWybierzXLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWybierzXLSX.ForeColor = System.Drawing.Color.Black;
+            this.btnWybierzXLSX.Location = new System.Drawing.Point(425, 20);
+            this.btnWybierzXLSX.Name = "btnWybierzXLSX";
+            this.btnWybierzXLSX.Size = new System.Drawing.Size(160, 35);
+            this.btnWybierzXLSX.TabIndex = 0;
+            this.btnWybierzXLSX.Text = "Wybierz plik XLSX";
+            this.btnWybierzXLSX.UseVisualStyleBackColor = false;
+            this.btnWybierzXLSX.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSprawdz
+            // 
+            this.btnSprawdz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnSprawdz.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnSprawdz.FlatAppearance.BorderSize = 2;
+            this.btnSprawdz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSprawdz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSprawdz.ForeColor = System.Drawing.Color.White;
+            this.btnSprawdz.Location = new System.Drawing.Point(600, 20);
+            this.btnSprawdz.Name = "btnSprawdz";
+            this.btnSprawdz.Size = new System.Drawing.Size(100, 35);
+            this.btnSprawdz.TabIndex = 1;
+            this.btnSprawdz.Text = "Sprawdź";
+            this.btnSprawdz.UseVisualStyleBackColor = false;
+            // 
+            // lblStatusFiles
+            // 
+            this.lblStatusFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblStatusFiles.ForeColor = System.Drawing.Color.DimGray;
+            this.lblStatusFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStatusFiles.Location = new System.Drawing.Point(425, 60);
+            this.lblStatusFiles.Name = "lblStatusFiles";
+            this.lblStatusFiles.Size = new System.Drawing.Size(190, 15);
+            this.lblStatusFiles.TabIndex = 2;
+            this.lblStatusFiles.Text = "Załadowane pliki: 0  |  XLSX: (brak)";
+            this.lblStatusFiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStatusFiles.Click += new System.EventHandler(this.lblStatusFiles_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 471);
+            this.Controls.Add(this.lblStatusFiles);
+            this.Controls.Add(this.btnSprawdz);
+            this.Controls.Add(this.btnWybierzXLSX);
             this.Name = "MainForm";
             this.Text = "Sprawdzanie Kolokwiów";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnWybierzXLSX;
+        private System.Windows.Forms.Button btnSprawdz;
+        private System.Windows.Forms.Label lblStatusFiles;
     }
 }
 
