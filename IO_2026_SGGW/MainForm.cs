@@ -31,5 +31,10 @@ namespace IO_2026_SGGW
         {
 
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,7 +49,7 @@
             this.lstResults.ItemHeight = 14;
             this.lstResults.Location = new System.Drawing.Point(12, 130);
             this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(700, 325);
+            this.lstResults.Size = new System.Drawing.Size(680, 325);
             this.lstResults.TabIndex = 0;
             this.lstResults.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
