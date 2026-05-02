@@ -28,10 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lstResults = new System.Windows.Forms.ListBox();
             this.btnWybierzXLSX = new System.Windows.Forms.Button();
             this.btnSprawdz = new System.Windows.Forms.Button();
             this.lblStatusFiles = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lstResults
+            // 
+            this.lstResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstResults.BackColor = System.Drawing.Color.White;
+            this.lstResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstResults.Font = new System.Drawing.Font("Consolas", 9F);
+            this.lstResults.ForeColor = System.Drawing.Color.Black;
+            this.lstResults.FormattingEnabled = true;
+            this.lstResults.HorizontalScrollbar = true;
+            this.lstResults.IntegralHeight = false;
+            this.lstResults.ItemHeight = 14;
+            this.lstResults.Location = new System.Drawing.Point(12, 130);
+            this.lstResults.Name = "lstResults";
+            this.lstResults.Size = new System.Drawing.Size(700, 325);
+            this.lstResults.TabIndex = 0;
+            this.lstResults.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnWybierzXLSX
             // 
@@ -82,6 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 471);
+            this.Controls.Add(this.lstResults);
             this.Controls.Add(this.lblStatusFiles);
             this.Controls.Add(this.btnSprawdz);
             this.Controls.Add(this.btnWybierzXLSX);
@@ -93,6 +114,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lstResults;
 
         private System.Windows.Forms.Button btnWybierzXLSX;
         private System.Windows.Forms.Button btnSprawdz;
