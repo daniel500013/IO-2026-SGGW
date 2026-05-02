@@ -16,5 +16,10 @@ namespace IO_2026_SGGW
         {
             InitializeComponent();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
