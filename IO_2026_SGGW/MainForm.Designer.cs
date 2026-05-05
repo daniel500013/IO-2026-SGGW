@@ -32,11 +32,40 @@
             this.btnWybierzXLSX = new System.Windows.Forms.Button();
             this.btnSprawdz = new System.Windows.Forms.Button();
             this.lblStatusFiles = new System.Windows.Forms.Label();
+            this.panelDrop = new System.Windows.Forms.Panel();
+            this.lblDropHint = new System.Windows.Forms.Label();
+            this.panelDrop.SuspendLayout();
             this.lblOd = new System.Windows.Forms.Label();
             this.dtpOd = new System.Windows.Forms.DateTimePicker();
             this.lblDo = new System.Windows.Forms.Label();
             this.dtpDo = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
+            
+            // 
+            // panelDrop
+            // 
+            this.panelDrop.AllowDrop = true;
+            this.panelDrop.BackColor = System.Drawing.Color.White;
+            this.panelDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDrop.Controls.Add(this.lblDropHint);
+            this.panelDrop.Location = new System.Drawing.Point(12, 12);
+            this.panelDrop.Name = "panelDrop";
+            this.panelDrop.Size = new System.Drawing.Size(400, 85);
+            this.panelDrop.TabIndex = 3;
+            // 
+            // lblDropHint
+            // 
+            this.lblDropHint.BackColor = System.Drawing.Color.White;
+            this.lblDropHint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDropHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblDropHint.ForeColor = System.Drawing.Color.Gray;
+            this.lblDropHint.Location = new System.Drawing.Point(0, 0);
+            this.lblDropHint.Name = "lblDropHint";
+            this.lblDropHint.Size = new System.Drawing.Size(398, 83);
+            this.lblDropHint.TabIndex = 0;
+            this.lblDropHint.Text = "Przeciągnij pliki .cs tutaj";
+            this.lblDropHint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            
             // 
             // lstResults
             // 
@@ -158,6 +187,7 @@
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.lblStatusFiles);
             this.Controls.Add(this.btnSprawdz);
+            this.Controls.Add(this.panelDrop);
             this.Controls.Add(this.btnWybierzXLSX);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
@@ -171,7 +201,8 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstResults;
-
+        private System.Windows.Forms.Panel panelDrop;
+        private System.Windows.Forms.Label lblDropHint;
         private System.Windows.Forms.Button btnWybierzXLSX;
         private System.Windows.Forms.Button btnSprawdz;
         private System.Windows.Forms.Label lblStatusFiles;
