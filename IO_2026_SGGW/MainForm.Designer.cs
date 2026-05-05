@@ -32,6 +32,10 @@
             this.btnWybierzXLSX = new System.Windows.Forms.Button();
             this.btnSprawdz = new System.Windows.Forms.Button();
             this.lblStatusFiles = new System.Windows.Forms.Label();
+            this.lblOd = new System.Windows.Forms.Label();
+            this.dtpOd = new System.Windows.Forms.DateTimePicker();
+            this.lblDo = new System.Windows.Forms.Label();
+            this.dtpDo = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lstResults
@@ -46,10 +50,11 @@
             this.lstResults.FormattingEnabled = true;
             this.lstResults.HorizontalScrollbar = true;
             this.lstResults.IntegralHeight = false;
-            this.lstResults.ItemHeight = 14;
-            this.lstResults.Location = new System.Drawing.Point(12, 130);
+            this.lstResults.ItemHeight = 18;
+            this.lstResults.Location = new System.Drawing.Point(16, 160);
+            this.lstResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(680, 325);
+            this.lstResults.Size = new System.Drawing.Size(906, 400);
             this.lstResults.TabIndex = 0;
             this.lstResults.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -61,9 +66,10 @@
             this.btnWybierzXLSX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWybierzXLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWybierzXLSX.ForeColor = System.Drawing.Color.Black;
-            this.btnWybierzXLSX.Location = new System.Drawing.Point(425, 20);
+            this.btnWybierzXLSX.Location = new System.Drawing.Point(567, 25);
+            this.btnWybierzXLSX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnWybierzXLSX.Name = "btnWybierzXLSX";
-            this.btnWybierzXLSX.Size = new System.Drawing.Size(160, 35);
+            this.btnWybierzXLSX.Size = new System.Drawing.Size(213, 43);
             this.btnWybierzXLSX.TabIndex = 0;
             this.btnWybierzXLSX.Text = "Wybierz plik XLSX";
             this.btnWybierzXLSX.UseVisualStyleBackColor = false;
@@ -77,9 +83,10 @@
             this.btnSprawdz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSprawdz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSprawdz.ForeColor = System.Drawing.Color.White;
-            this.btnSprawdz.Location = new System.Drawing.Point(600, 20);
+            this.btnSprawdz.Location = new System.Drawing.Point(800, 25);
+            this.btnSprawdz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSprawdz.Name = "btnSprawdz";
-            this.btnSprawdz.Size = new System.Drawing.Size(100, 35);
+            this.btnSprawdz.Size = new System.Drawing.Size(133, 43);
             this.btnSprawdz.TabIndex = 1;
             this.btnSprawdz.Text = "Sprawdź";
             this.btnSprawdz.UseVisualStyleBackColor = false;
@@ -89,27 +96,75 @@
             this.lblStatusFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblStatusFiles.ForeColor = System.Drawing.Color.DimGray;
             this.lblStatusFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblStatusFiles.Location = new System.Drawing.Point(425, 60);
+            this.lblStatusFiles.Location = new System.Drawing.Point(567, 74);
+            this.lblStatusFiles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatusFiles.Name = "lblStatusFiles";
-            this.lblStatusFiles.Size = new System.Drawing.Size(190, 15);
+            this.lblStatusFiles.Size = new System.Drawing.Size(253, 18);
             this.lblStatusFiles.TabIndex = 2;
             this.lblStatusFiles.Text = "Załadowane pliki: 0  |  XLSX: (brak)";
             this.lblStatusFiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblStatusFiles.Click += new System.EventHandler(this.lblStatusFiles_Click);
             // 
+            // lblOd
+            // 
+            this.lblOd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblOd.AutoSize = true;
+            this.lblOd.Location = new System.Drawing.Point(12, 470);
+            this.lblOd.Name = "lblOd";
+            this.lblOd.Size = new System.Drawing.Size(28, 16);
+            this.lblOd.TabIndex = 3;
+            this.lblOd.Text = "Od:";
+            this.lblOd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dtpOd
+            // 
+            this.dtpOd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dtpOd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOd.Location = new System.Drawing.Point(38, 467);
+            this.dtpOd.Name = "dtpOd";
+            this.dtpOd.Size = new System.Drawing.Size(110, 22);
+            this.dtpOd.TabIndex = 4;
+            this.dtpOd.Value = new System.DateTime(2026, 4, 1, 0, 0, 0, 0);
+            // 
+            // lblDo
+            // 
+            this.lblDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblDo.AutoSize = true;
+            this.lblDo.Location = new System.Drawing.Point(158, 470);
+            this.lblDo.Name = "lblDo";
+            this.lblDo.Size = new System.Drawing.Size(28, 16);
+            this.lblDo.TabIndex = 5;
+            this.lblDo.Text = "Do:";
+            // 
+            // dtpDo
+            // 
+            this.dtpDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dtpDo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDo.Location = new System.Drawing.Point(184, 467);
+            this.dtpDo.Name = "dtpDo";
+            this.dtpDo.Size = new System.Drawing.Size(110, 22);
+            this.dtpDo.TabIndex = 6;
+            this.dtpDo.Value = new System.DateTime(2026, 4, 30, 0, 0, 0, 0);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 471);
+            this.ClientSize = new System.Drawing.Size(939, 580);
+            this.Controls.Add(this.dtpDo);
+            this.Controls.Add(this.lblDo);
+            this.Controls.Add(this.dtpOd);
+            this.Controls.Add(this.lblOd);
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.lblStatusFiles);
             this.Controls.Add(this.btnSprawdz);
             this.Controls.Add(this.btnWybierzXLSX);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Sprawdzanie Kolokwiów";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,6 +175,10 @@
         private System.Windows.Forms.Button btnWybierzXLSX;
         private System.Windows.Forms.Button btnSprawdz;
         private System.Windows.Forms.Label lblStatusFiles;
+        private System.Windows.Forms.Label lblOd;
+        private System.Windows.Forms.DateTimePicker dtpOd;
+        private System.Windows.Forms.Label lblDo;
+        private System.Windows.Forms.DateTimePicker dtpDo;
     }
 }
 
