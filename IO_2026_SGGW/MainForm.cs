@@ -36,5 +36,15 @@ namespace IO_2026_SGGW
         {
 
         }
+
+        private void btnFiltruj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEksportuj_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
