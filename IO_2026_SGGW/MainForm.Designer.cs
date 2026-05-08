@@ -40,6 +40,7 @@
             this.dtpDo = new System.Windows.Forms.DateTimePicker();
             this.btnFiltruj = new System.Windows.Forms.Button();
             this.btnEksportuj = new System.Windows.Forms.Button();
+            this.mainProgressBar = new System.Windows.Forms.ProgressBar();
             this.panelDrop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,12 +210,22 @@
             this.btnEksportuj.Text = "Eksportuj do .xlsx";
             this.btnEksportuj.UseVisualStyleBackColor = false;
             this.btnEksportuj.Click += new System.EventHandler(this.btnEksportuj_Click);
-            // 
+            //
+            // mainProgressBar
+            //
+            this.mainProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainProgressBar.Location = new System.Drawing.Point(12, 165);
+            this.mainProgressBar.Name = "mainProgressBar";
+            this.mainProgressBar.Size = new System.Drawing.Size(1032, 15);
+            this.mainProgressBar.TabIndex = 9;
+            //
             // MainForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 725);
+            this.Controls.Add(this.mainProgressBar);
             this.Controls.Add(this.btnEksportuj);
             this.Controls.Add(this.btnFiltruj);
             this.Controls.Add(this.dtpDo);
@@ -250,6 +261,7 @@
         private System.Windows.Forms.DateTimePicker dtpDo;
         private System.Windows.Forms.Button btnFiltruj;
         private System.Windows.Forms.Button btnEksportuj;
+        private System.Windows.Forms.ProgressBar mainProgressBar;
     }
 }
 
