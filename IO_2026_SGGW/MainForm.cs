@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IO_2026_SGGW.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace IO_2026_SGGW
 {
     public partial class MainForm : Form
     {
+        private AnswerKey answerKey;
+        private string xlsxPath;
         public MainForm()
         {
             InitializeComponent();
@@ -21,7 +24,28 @@ namespace IO_2026_SGGW
 
         private void button1_Click(object sender, EventArgs e)
         {
+            using (var ofd = new OpenFileDialog { Filter = "Excel files (*.xlsx)|*.xlsx", Title = "Wybierz plik z kluczem odpowiedzi" })
+            {
+                if (ofd.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
 
+                try
+                {
+                    answerKey = new AnswerKeyLoader().Load(ofd.FileName);
+                    xlsxPath = ofd.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Błąd wczytywania klucza:\n" + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    answerKey = null;
+                    xlsxPath = null;
+                }
+
+                UpdateStatusBar(); // metoda z Zadania 1
+            }
         }
 
         private void lblStatusFiles_Click(object sender, EventArgs e)
