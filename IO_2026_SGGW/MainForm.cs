@@ -18,23 +18,6 @@ namespace IO_2026_SGGW
         List<StudentSolution>();
         private string xlsxPath;
 
-        [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
-        private static extern bool ChangeWindowMessageFilterEx(IntPtr hWnd, uint msg, uint action, IntPtr str);
-     
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            try
-            {
-                ChangeWindowMessageFilterEx(this.Handle, 0x0233, 1, IntPtr.Zero); //WM_DROPFILES
-                ChangeWindowMessageFilterEx(this.Handle, 0x004A, 1, IntPtr.Zero); //WM_COPYDATA
-                ChangeWindowMessageFilterEx(this.Handle, 0x0049, 1, IntPtr.Zero); //WM_COPYGLOBALDATA
-                
-            }
-            catch { }
-        }
-
-
         public MainForm()
         {
             InitializeComponent();
@@ -62,14 +45,14 @@ namespace IO_2026_SGGW
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 var paths = (string[])e.Data.GetData(DataFormats.FileDrop);
-            
+
                 bool hasCsFile = false;
                 foreach (var path in paths)
                 {
                     if (path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
                     {
                         hasCsFile = true;
-                        break; 
+                        break;
                     }
                 }
                 if (hasCsFile)
