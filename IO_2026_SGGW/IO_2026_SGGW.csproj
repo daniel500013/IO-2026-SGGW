@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Core\AnswerKey.cs" />
     <Compile Include="Core\AnswerKeyLoader_AdrianK.cs" />
+    <Compile Include="Core\ResultsExporter.cs" />
     <Compile Include="Core\TaskSheet.cs" />
     <Compile Include="Core\TestCase.cs" />
     <Compile Include="Core\StudentSolution.cs" />
