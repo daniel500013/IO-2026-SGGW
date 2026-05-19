@@ -1,8 +1,10 @@
-﻿using System;
+﻿using IO_2026_SGGW.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,27 @@ namespace IO_2026_SGGW
 {
     public partial class MainForm : Form
     {
+        private readonly List<StudentSolution> studentSolutions = new
+        List<StudentSolution>();
+        private string xlsxPath;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+        private static extern bool ChangeWindowMessageFilterEx(IntPtr hWnd, uint msg, uint action, IntPtr str);
+     
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            try
+            {
+                ChangeWindowMessageFilterEx(this.Handle, 0x0233, 1, IntPtr.Zero); //WM_DROPFILES
+                ChangeWindowMessageFilterEx(this.Handle, 0x004A, 1, IntPtr.Zero); //WM_COPYDATA
+                ChangeWindowMessageFilterEx(this.Handle, 0x0049, 1, IntPtr.Zero); //WM_COPYGLOBALDATA
+                
+            }
+            catch { }
+        }
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -33,12 +56,105 @@ namespace IO_2026_SGGW
         {
 
         }
+        
+        private void panelDrop_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                var paths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            
+                bool hasCsFile = false;
+                foreach (var path in paths)
+                {
+                    if (path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
+                    {
+                        hasCsFile = true;
+                        break; 
+                    }
+                }
+                if (hasCsFile)
+                {
+                    e.Effect = DragDropEffects.Copy;
+                    panelDrop.BackColor = Color.LightGreen;
+                    lblDropHint.BackColor = Color.LightGreen;
+                    return;
+                }
+            }
+            e.Effect = DragDropEffects.None;
+            panelDrop.BackColor = Color.White;
+            lblDropHint.BackColor = Color.White;
+        }
+        private void panelDrop_DragLeave(object sender, EventArgs e)
+        {
+            panelDrop.BackColor = Color.White;
+            lblDropHint.BackColor = Color.White;
+        }
+        private void panelDrop_DragDrop(object sender, DragEventArgs e)
+        {
+            panelDrop.BackColor = Color.White;
+            lblDropHint.BackColor = Color.White;
+            var paths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            AddCsFiles(paths);
+        }
+        private void AddCsFiles(string[] paths)
+        {
+            foreach (var path in paths)
+            {
+                if (!path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
+                    continue;
+                if (studentSolutions.Exists(s => s.FilePath == path)) continue;
+                studentSolutions.Add(new StudentSolution
+                {
+                    StudentId = Path.GetFileNameWithoutExtension(path),
+                    FilePath = path,
+                    SourceCode = File.ReadAllText(path),
+                    LastModified = File.GetLastWriteTime(path)
+                });
+            }
+            UpdateStatusBar();
+        }
+
+
+        private void btnWybierzPlikiCs_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog
+            {
+                Filter = "C# files (*.cs)|*.cs",
+                Multiselect = true
+            })
+            {
+                if (ofd.ShowDialog() != DialogResult.OK) return;
+                AddCsFiles(ofd.FileNames);
+            }
+        }
 
         private void btnFiltruj_Click(object sender, EventArgs e)
         {
-
+            UpdateStatusBar();
         }
+        private List<StudentSolution> GetInRangeSolutions()
+        {
+            var from = dtpOd.Value.Date;
+            var to = dtpDo.Value.Date;
+            var result = new List<StudentSolution>();
+            foreach (var s in studentSolutions)
+            {
+                var d = s.LastModified.Date;
+                if (d >= from && d <= to) result.Add(s);
+            }
+            return result;
+        }
+        private void UpdateStatusBar()
+        {
+            if (lblStatusFiles.InvokeRequired)
+            {
+                lblStatusFiles.Invoke(new Action(UpdateStatusBar));
+                return;
+            }
 
+            string xlsxName = string.IsNullOrEmpty(xlsxPath) ? "(brak)" : Path.GetFileName(xlsxPath);
+            lblStatusFiles.Text = $"Załadowane: {studentSolutions.Count} | W zakresie: {GetInRangeSolutions().Count} | XLSX: {xlsxName}";
+        }
         private void btnEksportuj_Click(object sender, EventArgs e)
         {
 
@@ -114,5 +230,7 @@ namespace IO_2026_SGGW
             // Przypięcie gotowego menu do kontrolki ListBox
             lstResults.ContextMenuStrip = resultsMenu;
         }
+
+        
     }
 }
