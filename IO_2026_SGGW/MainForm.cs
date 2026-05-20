@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,9 @@ namespace IO_2026_SGGW
         List<StudentSolution>();
         private string xlsxPath;
         private AnswerKey answerKey;
-        
+
+        private readonly List<ResultRow> resultsList = new List<ResultRow>();
+
         public MainForm()
         {
             InitializeComponent();
@@ -162,6 +165,32 @@ namespace IO_2026_SGGW
         }
         private void btnEksportuj_Click(object sender, EventArgs e)
         {
+            if (resultsList.Count == 0)
+            {
+                MessageBox.Show("Brak wyników do eksportu", "Brak danych");
+                return;
+            }
+            using (var sfd = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                FileName = "wyniki_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm") +
+            ".xlsx"
+            })
+            {
+                if (sfd.ShowDialog() != DialogResult.OK) return;
+                try
+                {
+                    new ResultsExporter().Export(resultsList, sfd.FileName);
+                    if (MessageBox.Show("Zapisano. Otworzyć folder?", "Sukces",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Process.Start("explorer.exe", "/select,\"" + sfd.FileName +
+                        "\"");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Błąd zapisu:\n" + ex.Message, "Błąd");
+                }
+            }
 
         }
         private void MainForm_Load(object sender, EventArgs e)
