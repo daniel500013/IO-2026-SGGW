@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AnswerKey.cs" />
+    <Compile Include="Core\SolutionRunner.cs" />
     <Compile Include="Core\TaskSheet.cs" />
     <Compile Include="Core\TestCase.cs" />
     <Compile Include="Core\StudentSolution.cs" />
