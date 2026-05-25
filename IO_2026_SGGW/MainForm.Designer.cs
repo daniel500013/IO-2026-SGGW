@@ -1,4 +1,7 @@
-﻿namespace IO_2026_SGGW
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace IO_2026_SGGW
 {
     partial class MainForm
     {
@@ -29,7 +32,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.lstResults = new System.Windows.Forms.ListBox();
             this.btnWybierzXLSX = new System.Windows.Forms.Button();
             this.btnSprawdz = new System.Windows.Forms.Button();
             this.lblStatusFiles = new System.Windows.Forms.Label();
@@ -42,28 +44,46 @@
             this.btnFiltruj = new System.Windows.Forms.Button();
             this.btnEksportuj = new System.Windows.Forms.Button();
             this.mainProgressBar = new System.Windows.Forms.ProgressBar();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panelDrop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstResults
+            // dvgResults
             // 
-            this.lstResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvResults = new System.Windows.Forms.DataGridView();
+            this.lblTimeout = new System.Windows.Forms.Label();
+            this.numTimeout = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).BeginInit();
+            this.dgvResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstResults.BackColor = System.Drawing.Color.White;
-            this.lstResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstResults.Font = new System.Drawing.Font("Consolas", 9F);
-            this.lstResults.ForeColor = System.Drawing.Color.Black;
-            this.lstResults.FormattingEnabled = true;
-            this.lstResults.HorizontalScrollbar = true;
-            this.lstResults.IntegralHeight = false;
-            this.lstResults.ItemHeight = 22;
-            this.lstResults.Location = new System.Drawing.Point(18, 200);
-            this.lstResults.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(1019, 374);
-            this.lstResults.TabIndex = 0;
-            this.lstResults.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.dgvResults.AllowUserToAddRows = false;
+            this.dgvResults.AllowUserToDeleteRows = false;
+            this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResults.Location = new System.Drawing.Point(18, 200);
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.ReadOnly = true;
+            this.dgvResults.RowHeadersVisible = false;
+            this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResults.Size = new System.Drawing.Size(1019, 375);
+            this.dgvResults.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvResults_CellFormatting);
+            //
+            // lblTimeout
+            //
+            this.lblTimeout.AutoSize = true;
+            this.lblTimeout.Location = new System.Drawing.Point(638, 130);
+            this.lblTimeout.Name = "lblTimeout";
+            this.lblTimeout.Text = "Timeout (s):";
+            //
+            // numTimeout
+            //
+            this.numTimeout.Location = new System.Drawing.Point(733, 128);
+            this.numTimeout.Minimum = 1;
+            this.numTimeout.Maximum = 60;
+            this.numTimeout.Value = 3;
+            this.numTimeout.Name = "numTimeout";
+            this.numTimeout.Size = new System.Drawing.Size(60, 26);
             // 
             // btnWybierzXLSX
             // 
@@ -224,7 +244,7 @@
             // 
             // mainProgressBar
             // 
-            this.mainProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mainProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainProgressBar.Location = new System.Drawing.Point(12, 165);
             this.mainProgressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -232,11 +252,23 @@
             this.mainProgressBar.Size = new System.Drawing.Size(1032, 15);
             this.mainProgressBar.TabIndex = 9;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(939, 25);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+           // this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClick 
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 725);
+            this.Controls.Add(this.dgvResults);
+            this.Controls.Add(this.lblTimeout);
+            this.Controls.Add(this.numTimeout);
             this.Controls.Add(this.mainProgressBar);
             this.Controls.Add(this.btnEksportuj);
             this.Controls.Add(this.btnFiltruj);
@@ -244,7 +276,7 @@
             this.Controls.Add(this.lblDo);
             this.Controls.Add(this.dtpOd);
             this.Controls.Add(this.lblOd);
-            this.Controls.Add(this.lstResults);
+            
             this.Controls.Add(this.lblStatusFiles);
             this.Controls.Add(this.btnSprawdz);
             this.Controls.Add(this.panelDrop);
@@ -254,15 +286,20 @@
             this.Name = "MainForm";
             this.Text = "Sprawdzanie Kolokwiów";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).EndInit();
             this.panelDrop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.ToolStrip toolStrip1;
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstResults;
+        private System.Windows.Forms.DataGridView dgvResults; 
+        private System.Windows.Forms.Label lblTimeout; 
+        private System.Windows.Forms.NumericUpDown numTimeout;
         private System.Windows.Forms.Panel panelDrop;
         private System.Windows.Forms.Label lblDropHint;
         private System.Windows.Forms.Button btnWybierzXLSX;
