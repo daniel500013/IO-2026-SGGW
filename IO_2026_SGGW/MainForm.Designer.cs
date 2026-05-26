@@ -37,11 +37,6 @@ namespace IO_2026_SGGW
             this.lblStatusFiles = new System.Windows.Forms.Label();
             this.panelDrop = new System.Windows.Forms.Panel();
             this.lblDropHint = new System.Windows.Forms.Label();
-            this.lblOd = new System.Windows.Forms.Label();
-            this.dtpOd = new System.Windows.Forms.DateTimePicker();
-            this.lblDo = new System.Windows.Forms.Label();
-            this.dtpDo = new System.Windows.Forms.DateTimePicker();
-            this.btnFiltruj = new System.Windows.Forms.Button();
             this.btnEksportuj = new System.Windows.Forms.Button();
             this.mainProgressBar = new System.Windows.Forms.ProgressBar();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -117,7 +112,8 @@ namespace IO_2026_SGGW
             this.btnSprawdz.TabIndex = 1;
             this.btnSprawdz.Text = "Sprawdź";
             this.btnSprawdz.UseVisualStyleBackColor = false;
-            // 
+            this.btnSprawdz.Click += new System.EventHandler(this.btnSprawdz_Click);
+            //
             // lblStatusFiles
             // 
             this.lblStatusFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -164,67 +160,7 @@ namespace IO_2026_SGGW
             this.lblDropHint.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelDrop_DragDrop);
             this.lblDropHint.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelDrop_DragEnter);
             this.lblDropHint.DragLeave += new System.EventHandler(this.panelDrop_DragLeave);
-            // 
-            // lblOd
-            // 
-            this.lblOd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblOd.AutoSize = true;
-            this.lblOd.Location = new System.Drawing.Point(14, 588);
-            this.lblOd.Name = "lblOd";
-            this.lblOd.Size = new System.Drawing.Size(34, 20);
-            this.lblOd.TabIndex = 3;
-            this.lblOd.Text = "Od:";
-            this.lblOd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // dtpOd
-            // 
-            this.dtpOd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dtpOd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOd.Location = new System.Drawing.Point(43, 584);
-            this.dtpOd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpOd.Name = "dtpOd";
-            this.dtpOd.Size = new System.Drawing.Size(123, 26);
-            this.dtpOd.TabIndex = 4;
-            this.dtpOd.Value = new System.DateTime(2026, 4, 1, 0, 0, 0, 0);
-            // 
-            // lblDo
-            // 
-            this.lblDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblDo.AutoSize = true;
-            this.lblDo.Location = new System.Drawing.Point(178, 588);
-            this.lblDo.Name = "lblDo";
-            this.lblDo.Size = new System.Drawing.Size(34, 20);
-            this.lblDo.TabIndex = 5;
-            this.lblDo.Text = "Do:";
-            // 
-            // dtpDo
-            // 
-            this.dtpDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dtpDo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDo.Location = new System.Drawing.Point(207, 584);
-            this.dtpDo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpDo.Name = "dtpDo";
-            this.dtpDo.Size = new System.Drawing.Size(123, 26);
-            this.dtpDo.TabIndex = 6;
-            this.dtpDo.Value = new System.DateTime(2026, 4, 30, 0, 0, 0, 0);
-            // 
-            // btnFiltruj
-            // 
-            this.btnFiltruj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltruj.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnFiltruj.FlatAppearance.BorderSize = 0;
-            this.btnFiltruj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltruj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltruj.ForeColor = System.Drawing.Color.White;
-            this.btnFiltruj.Location = new System.Drawing.Point(681, 581);
-            this.btnFiltruj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFiltruj.Name = "btnFiltruj";
-            this.btnFiltruj.Size = new System.Drawing.Size(125, 35);
-            this.btnFiltruj.TabIndex = 7;
-            this.btnFiltruj.Text = "Filtruj";
-            this.btnFiltruj.UseVisualStyleBackColor = false;
-            this.btnFiltruj.Click += new System.EventHandler(this.btnFiltruj_Click);
-            // 
+            //
             // btnEksportuj
             // 
             this.btnEksportuj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -271,11 +207,6 @@ namespace IO_2026_SGGW
             this.Controls.Add(this.numTimeout);
             this.Controls.Add(this.mainProgressBar);
             this.Controls.Add(this.btnEksportuj);
-            this.Controls.Add(this.btnFiltruj);
-            this.Controls.Add(this.dtpDo);
-            this.Controls.Add(this.lblDo);
-            this.Controls.Add(this.dtpOd);
-            this.Controls.Add(this.lblOd);
             
             this.Controls.Add(this.lblStatusFiles);
             this.Controls.Add(this.btnSprawdz);
@@ -305,11 +236,6 @@ namespace IO_2026_SGGW
         private System.Windows.Forms.Button btnWybierzXLSX;
         private System.Windows.Forms.Button btnSprawdz;
         private System.Windows.Forms.Label lblStatusFiles;
-        private System.Windows.Forms.Label lblOd;
-        private System.Windows.Forms.DateTimePicker dtpOd;
-        private System.Windows.Forms.Label lblDo;
-        private System.Windows.Forms.DateTimePicker dtpDo;
-        private System.Windows.Forms.Button btnFiltruj;
         private System.Windows.Forms.Button btnEksportuj;
         private System.Windows.Forms.ProgressBar mainProgressBar;
     }

@@ -39,10 +39,14 @@ namespace IO_2026_SGGW
                 {
                     answerKey = new AnswerKeyLoader().Load(ofd.FileName);
                     xlsxPath = ofd.FileName;
+                    DebugLog($"OK Load: {ofd.FileName} | zadan={answerKey.Tasks.Count}");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Błąd wczytywania klucza:\n" + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DebugLog($"FAIL Load: {ofd.FileName}\n{ex.GetType().FullName}: {ex.Message}\nInner: {ex.InnerException?.GetType().FullName}: {ex.InnerException?.Message}\n{ex.StackTrace}");
+                    MessageBox.Show("Błąd wczytywania klucza:\n" + ex.GetType().Name + ": " + ex.Message +
+                        (ex.InnerException != null ? "\n\n" + ex.InnerException.GetType().Name + ": " + ex.InnerException.Message : ""),
+                        "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     answerKey = null;
                     xlsxPath = null;
@@ -50,6 +54,16 @@ namespace IO_2026_SGGW
 
                 UpdateStatusBar(); // metoda z Zadania 1
             }
+        }
+
+        private static void DebugLog(string msg)
+        {
+            try
+            {
+                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "io_debug.log");
+                File.AppendAllText(path, DateTime.Now.ToString("HH:mm:ss") + " " + msg + Environment.NewLine);
+            }
+            catch { }
         }
 
         private void lblStatusFiles_Click(object sender, EventArgs e)
@@ -131,22 +145,40 @@ namespace IO_2026_SGGW
             }
         }
 
-        private void btnFiltruj_Click(object sender, EventArgs e)
+        private async void btnSprawdz_Click(object sender, EventArgs e)
         {
-            UpdateStatusBar();
-        }
-        private List<StudentSolution> GetInRangeSolutions()
-        {
-            var from = dtpOd.Value.Date;
-            var to = dtpDo.Value.Date;
-            var result = new List<StudentSolution>();
-            foreach (var s in studentSolutions)
+            if (studentSolutions.Count == 0) { MessageBox.Show("Brak plików .cs"); return; }
+            if (answerKey == null) { MessageBox.Show("Wybierz klucz XLSX"); return; }
+
+            resultsList.Clear();
+            mainProgressBar.Value = 0;
+            EnableUiControls(false);
+
+            int timeoutMs = (int)numTimeout.Value * 1000;
+            var progress = new Progress<int>(p => mainProgressBar.Value = Math.Min(100, p));
+
+            try
             {
-                var d = s.LastModified.Date;
-                if (d >= from && d <= to) result.Add(s);
+                await new GradingService().RunAsync(studentSolutions, answerKey, timeoutMs, resultsList, progress);
+                int total = 0;
+                foreach (var r in resultsList) total += r.Punkty;
+                MessageBox.Show($"Sprawdzono. Łącznie {total} punktów.", "Gotowe");
             }
-            return result;
+            finally
+            {
+                EnableUiControls(true);
+            }
         }
+
+        private void EnableUiControls(bool enabled)
+        {
+            btnSprawdz.Enabled = enabled;
+            btnEksportuj.Enabled = enabled;
+            btnWybierzXLSX.Enabled = enabled;
+            numTimeout.Enabled = enabled;
+            panelDrop.Enabled = enabled;
+        }
+
         private void UpdateStatusBar()
         {
             if (lblStatusFiles.InvokeRequired)
@@ -156,7 +188,7 @@ namespace IO_2026_SGGW
             }
 
             string xlsxName = string.IsNullOrEmpty(xlsxPath) ? "(brak)" : Path.GetFileName(xlsxPath);
-            lblStatusFiles.Text = $"Załadowane: {studentSolutions.Count} | W zakresie: {GetInRangeSolutions().Count} | XLSX: {xlsxName}";
+            lblStatusFiles.Text = $"Załadowane: {studentSolutions.Count} | XLSX: {xlsxName}";
         }
         private void btnEksportuj_Click(object sender, EventArgs e)
         {
@@ -200,12 +232,9 @@ namespace IO_2026_SGGW
             // Przyciski
             toolTip.SetToolTip(btnWybierzXLSX, "Wybierz plik referencyjny z rozszerzeniem .xlsx");
             toolTip.SetToolTip(btnSprawdz, "Uruchom weryfikację załadowanych plików .cs");
-            toolTip.SetToolTip(btnFiltruj, "Zastosuj filtr czasowy do listy wyników");
             toolTip.SetToolTip(btnEksportuj, "Zapisz obecne wyniki do nowego pliku Excel");
 
-            // Pickery dat i Drop Zone
-            toolTip.SetToolTip(dtpOd, "Wybierz datę początkową");
-            toolTip.SetToolTip(dtpDo, "Wybierz datę końcową");
+            // Drop Zone
             toolTip.SetToolTip(panelDrop, "Przeciągnij i upuść pliki studentów (.cs) tutaj");
 
             // Menu kontekstowe dla lstResults
