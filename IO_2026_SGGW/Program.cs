@@ -6,10 +6,14 @@ using System.Windows.Forms;
 
 namespace IO_2026_SGGW
 {
+    /// <summary>
+    /// Klasa startowa aplikacji, zawierająca punkt wejścia procesu.
+    /// </summary>
     internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Główny punkt wejścia aplikacji. Włącza style wizualne Windows Forms i uruchamia
+        /// główne okno <see cref="MainForm"/>.
         /// </summary>
         [STAThread]
         static void Main()

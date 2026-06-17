@@ -13,19 +13,40 @@ using System.Windows.Forms;
 
 namespace IO_2026_SGGW
 {
+    /// <summary>
+    /// Główne okno aplikacji do sprawdzania kolokwiów. Łączy interfejs użytkownika z logiką oceniania:
+    /// wczytanie klucza XLSX, dodawanie plików <c>.cs</c> studentów (przeciąganie lub okno dialogowe),
+    /// uruchomienie sprawdzania oraz eksport wyników do Excela.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>Lista wczytanych rozwiązań studentów (plików <c>.cs</c>) oczekujących na sprawdzenie.</summary>
         private readonly List<StudentSolution> studentSolutions = new
         List<StudentSolution>();
+
+        /// <summary>Ścieżka aktualnie wczytanego pliku klucza XLSX; <c>null</c>, gdy nie wczytano klucza.</summary>
         private string xlsxPath;
+
+        /// <summary>Aktualnie wczytany klucz odpowiedzi; <c>null</c>, gdy nie wczytano klucza.</summary>
         private AnswerKey answerKey;
 
+        /// <summary>
+        /// Inicjalizuje okno: buduje kontrolki (<c>InitializeComponent</c>) i konfiguruje tabelę wyników
+        /// (<see cref="SetupGrid"/>).
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
             SetupGrid();
         }
 
+        /// <summary>
+        /// Obsługuje przycisk wyboru klucza XLSX: otwiera okno dialogowe, wczytuje wybrany plik przez
+        /// <see cref="AnswerKeyLoader"/> i aktualizuje pasek statusu. Błędy wczytywania są logowane
+        /// i pokazywane użytkownikowi w oknie komunikatu.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void button1_Click(object sender, EventArgs e)
         {
             using (var ofd = new OpenFileDialog { Filter = "Excel files (*.xlsx)|*.xlsx", Title = "Wybierz plik z kluczem odpowiedzi" })
@@ -56,6 +77,11 @@ namespace IO_2026_SGGW
             }
         }
 
+        /// <summary>
+        /// Dopisuje wpis diagnostyczny (ze znacznikiem czasu) do pliku <c>io_debug.log</c> na pulpicie.
+        /// Ewentualne błędy zapisu są celowo ignorowane.
+        /// </summary>
+        /// <param name="msg">Treść komunikatu do zapisania.</param>
         private static void DebugLog(string msg)
         {
             try
@@ -66,14 +92,31 @@ namespace IO_2026_SGGW
             catch { }
         }
 
+        /// <summary>
+        /// Obsługa kliknięcia etykiety statusu plików. Obecnie pusta (brak akcji).
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void lblStatusFiles_Click(object sender, EventArgs e)
         {
         }
 
+        /// <summary>
+        /// Pozostałość po wcześniejszej kontrolce listy, obecnie pusta obsługa zdarzenia (bez akcji).
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
         
+        /// <summary>
+        /// Obsługuje wejście przeciąganych plików nad panel upuszczania. Jeśli wśród przeciąganych elementów
+        /// jest plik <c>.cs</c>, dopuszcza kopiowanie i podświetla panel na zielono; w przeciwnym razie
+        /// blokuje upuszczenie.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia przeciągania (lista ścieżek oraz ustawiany efekt).</param>
         private void panelDrop_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -101,11 +144,22 @@ namespace IO_2026_SGGW
             panelDrop.BackColor = Color.White;
             lblDropHint.BackColor = Color.White;
         }
+        /// <summary>
+        /// Przywraca białe tło panelu upuszczania po opuszczeniu go przez kursor przeciągania.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void panelDrop_DragLeave(object sender, EventArgs e)
         {
             panelDrop.BackColor = Color.White;
             lblDropHint.BackColor = Color.White;
         }
+        /// <summary>
+        /// Obsługuje upuszczenie plików na panel: przywraca tło i przekazuje upuszczone ścieżki
+        /// do <see cref="AddCsFiles"/>.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia przeciągania zawierające upuszczone ścieżki plików.</param>
         private void panelDrop_DragDrop(object sender, DragEventArgs e)
         {
             panelDrop.BackColor = Color.White;
@@ -113,6 +167,11 @@ namespace IO_2026_SGGW
             var paths = (string[])e.Data.GetData(DataFormats.FileDrop);
             AddCsFiles(paths);
         }
+        /// <summary>
+        /// Dodaje wskazane pliki <c>.cs</c> do listy rozwiązań studentów, pomijając pliki o innym rozszerzeniu
+        /// oraz już wcześniej dodane (rozpoznawane po ścieżce). Po dodaniu odświeża pasek statusu.
+        /// </summary>
+        /// <param name="paths">Ścieżki plików do rozważenia.</param>
         private void AddCsFiles(string[] paths)
         {
             foreach (var path in paths)
@@ -132,6 +191,12 @@ namespace IO_2026_SGGW
         }
 
 
+        /// <summary>
+        /// Obsługuje wybór plików <c>.cs</c> z okna dialogowego (z możliwością wielokrotnego wyboru)
+        /// i przekazuje je do <see cref="AddCsFiles"/>.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void btnWybierzPlikiCs_Click(object sender, EventArgs e)
         {
             using (var ofd = new OpenFileDialog
@@ -145,6 +210,13 @@ namespace IO_2026_SGGW
             }
         }
 
+        /// <summary>
+        /// Uruchamia sprawdzanie: waliduje, czy wczytano pliki i klucz, czyści poprzednie wyniki, blokuje UI,
+        /// wywołuje <see cref="GradingService.RunAsync"/>, a po zakończeniu pokazuje łączną liczbę punktów
+        /// i z powrotem odblokowuje kontrolki.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private async void btnSprawdz_Click(object sender, EventArgs e)
         {
             if (studentSolutions.Count == 0) { MessageBox.Show("Brak plików .cs"); return; }
@@ -170,6 +242,10 @@ namespace IO_2026_SGGW
             }
         }
 
+        /// <summary>
+        /// Włącza lub wyłącza kontrolki interfejsu na czas trwania sprawdzania, aby zapobiec równoległym akcjom.
+        /// </summary>
+        /// <param name="enabled"><c>true</c>, aby włączyć kontrolki; <c>false</c>, aby je zablokować.</param>
         private void EnableUiControls(bool enabled)
         {
             btnSprawdz.Enabled = enabled;
@@ -179,6 +255,10 @@ namespace IO_2026_SGGW
             panelDrop.Enabled = enabled;
         }
 
+        /// <summary>
+        /// Aktualizuje pasek statusu liczbą wczytanych plików i nazwą wybranego klucza XLSX.
+        /// W razie potrzeby przełącza wykonanie na wątek UI (<see cref="Control.InvokeRequired"/>).
+        /// </summary>
         private void UpdateStatusBar()
         {
             if (lblStatusFiles.InvokeRequired)
@@ -190,6 +270,12 @@ namespace IO_2026_SGGW
             string xlsxName = string.IsNullOrEmpty(xlsxPath) ? "(brak)" : Path.GetFileName(xlsxPath);
             lblStatusFiles.Text = $"Załadowane: {studentSolutions.Count} | XLSX: {xlsxName}";
         }
+        /// <summary>
+        /// Obsługuje eksport wyników: jeśli istnieją jakiekolwiek wyniki, otwiera okno zapisu i zapisuje je
+        /// przez <see cref="ResultsExporter"/>, a następnie opcjonalnie otwiera folder z plikiem w Eksploratorze.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void btnEksportuj_Click(object sender, EventArgs e)
         {
             if (resultsList.Count == 0)
@@ -220,10 +306,20 @@ namespace IO_2026_SGGW
             }
         }
 
+        /// <summary>
+        /// Obsługa zdarzenia załadowania okna. Obecnie pusta (brak dodatkowej inicjalizacji).
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
         }
 
+        /// <summary>
+        /// Przygotowuje dodatkowe elementy interfejsu: podpowiedzi (tooltipy) dla przycisków i panelu
+        /// oraz menu kontekstowe wyników. Metoda jest niekompletna i obecnie nigdzie nie jest wywoływana
+        /// (pozostałość po wcześniejszej wersji UI z listą wyników).
+        /// </summary>
         private void SetupCustomUI()
         {
             // ToolTipy dla kontrolek
@@ -275,10 +371,18 @@ namespace IO_2026_SGGW
             // Przypięcie gotowego menu do kontrolki ListBox
         }
 
+        /// <summary>
+        /// Kolekcja wyników powiązana z tabelą (<c>DataGridView</c>) jako źródło danych; uzupełniana na bieżąco
+        /// w trakcie sprawdzania przez <see cref="GradingService"/>.
+        /// </summary>
         private readonly BindingList<ResultRow> resultsList = new
             BindingList<ResultRow>();
 
 
+        /// <summary>
+        /// Konfiguruje tabelę wyników (<c>DataGridView</c>): definiuje kolumny powiązane z właściwościami
+        /// <see cref="ResultRow"/> i ustawia źródło danych na <see cref="resultsList"/>.
+        /// </summary>
         private void SetupGrid()
         {
             dgvResults.AutoGenerateColumns = false;
@@ -328,6 +432,12 @@ namespace IO_2026_SGGW
             dgvResults.DataSource = resultsList;
         }
 
+        /// <summary>
+        /// Koloruje wiersze tabeli wyników w zależności od statusu (<see cref="RunStatus"/>): np. zielony dla
+        /// poprawnych, czerwony dla błędnych, pomarańczowy dla przekroczenia limitu czasu.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">Dane zdarzenia formatowania komórki (zawierają indeks wiersza).</param>
         private void dgvResults_CellFormatting(object sender,
             DataGridViewCellFormattingEventArgs e)
         {

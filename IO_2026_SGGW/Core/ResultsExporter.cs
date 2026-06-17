@@ -3,8 +3,26 @@ using System.Linq;
 using ClosedXML.Excel;
 namespace IO_2026_SGGW.Core
 {
+    /// <summary>
+    /// Eksportuje wyniki oceny do pliku Excel (<c>.xlsx</c>) przy użyciu biblioteki ClosedXML.
+    /// </summary>
+    /// <remarks>
+    /// Tworzony plik zawiera dwa arkusze: "Wyniki" ze szczegółowym wykazem wszystkich przypadków testowych
+    /// (z kolorowaniem komórki statusu) oraz "Podsumowanie" z sumą punktów, liczbą zadań i procentem dla
+    /// każdego studenta.
+    /// </remarks>
     public class ResultsExporter
     {
+        /// <summary>
+        /// Zapisuje przekazane wiersze wyników do nowego pliku Excel.
+        /// </summary>
+        /// <param name="rows">Wiersze wyników do wyeksportowania.</param>
+        /// <param name="path">Docelowa ścieżka pliku <c>.xlsx</c> (istniejący plik zostanie nadpisany).</param>
+        /// <remarks>
+        /// Arkusz "Wyniki" zawiera kolumny: Student, Zadanie, Parametry, Oczekiwany, Uzyskany, Punkty, Status,
+        /// a komórka statusu jest kolorowana przez <see cref="ColorForStatus"/>. Arkusz "Podsumowanie" grupuje
+        /// wiersze po studencie i oblicza sumę punktów, liczbę zadań oraz procent (suma punktów / liczba przypadków).
+        /// </remarks>
         public void Export(IList<ResultRow> rows, string path)
         {
             using (var wb = new XLWorkbook())
@@ -56,6 +74,15 @@ namespace IO_2026_SGGW.Core
                 wb.SaveAs(path);
             }
         }
+        /// <summary>
+        /// Zwraca kolor tła komórki statusu w eksporcie, odpowiadający danemu <see cref="RunStatus"/>.
+        /// </summary>
+        /// <param name="s">Status wykonania przypadku testowego.</param>
+        /// <returns>
+        /// Kolor ClosedXML przypisany do statusu; dla statusów bez własnego koloru
+        /// (m.in. <see cref="RunStatus.BrakMetody"/>, <see cref="RunStatus.ZlyFormatParametrow"/>)
+        /// zwracany jest jasnoszary.
+        /// </returns>
         private static XLColor ColorForStatus(RunStatus s)
         {
             switch (s)

@@ -1,0 +1,85 @@
+/**
+\mainpage Sprawdzanie Kolokwiów
+
+\tableofcontents
+
+\section intro_sec Wprowadzenie
+
+<b>Sprawdzanie Kolokwiów</b> to aplikacja okienkowa (Windows Forms, .NET 8.0) służąca do
+<b>automatycznego sprawdzania kolokwiów</b> z programowania w języku C#. Prowadzący wczytuje
+klucz odpowiedzi z pliku Excel, dodaje pliki źródłowe (<tt>.cs</tt>) studentów, a aplikacja
+kompiluje je w pamięci, uruchamia odpowiednie metody na zestawie przypadków testowych i ocenia
+wyniki, prezentując je w tabeli oraz umożliwiając eksport do Excela.
+
+Aplikacja powstaje w ramach przedmiotu <em>Inżynieria Oprogramowania 2026</em> (SGGW) jako praca
+zespołu projektowego.
+
+\section arch_sec Architektura
+
+Projekt dzieli się na warstwę interfejsu użytkownika oraz warstwę logiki (przestrzeń nazw
+<tt>IO_2026_SGGW.Core</tt>):
+
+| Komponent | Rola |
+| --------- | ---- |
+| IO_2026_SGGW.MainForm        | Interfejs użytkownika: wybór klucza, dodawanie plików, uruchomienie, eksport |
+| IO_2026_SGGW.Core.AnswerKeyLoader  | Wczytanie klucza odpowiedzi z pliku XLSX |
+| IO_2026_SGGW.Core.GradingService   | Orkiestracja całego procesu oceny (asynchronicznie) |
+| IO_2026_SGGW.Core.SolutionCompiler | Kompilacja kodu studenta w pamięci (Roslyn) |
+| IO_2026_SGGW.Core.SolutionRunner   | Wyszukiwanie metod, parsowanie parametrów, wykonanie z limitem czasu, weryfikacja |
+| IO_2026_SGGW.Core.ResultsExporter  | Eksport wyników do pliku Excel |
+
+Modele danych: IO_2026_SGGW.Core.StudentSolution, IO_2026_SGGW.Core.AnswerKey,
+IO_2026_SGGW.Core.TaskSheet, IO_2026_SGGW.Core.TestCase, IO_2026_SGGW.Core.ResultRow
+oraz wyliczenie IO_2026_SGGW.Core.RunStatus.
+
+\section flow_sec Przepływ przetwarzania
+
+1. <b>Wczytanie klucza</b>: użytkownik wybiera plik XLSX, a IO_2026_SGGW.Core.AnswerKeyLoader
+   buduje obiekt IO_2026_SGGW.Core.AnswerKey.
+2. <b>Dodanie rozwiązań</b>: pliki <tt>.cs</tt> dodawane przez przeciągnięcie lub okno dialogowe
+   trafiają do listy IO_2026_SGGW.Core.StudentSolution.
+3. <b>Start sprawdzania</b>: IO_2026_SGGW.Core.GradingService.RunAsync uruchamia przetwarzanie
+   w tle, raportując postęp.
+4. <b>Kompilacja</b>: dla każdego studenta IO_2026_SGGW.Core.SolutionCompiler kompiluje kod,
+   a błąd kompilacji daje status IO_2026_SGGW.Core.RunStatus.BladKompilacji dla wszystkich zadań.
+5. <b>Wyszukanie metody</b>: IO_2026_SGGW.Core.SolutionRunner.FindMethod dopasowuje metodę po
+   znormalizowanej nazwie zadania (bez spacji, podkreśleń, bez uwzględniania wielkości liter).
+6. <b>Parsowanie parametrów</b>: IO_2026_SGGW.Core.SolutionRunner.ParseArgs zamienia tekst z klucza
+   na argumenty właściwych typów (kropka jako separator dziesiętny).
+7. <b>Wykonanie z limitem czasu</b>: IO_2026_SGGW.Core.SolutionRunner.InvokeWithTimeout wywołuje
+   metodę na osobnym wątku, a przekroczenie czasu daje status IO_2026_SGGW.Core.RunStatus.Timeout.
+8. <b>Weryfikacja wyniku</b>: IO_2026_SGGW.Core.SolutionRunner.IsCorrect porównuje wynik z kluczem
+   (tolerancja 1e-6 dla liczb zmiennoprzecinkowych, porównanie element po elemencie dla tablic).
+9. <b>Prezentacja i eksport</b>: wyniki trafiają do tabeli, a IO_2026_SGGW.Core.ResultsExporter
+   może zapisać je do Excela (arkusze "Wyniki" oraz "Podsumowanie").
+
+\section format_sec Format klucza odpowiedzi (XLSX)
+
+- Każdy <b>arkusz</b> pliku to jedno zadanie; nazwa arkusza = nazwa szukanej metody.
+- <b>Wiersz 1</b> jest nagłówkiem i jest pomijany.
+- <b>Kolumna B</b> (2): parametry wejściowe przypadku testowego.
+- <b>Kolumna C</b> (3): oczekiwany wynik.
+- Tablice zapisuje się w nawiasach kwadratowych, np. <tt>[1, 2, 3]</tt>.
+- Separatorem dziesiętnym jest <b>kropka</b> (kultura niezależna od ustawień regionalnych).
+- Tablice wielowymiarowe nie są obsługiwane.
+
+\section status_sec Statusy wyników
+
+Pełny zestaw statusów opisuje wyliczenie IO_2026_SGGW.Core.RunStatus:
+
+- <b>Ok</b>: wynik zgodny z kluczem (1 punkt),
+- <b>Bledny</b>: wynik niezgodny z kluczem (0 punktów),
+- <b>Timeout</b>: przekroczono limit czasu,
+- <b>BrakMetody</b>: nie znaleziono metody dla zadania,
+- <b>Wyjatek</b>: metoda rzuciła wyjątek,
+- <b>BladKompilacji</b>: kod studenta się nie skompilował,
+- <b>ZlyFormatParametrow</b>: nie udało się sparsować parametrów.
+
+\section build_sec Budowanie i zależności
+
+- Platforma: <b>.NET 8.0</b> (Windows Forms).
+- Biblioteki zewnętrzne:
+  - <b>ClosedXML</b> 0.102.2: odczyt i zapis plików Excel,
+  - <b>Microsoft.CodeAnalysis.CSharp</b> 4.8.0 (Roslyn): kompilacja kodu w pamięci,
+  - <b>System.Configuration.ConfigurationManager</b> 8.0.0.
+*/

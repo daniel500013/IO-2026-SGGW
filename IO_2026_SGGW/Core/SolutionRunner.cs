@@ -10,8 +10,32 @@ using System.Threading.Tasks;
 
 namespace IO_2026_SGGW.Core
 {
+    /// <summary>
+    /// Uruchamia metody ze skompilowanego rozwiązania studenta i porównuje ich wyniki z kluczem.
+    /// Odpowiada za odnajdywanie metod przez refleksję, parsowanie parametrów z postaci tekstowej,
+    /// bezpieczne wywołanie z limitem czasu oraz weryfikację poprawności wyniku.
+    /// </summary>
+    /// <remarks>
+    /// Współpracuje z <see cref="GradingService"/>, który dla każdego przypadku testowego wywołuje
+    /// kolejno: <see cref="FindMethod"/>, <see cref="ParseArgs"/>, <see cref="InvokeWithTimeout"/>
+    /// oraz <see cref="IsCorrect"/>.
+    /// </remarks>
     public class SolutionRunner
     {
+        /// <summary>
+        /// Wyszukuje w podzespole metodę odpowiadającą nazwie zadania.
+        /// </summary>
+        /// <param name="asm">Skompilowany podzespół rozwiązania studenta.</param>
+        /// <param name="taskName">Nazwa zadania (nazwa arkusza z klucza).</param>
+        /// <returns>
+        /// Pasująca <see cref="MethodInfo"/> albo <c>null</c>, jeśli żadna metoda nie odpowiada nazwie zadania.
+        /// </returns>
+        /// <remarks>
+        /// Dopasowanie ignoruje wielkość liter oraz spacje i podkreślenia w nazwie (np. zadanie
+        /// "Suma Tablicy" pasuje do metody <c>SumaTablicy</c> lub <c>suma_tablicy</c>). Przeszukiwane są
+        /// wszystkie typy podzespołu i ich metody publiczne (statyczne oraz instancyjne) zadeklarowane
+        /// bezpośrednio w typie; metoda <c>Main</c> jest pomijana.
+        /// </remarks>
         public MethodInfo FindMethod(Assembly asm, string taskName)
         {
             var nameNormalized = taskName.Replace(" ", "").Replace("_", "");
@@ -28,6 +52,26 @@ namespace IO_2026_SGGW.Core
             return null;
         }
 
+        /// <summary>
+        /// Zamienia tekstowy zapis parametrów z klucza na tablicę argumentów o typach wymaganych przez metodę.
+        /// </summary>
+        /// <param name="paramsCsv">
+        /// Parametry rozdzielone przecinkami w postaci tekstowej (np. <c>"2, 3"</c>); tablicę zapisuje się
+        /// w nawiasach kwadratowych, np. <c>"[1, 2, 3]"</c>.
+        /// </param>
+        /// <param name="paramInfos">Informacje o parametrach docelowej metody (z <see cref="System.Reflection.MethodBase.GetParameters"/>).</param>
+        /// <returns>Tablica argumentów gotowa do przekazania do <see cref="InvokeWithTimeout"/>.</returns>
+        /// <exception cref="System.ArgumentException">
+        /// Gdy liczba dostarczonych parametrów nie zgadza się z liczbą parametrów metody.
+        /// </exception>
+        /// <exception cref="System.NotImplementedException">
+        /// Gdy parametr jest tablicą wielowymiarową (zagnieżdżone nawiasy kwadratowe), co nie jest obsługiwane.
+        /// </exception>
+        /// <remarks>
+        /// Konwersja typów odbywa się przez <see cref="System.Convert.ChangeType(object, System.Type, System.IFormatProvider)"/>
+        /// z <see cref="CultureInfo.InvariantCulture"/>, dzięki czemu separatorem dziesiętnym jest kropka.
+        /// Dla parametrów tablicowych każdy element konwertowany jest na typ elementu tablicy.
+        /// </remarks>
         public object[] ParseArgs(string paramsCsv, ParameterInfo[] paramInfos)
         {
             if (String.IsNullOrWhiteSpace(paramsCsv))
@@ -74,6 +118,24 @@ namespace IO_2026_SGGW.Core
             return toRet;
         }
 
+        /// <summary>
+        /// Wywołuje metodę na osobnym wątku z ograniczeniem czasu, przechwytując ewentualne wyjątki.
+        /// </summary>
+        /// <param name="method">Metoda do wywołania.</param>
+        /// <param name="args">Argumenty wywołania (zob. <see cref="ParseArgs"/>).</param>
+        /// <param name="timeoutMs">Maksymalny czas wykonania w milisekundach.</param>
+        /// <returns>
+        /// <see cref="RunResult"/> ze statusem <see cref="RunStatus.Ok"/> i zwróconą wartością przy powodzeniu,
+        /// <see cref="RunStatus.Timeout"/> po przekroczeniu czasu albo <see cref="RunStatus.Wyjatek"/>,
+        /// gdy metoda rzuciła wyjątek.
+        /// </returns>
+        /// <remarks>
+        /// Dla metody instancyjnej tworzony jest egzemplarz typu deklarującego. Metoda wykonywana jest na
+        /// wątku w tle, na który oczekuje się przez <see cref="Thread.Join(int)"/>. Uwaga: próba przerwania
+        /// przekroczonego wątku korzysta z <see cref="Thread.Abort()"/>, które na platformie .NET 5+ nie jest
+        /// wspierane i rzuca wyjątek (przechwytywany po cichu), w takim wypadku wątek (uruchomiony jako tło)
+        /// może nadal działać, mimo że metoda zwraca już status <see cref="RunStatus.Timeout"/>.
+        /// </remarks>
         [DebuggerHidden]
         public RunResult InvokeWithTimeout(MethodInfo method, object[] args, int timeoutMs)
         {
@@ -129,6 +191,19 @@ namespace IO_2026_SGGW.Core
         }
 
 
+        /// <summary>
+        /// Sprawdza, czy faktyczny wynik metody jest zgodny z wartością oczekiwaną z klucza.
+        /// </summary>
+        /// <param name="actual">Wartość zwrócona przez metodę studenta.</param>
+        /// <param name="expectedFromXlsx">Oczekiwany wynik w postaci tekstowej z klucza.</param>
+        /// <param name="returnType">Typ zwracany metody, decydujący o sposobie porównania.</param>
+        /// <returns><c>true</c>, jeśli wynik jest uznawany za poprawny; w przeciwnym razie <c>false</c>.</returns>
+        /// <remarks>
+        /// Reguły porównania: dla <c>null</c> wynik jest poprawny tylko wtedy, gdy oczekiwana wartość jest pusta;
+        /// tablice porównywane są element po elemencie (po wcześniejszym sprawdzeniu długości); wartości
+        /// zmiennoprzecinkowe (<see cref="double"/>/<see cref="float"/>) porównywane są z tolerancją 1e-6;
+        /// pozostałe typy porównywane są tekstowo, bez uwzględniania wielkości liter i z przycięciem białych znaków.
+        /// </remarks>
         public bool IsCorrect(object actual, string expectedFromXlsx, Type returnType)
         {
             if (actual == null) return string.IsNullOrWhiteSpace(expectedFromXlsx);
@@ -168,14 +243,39 @@ namespace IO_2026_SGGW.Core
 
 
 
+        /// <summary>
+        /// Wynik pojedynczego wywołania metody, zwracany przez <see cref="InvokeWithTimeout"/>.
+        /// </summary>
         public class RunResult
         {
+            /// <summary>
+            /// Status wykonania (np. <see cref="RunStatus.Ok"/>, <see cref="RunStatus.Timeout"/>,
+            /// <see cref="RunStatus.Wyjatek"/>).
+            /// </summary>
             public RunStatus Status { get; set; }
+
+            /// <summary>
+            /// Wartość zwrócona przez metodę przy statusie <see cref="RunStatus.Ok"/>;
+            /// w pozostałych przypadkach zwykle <c>null</c>.
+            /// </summary>
             public object Value { get; set; }
+
+            /// <summary>
+            /// Komunikat błędu (typ i treść wyjątku) ustawiany przy statusie <see cref="RunStatus.Wyjatek"/>.
+            /// </summary>
             public string ErrorMessage { get; set; }
         }
 
 
+        /// <summary>
+        /// Dzieli tekst parametrów po przecinkach, ignorując przecinki znajdujące się wewnątrz
+        /// nawiasów kwadratowych (czyli wewnątrz tablic).
+        /// </summary>
+        /// <param name="s">Tekstowy zapis listy parametrów.</param>
+        /// <returns>Lista pojedynczych tokenów-parametrów (jeszcze nieobciętych z białych znaków).</returns>
+        /// <exception cref="System.NotImplementedException">
+        /// Gdy zagnieżdżenie nawiasów przekracza jeden poziom (tablice wielowymiarowe nie są obsługiwane).
+        /// </exception>
         private static List<string> SplitRespectingBrackets(string s)
         // MultiD nie jest wspierane
         {
@@ -204,6 +304,12 @@ namespace IO_2026_SGGW.Core
             return toRet;
         }
 
+        /// <summary>
+        /// Przygotowuje tekst z pliku XLSX reprezentujący tablicę do dalszej konwersji: usuwa zewnętrzne
+        /// nawiasy kwadratowe i dzieli zawartość po przecinkach, obcinając białe znaki.
+        /// </summary>
+        /// <param name="xlsxString">Tekstowy zapis tablicy, np. <c>"[1, 2, 3]"</c>.</param>
+        /// <returns>Tablica tekstowych elementów (np. <c>"1"</c>, <c>"2"</c>, <c>"3"</c>).</returns>
         private static string[] PrepareXlsxInput(string xlsxString)
         {
             var expectedInner = xlsxString.Trim().TrimStart('[').TrimEnd(']');

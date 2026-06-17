@@ -1,0 +1,108 @@
+# Doxyfile dla projektu Sprawdzanie Kolokwiów
+#
+# Uruchomienie (z katalogu głównego projektu):
+#     doxygen Doxyfile
+# Wynik HTML powstanie w:
+#     docs/doxygen/html/index.html
+#
+# Plik zawiera tylko ustawienia istotne dla tego projektu, pozostałe opcje
+# przyjmują wartości domyślne Doxygena.
+
+#---------------------------------------------------------------------------
+# Projekt
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "Sprawdzanie Kolokwiów"
+PROJECT_BRIEF          = "Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#"
+PROJECT_NUMBER         = 1.0
+OUTPUT_DIRECTORY       = docs/doxygen
+OUTPUT_LANGUAGE        = Polish
+CREATE_SUBDIRS         = NO
+
+#---------------------------------------------------------------------------
+# Wejście (kodowanie i pliki źródłowe)
+#---------------------------------------------------------------------------
+INPUT                  = .
+INPUT_ENCODING         = UTF-8
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cs *.dox
+# Pomijamy pliki generowane automatycznie oraz katalogi kompilacji.
+EXCLUDE_PATTERNS       = */obj/* */bin/* *.Designer.cs *.AssemblyInfo.cs *AssemblyAttributes.cs
+
+#---------------------------------------------------------------------------
+# Wydobywanie symboli: celem jest MAKSYMALNIE szczegółowa dokumentacja
+#---------------------------------------------------------------------------
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+INTERNAL_DOCS          = YES
+SHOW_USED_FILES        = YES
+SHOW_FILES             = YES
+SHOW_NAMESPACES        = YES
+
+#---------------------------------------------------------------------------
+# Interpretacja komentarzy dokumentacyjnych
+#---------------------------------------------------------------------------
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+INHERIT_DOCS           = YES
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+TAB_SIZE               = 4
+SORT_MEMBER_DOCS       = NO
+SORT_BRIEF_DOCS        = NO
+
+#---------------------------------------------------------------------------
+# Ostrzeżenia (pomocne przy uzupełnianiu brakującej dokumentacji)
+#---------------------------------------------------------------------------
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+
+#---------------------------------------------------------------------------
+# Przeglądanie kodu źródłowego
+#---------------------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+VERBATIM_HEADERS       = YES
+
+#---------------------------------------------------------------------------
+# Wyjście HTML
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+SEARCHENGINE           = YES
+
+#---------------------------------------------------------------------------
+# Pozostałe formaty: wyłączone (interesuje nas HTML)
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = NO
+GENERATE_RTF           = NO
+GENERATE_MAN           = NO
+GENERATE_XML           = NO
+GENERATE_DOCBOOK       = NO
+
+#---------------------------------------------------------------------------
+# Diagramy
+#   Diagramy klas działają częściowo bez dodatkowego oprogramowania.
+#   Aby uzyskać pełne grafy (współpracy, wywołań), zainstaluj Graphviz
+#   i ustaw HAVE_DOT = YES.
+#---------------------------------------------------------------------------
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+DIRECTORY_GRAPH        = YES
+HAVE_DOT               = NO
+UML_LOOK               = YES
+TEMPLATE_RELATIONS     = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
