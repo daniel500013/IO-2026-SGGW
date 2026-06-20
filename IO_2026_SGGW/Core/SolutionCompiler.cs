@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using Microsoft.CodeAnalysis;
@@ -40,6 +41,7 @@ namespace IO_2026_SGGW.Core
     /// Powstały podzespół jest ładowany bezpośrednio ze strumienia pamięci, dzięki czemu
     /// <see cref="SolutionRunner"/> może odnaleźć i wywołać metody studenta przez refleksję.
     /// </remarks>
+     
     public class SolutionCompiler
     {
         /// <summary>
@@ -56,8 +58,35 @@ namespace IO_2026_SGGW.Core
         /// (<see cref="Microsoft.CodeAnalysis.OutputKind.DynamicallyLinkedLibrary"/>). Jako błędy traktowane
         /// są wyłącznie diagnostyki o wadze <see cref="Microsoft.CodeAnalysis.DiagnosticSeverity.Error"/>.
         /// </remarks>
+        // Obrona w głąb (T3-16 / T3-17): odrzuć kod sięgający po groźne API.
+        private static readonly string[] ForbiddenApis =
+        {
+            "Environment.Exit", "Environment.FailFast",
+            "Process.Start", "Process.GetCurrentProcess", "Process.Kill",
+            "File.Delete", "File.WriteAllText", "File.WriteAllBytes", "File.Create", "File.Open",
+            "Directory.Delete", "Directory.CreateDirectory",
+            "Registry.", "DllImport", "Marshal."
+        };
+        private static string FindForbiddenApi(string sourceCode)
+        {
+            foreach (var api in ForbiddenApis)
+                if (sourceCode.IndexOf(api, StringComparison.Ordinal) >= 0)
+                    return api;
+            return null;
+        }
+
         public CompilationResult Compile(string sourceCode)
         {
+
+            // Bezpiecznik bezpieczeństwa - odrzuć groźny kod zanim w ogóle go skompilujemy.
+            var forbidden = FindForbiddenApi(sourceCode);
+            if (forbidden != null)
+            {
+                return new CompilationResult
+                {
+                    ErrorMessage = $"Kod odrzucony ze względów bezpieczeństwa: użyto zabronionego API'{forbidden}'."
+                };
+            }
             var syntaxTree = CSharpSyntaxTree.ParseText(sourceCode);
             var runtimeDir = System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory();
 
