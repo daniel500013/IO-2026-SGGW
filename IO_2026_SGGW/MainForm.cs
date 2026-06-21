@@ -38,7 +38,22 @@ namespace IO_2026_SGGW
         {
             InitializeComponent();
             SetupGrid();
+
         }
+        [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+        private static extern bool ChangeWindowMessageFilterEx(IntPtr hWnd, uint msg, uint action, IntPtr str);
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            try
+            {
+                ChangeWindowMessageFilterEx(this.Handle, 0x0233, 1, IntPtr.Zero); // WM_DROPFILES
+                ChangeWindowMessageFilterEx(this.Handle, 0x004A, 1, IntPtr.Zero); // WM_COPYDATA
+                ChangeWindowMessageFilterEx(this.Handle, 0x0049, 1, IntPtr.Zero); // WM_COPYGLOBALDATA
+            }
+            catch { }
+        }
+
 
         /// <summary>
         /// Obsługuje przycisk wyboru klucza XLSX: otwiera okno dialogowe, wczytuje wybrany plik przez
@@ -126,7 +141,7 @@ namespace IO_2026_SGGW
                 bool hasCsFile = false;
                 foreach (var path in paths)
                 {
-                    if (path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
+                    if (File.Exists(path) && path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
                     {
                         hasCsFile = true;
                         break;
@@ -174,20 +189,36 @@ namespace IO_2026_SGGW
         /// <param name="paths">Ścieżki plików do rozważenia.</param>
         private void AddCsFiles(string[] paths)
         {
+            int added = 0, skipped = 0;
             foreach (var path in paths)
             {
-                if (!path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
-                    continue;
-                if (studentSolutions.Exists(s => s.FilePath == path)) continue;
-                studentSolutions.Add(new StudentSolution
+                try
                 {
-                    StudentId = Path.GetFileNameWithoutExtension(path),
-                    FilePath = path,
-                    SourceCode = File.ReadAllText(path),
-                    LastModified = File.GetLastWriteTime(path)
-                });
+                    // T1-11: odrzuć katalogi - folder "Testy.CS" też kończy się na ".cs"
+                    if (Directory.Exists(path)) { skipped++; continue; }
+                    if (!File.Exists(path)) { skipped++; continue; }
+                    if (!path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase)) { skipped++; continue; }
+                    if (studentSolutions.Exists(s => s.FilePath == path)) continue;
+                    studentSolutions.Add(new StudentSolution
+                    {
+                        StudentId = Path.GetFileNameWithoutExtension(path),
+                        FilePath = path,
+                        SourceCode = File.ReadAllText(path),
+                        LastModified = File.GetLastWriteTime(path)
+                    });
+                    added++;
+                }
+                catch (Exception ex)
+                {
+                    // T1-15: błąd jednego pliku NIE może przerwać całej operacji multi-drop
+                    skipped++;
+                    DebugLog($"Pominięto plik '{path}': {ex.GetType().Name}: {ex.Message}");
+                }
             }
             UpdateStatusBar();
+            if (skipped > 0)
+                MessageBox.Show($"Dodano {added} plik(ów). Pominięto {skipped} (foldery / pliki zablokowane / nie.cs).",
+        "Dodawanie plików", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
