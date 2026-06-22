@@ -10,9 +10,9 @@ Projekt realizowany w ramach przedmiotu **Inżynieria Oprogramowania 2026 (SGGW)
 
 - **Windows** (aplikacja okienkowa WinForms)
 - **.NET Framework 4.7.2** (do uruchomienia gotowej aplikacji)
-- Do budowania ze źródeł — jedno z:
+- Do budowania ze źródeł - jedno z:
   - **Visual Studio 2022** z obsługą .NET desktop development, albo
-  - **.NET SDK** (`dotnet`) — wystarczy CLI; pakiety reference assemblies dla net472 pobierają się automatycznie z NuGet
+  - **.NET SDK** (`dotnet`) - wystarczy CLI; pakiety reference assemblies dla net472 pobierają się automatycznie z NuGet
 
 Zależności (NuGet, pobierane automatycznie przy `restore`):
 
@@ -55,24 +55,24 @@ dotnet test IO_2026_SGGW/IO_2026_SGGW.sln
 
 ## Instrukcja obsługi
 
-1. **Wczytaj klucz odpowiedzi** — kliknij **„Wybierz plik XLSX"** i wskaż plik `.xlsx` z kluczem (format opisany niżej).
+1. **Wczytaj klucz odpowiedzi** - kliknij **„Wybierz plik XLSX"** i wskaż plik `.xlsx` z kluczem (format opisany niżej).
 2. **Dodaj rozwiązania studentów** (`.cs`) na jeden z dwóch sposobów:
    - **przeciągnij i upuść** pliki na panel „Przeciągnij pliki .cs tutaj" (panel podświetla się na zielono, gdy upuszczenie jest dozwolone), lub
    - **kliknij ten panel**, aby otworzyć okno wyboru plików (można zaznaczyć wiele plików naraz).
    - Jeden plik `.cs` = jeden student; nazwa pliku (bez rozszerzenia) jest identyfikatorem studenta. Pliki już dodane oraz foldery są pomijane.
-3. **Ustaw limit czasu** w polu **„Timeout (s)"** — zakres 1–60 sekund, domyślnie **3 s** (limit na wykonanie pojedynczej metody).
-4. **Uruchom sprawdzanie** — kliknij **„Sprawdź"**. Pasek postępu pokazuje stan; interfejs jest na ten czas zablokowany. Po zakończeniu pojawia się łączna liczba punktów.
+3. **Ustaw limit czasu** w polu **„Timeout (s)"** - zakres 1–60 sekund, domyślnie **3 s** (limit na wykonanie pojedynczej metody).
+4. **Uruchom sprawdzanie** - kliknij **„Sprawdź"**. Pasek postępu pokazuje stan; interfejs jest na ten czas zablokowany. Po zakończeniu pojawia się łączna liczba punktów.
 5. **Przejrzyj wyniki** w tabeli (kolumny: *Student, Zadanie, Parametry, Oczekiwany, Uzyskany, Pkt, Status*). Wiersze są kolorowane wg statusu (patrz niżej).
-6. **Wyeksportuj wyniki** — kliknij **„Eksportuj do .xlsx"** i wskaż lokalizację. Domyślna nazwa: `wyniki_RRRR-MM-DD_GG-mm.xlsx` (arkusze „Wyniki" oraz „Podsumowanie"). Po zapisie można od razu otworzyć folder z plikiem.
+6. **Wyeksportuj wyniki** - kliknij **„Eksportuj do .xlsx"** i wskaż lokalizację. Domyślna nazwa: `wyniki_RRRR-MM-DD_GG-mm.xlsx` (arkusze „Wyniki" oraz „Podsumowanie"). Po zapisie można od razu otworzyć folder z plikiem.
 
 ---
 
 ## Format pliku klucza odpowiedzi (XLSX)
 
-- Każdy **arkusz** pliku to jedno zadanie; **nazwa arkusza = nazwa szukanej metody** (dopasowanie po nazwie znormalizowanej — bez spacji/podkreśleń, bez rozróżniania wielkości liter).
+- Każdy **arkusz** pliku to jedno zadanie; **nazwa arkusza = nazwa szukanej metody** (dopasowanie po nazwie znormalizowanej - bez spacji/podkreśleń, bez rozróżniania wielkości liter).
 - **Wiersz 1** jest nagłówkiem i jest pomijany.
-- **Kolumna B** — parametry wejściowe przypadku testowego.
-- **Kolumna C** — oczekiwany wynik.
+- **Kolumna B** - parametry wejściowe przypadku testowego.
+- **Kolumna C** - oczekiwany wynik.
 - Tablice zapisuje się w nawiasach kwadratowych, np. `[1, 2, 3]`.
 - Separatorem dziesiętnym jest **kropka** (niezależnie od ustawień regionalnych).
 - Tablice wielowymiarowe nie są obsługiwane.
@@ -128,5 +128,5 @@ Wynik: `IO_2026_SGGW/docs/doxygen/html/index.html`.
 ## Rozwiązywanie problemów
 
 - Aplikacja zapisuje log diagnostyczny **`io_debug.log` na pulpicie** (m.in. szczegóły błędów wczytywania klucza i pomijanych plików).
-- „Błąd wczytywania klucza" — sprawdź, czy plik to poprawny `.xlsx` i czy układ kolumn jest zgodny z opisanym formatem.
-- Brak wyników mimo wczytanych plików — upewnij się, że nazwy arkuszy w kluczu odpowiadają nazwom metod w kodzie studentów.
+- „Błąd wczytywania klucza" - sprawdź, czy plik to poprawny `.xlsx` i czy układ kolumn jest zgodny z opisanym formatem.
+- Brak wyników mimo wczytanych plików - upewnij się, że nazwy arkuszy w kluczu odpowiadają nazwom metod w kodzie studentów.
