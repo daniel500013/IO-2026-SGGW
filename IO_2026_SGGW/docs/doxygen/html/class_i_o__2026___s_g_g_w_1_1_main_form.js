@@ -1,0 +1,27 @@
+var class_i_o__2026___s_g_g_w_1_1_main_form =
+[
+    [ "MainForm", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a2bf8730f0c138d41de314a63c37af673", null ],
+    [ "ChangeWindowMessageFilterEx", "class_i_o__2026___s_g_g_w_1_1_main_form.html#aac982ba69d0d98acf83722943b0d94f2", null ],
+    [ "OnHandleCreated", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a2f3b5199ca761af654fb992a61b802c0", null ],
+    [ "button1_Click", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a2925e3e8b7e569f526f9d67682b9e54f", null ],
+    [ "DebugLog", "class_i_o__2026___s_g_g_w_1_1_main_form.html#af120469bddb811d04724eda6ee1abbd6", null ],
+    [ "lblStatusFiles_Click", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a37863552edd424cebd272ad2e1b1abbb", null ],
+    [ "listBox1_SelectedIndexChanged", "class_i_o__2026___s_g_g_w_1_1_main_form.html#ae53a2b234fcf38ae70abb0552d840967", null ],
+    [ "panelDrop_DragEnter", "class_i_o__2026___s_g_g_w_1_1_main_form.html#aa865a66a94be995b4ab4297dad2dec0e", null ],
+    [ "panelDrop_DragLeave", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a60be45d796546cc5f9754f2e8921704a", null ],
+    [ "panelDrop_DragDrop", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a404baf3fe233abc4fe21815baeed7cb4", null ],
+    [ "AddCsFiles", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a6be3e085e11f0112b58badd3ab2185f7", null ],
+    [ "btnWybierzPlikiCs_Click", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a68290710a0aab8260a6e67cce7879ac5", null ],
+    [ "btnSprawdz_Click", "class_i_o__2026___s_g_g_w_1_1_main_form.html#ae1151cd0cc7f88fbb022144c019c761d", null ],
+    [ "EnableUiControls", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a220abb3b296f6b2836bc425a0a9c0b1b", null ],
+    [ "UpdateStatusBar", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a01a4582ea286a1f66be038e3dbf683dd", null ],
+    [ "btnEksportuj_Click", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a3075e84b646fff0c08ff9e9e75069394", null ],
+    [ "MainForm_Load", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a6b19a027b09cf3d8150c21633a7d3fa6", null ],
+    [ "SetupCustomUI", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a09ab6544cc2bda715dc94f7a51a2e441", null ],
+    [ "SetupGrid", "class_i_o__2026___s_g_g_w_1_1_main_form.html#acd15c046f0afbbb63db14862dbe7e1c7", null ],
+    [ "dgvResults_CellFormatting", "class_i_o__2026___s_g_g_w_1_1_main_form.html#aa804fb93569777c28fa9d5172f3d03c7", null ],
+    [ "studentSolutions", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a0c009454610e0063b64781d94850a124", null ],
+    [ "xlsxPath", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a3f267ce6dbbcbd19c2f2ca077ba9eb32", null ],
+    [ "answerKey", "class_i_o__2026___s_g_g_w_1_1_main_form.html#a3b43e90fbd5d900d77619dc02a523ad3", null ],
+    [ "resultsList", "class_i_o__2026___s_g_g_w_1_1_main_form.html#ad5245452ded2049fe45cffaa165012a4", null ]
+];

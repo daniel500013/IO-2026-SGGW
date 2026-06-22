@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sprawdzanie Kolokwiów: Dokumentacja klasy IO_2026_SGGW.Core.AnswerKeyLoader</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sprawdzanie Kolokwiów<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key_loader.html','','class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key_loader-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy IO_2026_SGGW.Core.AnswerKeyLoader</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Wczytuje klucz odpowiedzi z pliku Excel (<code>.xlsx</code>) i buduje na jego podstawie obiekt AnswerKey.  
+ <a href="#details">Więcej...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a40722a383de4043c954af93789ec3a51" id="r_a40722a383de4043c954af93789ec3a51"><td class="memItemLeft"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html">AnswerKey</a>&#160;</td><td class="memItemRight"><a class="el" href="#a40722a383de4043c954af93789ec3a51">Load</a> (string xlsxPath)</td></tr>
+<tr class="memdesc:a40722a383de4043c954af93789ec3a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje klucz odpowiedzi z podanego pliku XLSX.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Wczytuje klucz odpowiedzi z pliku Excel (<code>.xlsx</code>) i buduje na jego podstawie obiekt AnswerKey. </p>
+<p>Konwencja pliku: każdy arkusz to jedno zadanie (jego nazwa = nazwa arkusza), pierwszy wiersz jest nagłówkiem i jest pomijany, kolumna 2 zawiera parametry, a kolumna 3 zawiera oczekiwany wynik. Do odczytu wykorzystywana jest biblioteka ClosedXML. Arkusze bez żadnego niepustego przypadku testowego są pomijane. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_answer_key_loader___adrian_k_8cs_source.html#l00018">18</a> pliku <a class="el" href="_answer_key_loader___adrian_k_8cs_source.html">AnswerKeyLoader_AdrianK.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a40722a383de4043c954af93789ec3a51" name="a40722a383de4043c954af93789ec3a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40722a383de4043c954af93789ec3a51">&#9670;&#160;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html">AnswerKey</a> IO_2026_SGGW.Core.AnswerKeyLoader.Load </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>xlsxPath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wczytuje klucz odpowiedzi z podanego pliku XLSX. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xlsxPath</td><td>Ścieżka do pliku Excel z kluczem odpowiedzi.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wypełniony AnswerKey zawierający wszystkie arkusze, które miały co najmniej jeden niepusty przypadek testowy. </dd></dl>
+<dl class="exception"><dt>Wyjątki</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System.IO.FileNotFoundException</td><td>Gdy plik o podanej ścieżce nie istnieje.</td></tr>
+    <tr><td class="paramname">System.IO.InvalidDataException</td><td>Gdy plik nie zawiera żadnego poprawnego zadania.</td></tr>
+    <tr><td class="paramname">System.Exception</td><td>Gdy odczyt konkretnego wiersza arkusza się nie powiedzie, komunikat zawiera nazwę arkusza i numer wiersza, a pierwotna przyczyna jest dostępna jako System.Exception.InnerException. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_answer_key_loader___adrian_k_8cs_source.html#l00034">34</a> pliku <a class="el" href="_answer_key_loader___adrian_k_8cs_source.html">AnswerKeyLoader_AdrianK.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00065">IO_2026_SGGW.MainForm.button1_Click()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li>Core/<a class="el" href="_answer_key_loader___adrian_k_8cs_source.html">AnswerKeyLoader_AdrianK.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_i_o__2026___s_g_g_w.html">IO_2026_SGGW</a></li><li class="navelem"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html">Core</a></li><li class="navelem"><a href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key_loader.html">AnswerKeyLoader</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

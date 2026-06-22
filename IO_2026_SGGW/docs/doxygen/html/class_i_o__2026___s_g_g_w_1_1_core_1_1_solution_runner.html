@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sprawdzanie Kolokwiów: Dokumentacja klasy IO_2026_SGGW.Core.SolutionRunner</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sprawdzanie Kolokwiów<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html','','class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy IO_2026_SGGW.Core.SolutionRunner</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Uruchamia metody ze skompilowanego rozwiązania studenta i porównuje ich wyniki z kluczem.  
+ <a href="#details">Więcej...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:RunResult" id="r_RunResult"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html">RunResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wynik pojedynczego wywołania metody, zwracany przez InvokeWithTimeout.  <a href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html#details">Więcej...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ae8a6225de080d594f8d1ed93d770d016" id="r_ae8a6225de080d594f8d1ed93d770d016"><td class="memItemLeft">MethodInfo&#160;</td><td class="memItemRight"><a class="el" href="#ae8a6225de080d594f8d1ed93d770d016">FindMethod</a> (Assembly asm, string taskName)</td></tr>
+<tr class="memdesc:ae8a6225de080d594f8d1ed93d770d016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje w podzespole metodę odpowiadającą nazwie zadania.  <br /></td></tr>
+<tr class="memitem:a30324f1fa6bf203bd0d06497e44652e2" id="r_a30324f1fa6bf203bd0d06497e44652e2"><td class="memItemLeft">object[]&#160;</td><td class="memItemRight"><a class="el" href="#a30324f1fa6bf203bd0d06497e44652e2">ParseArgs</a> (string paramsCsv, ParameterInfo[] paramInfos)</td></tr>
+<tr class="memdesc:a30324f1fa6bf203bd0d06497e44652e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zamienia tekstowy zapis parametrów z klucza na tablicę argumentów o typach wymaganych przez metodę.  <br /></td></tr>
+<tr class="memitem:af185c9b401c9546d3ff2786f5914fba1" id="r_af185c9b401c9546d3ff2786f5914fba1"><td class="memItemLeft"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html">RunResult</a>&#160;</td><td class="memItemRight"><a class="el" href="#af185c9b401c9546d3ff2786f5914fba1">InvokeWithTimeout</a> (MethodInfo method, object[] args, int timeoutMs)</td></tr>
+<tr class="memdesc:af185c9b401c9546d3ff2786f5914fba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wywołuje metodę na osobnym wątku z ograniczeniem czasu, przechwytując ewentualne wyjątki.  <br /></td></tr>
+<tr class="memitem:a99efe7cb78b42e2746a51b38313ffe66" id="r_a99efe7cb78b42e2746a51b38313ffe66"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a99efe7cb78b42e2746a51b38313ffe66">IsCorrect</a> (object actual, string expectedFromXlsx, Type returnType)</td></tr>
+<tr class="memdesc:a99efe7cb78b42e2746a51b38313ffe66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza, czy faktyczny wynik metody jest zgodny z wartością oczekiwaną z klucza.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Statyczne metody prywatne</h2></td></tr>
+<tr class="memitem:a5998e2de880ef9bb0ce121199334dbd1" id="r_a5998e2de880ef9bb0ce121199334dbd1"><td class="memItemLeft">static List&lt; string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5998e2de880ef9bb0ce121199334dbd1">SplitRespectingBrackets</a> (string s)</td></tr>
+<tr class="memdesc:a5998e2de880ef9bb0ce121199334dbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dzieli tekst parametrów po przecinkach, ignorując przecinki znajdujące się wewnątrz nawiasów kwadratowych (czyli wewnątrz tablic).  <br /></td></tr>
+<tr class="memitem:ac5d8ed8db797930c0180d86a214b8d9b" id="r_ac5d8ed8db797930c0180d86a214b8d9b"><td class="memItemLeft">static string[]&#160;</td><td class="memItemRight"><a class="el" href="#ac5d8ed8db797930c0180d86a214b8d9b">PrepareXlsxInput</a> (string xlsxString)</td></tr>
+<tr class="memdesc:ac5d8ed8db797930c0180d86a214b8d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przygotowuje tekst z pliku XLSX reprezentujący tablicę do dalszej konwersji: usuwa zewnętrzne nawiasy kwadratowe i dzieli zawartość po przecinkach, obcinając białe znaki.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Uruchamia metody ze skompilowanego rozwiązania studenta i porównuje ich wyniki z kluczem. </p>
+<p>Odpowiada za odnajdywanie metod przez refleksję, parsowanie parametrów z postaci tekstowej, bezpieczne wywołanie z limitem czasu oraz weryfikację poprawności wyniku.</p>
+<p>Współpracuje z GradingService, który dla każdego przypadku testowego wywołuje kolejno: FindMethod, ParseArgs, InvokeWithTimeout oraz IsCorrect. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00023">23</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ae8a6225de080d594f8d1ed93d770d016" name="ae8a6225de080d594f8d1ed93d770d016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a6225de080d594f8d1ed93d770d016">&#9670;&#160;</a></span>FindMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MethodInfo IO_2026_SGGW.Core.SolutionRunner.FindMethod </td>
+          <td>(</td>
+          <td class="paramtype">Assembly</td>          <td class="paramname"><span class="paramname"><em>asm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>taskName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyszukuje w podzespole metodę odpowiadającą nazwie zadania. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asm</td><td>Skompilowany podzespół rozwiązania studenta.</td></tr>
+    <tr><td class="paramname">taskName</td><td>Nazwa zadania (nazwa arkusza z klucza).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Pasująca MethodInfo albo <code>null</code>, jeśli żadna metoda nie odpowiada nazwie zadania. </dd></dl>
+<p>Dopasowanie ignoruje wielkość liter oraz spacje i podkreślenia w nazwie (np. zadanie "Suma Tablicy" pasuje do metody <code>SumaTablicy</code> lub <code>suma_tablicy</code>). Przeszukiwane są wszystkie typy podzespołu i ich metody publiczne (statyczne oraz instancyjne) zadeklarowane bezpośrednio w typie; metoda <code>Main</code> jest pomijana. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00039">39</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+
+</div>
+</div>
+<a id="a30324f1fa6bf203bd0d06497e44652e2" name="a30324f1fa6bf203bd0d06497e44652e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30324f1fa6bf203bd0d06497e44652e2">&#9670;&#160;</a></span>ParseArgs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object[] IO_2026_SGGW.Core.SolutionRunner.ParseArgs </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>paramsCsv</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ParameterInfo[]</td>          <td class="paramname"><span class="paramname"><em>paramInfos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zamienia tekstowy zapis parametrów z klucza na tablicę argumentów o typach wymaganych przez metodę. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paramsCsv</td><td>Parametry rozdzielone przecinkami w postaci tekstowej (np. <code>"2, 3"</code>); tablicę zapisuje się w nawiasach kwadratowych, np. <code>"[1, 2, 3]"</code>. </td></tr>
+    <tr><td class="paramname">paramInfos</td><td>Informacje o parametrach docelowej metody (z System.Reflection.MethodBase.GetParameters).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Tablica argumentów gotowa do przekazania do InvokeWithTimeout.</dd></dl>
+<dl class="exception"><dt>Wyjątki</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System.ArgumentException</td><td>Gdy liczba dostarczonych parametrów nie zgadza się z liczbą parametrów metody. </td></tr>
+    <tr><td class="paramname">System.NotImplementedException</td><td>Gdy parametr jest tablicą wielowymiarową (zagnieżdżone nawiasy kwadratowe), co nie jest obsługiwane. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Konwersja typów odbywa się przez System.Convert.ChangeType(object, System.Type, System.IFormatProvider) z CultureInfo.InvariantCulture, dzięki czemu separatorem dziesiętnym jest kropka. Dla parametrów tablicowych każdy element konwertowany jest na typ elementu tablicy. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00075">75</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_solution_runner_8cs_source.html#l00313">PrepareXlsxInput()</a> i <a class="el" href="_solution_runner_8cs_source.html#l00279">SplitRespectingBrackets()</a>.</p>
+
+</div>
+</div>
+<a id="af185c9b401c9546d3ff2786f5914fba1" name="af185c9b401c9546d3ff2786f5914fba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af185c9b401c9546d3ff2786f5914fba1">&#9670;&#160;</a></span>InvokeWithTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html">RunResult</a> IO_2026_SGGW.Core.SolutionRunner.InvokeWithTimeout </td>
+          <td>(</td>
+          <td class="paramtype">MethodInfo</td>          <td class="paramname"><span class="paramname"><em>method</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wywołuje metodę na osobnym wątku z ograniczeniem czasu, przechwytując ewentualne wyjątki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>Metoda do wywołania.</td></tr>
+    <tr><td class="paramname">args</td><td>Argumenty wywołania (zob. ParseArgs).</td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>Maksymalny czas wykonania w milisekundach.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>RunResult ze statusem RunStatus.Ok i zwróconą wartością przy powodzeniu, RunStatus.Timeout po przekroczeniu czasu albo RunStatus.Wyjatek, gdy metoda rzuciła wyjątek. </dd></dl>
+<p>Dla metody instancyjnej tworzony jest egzemplarz typu deklarującego. Metoda wykonywana jest na wątku w tle, na który oczekuje się przez Thread.Join(int). Uwaga: próba przerwania przekroczonego wątku korzysta z Thread.Abort(), które na platformie .NET 5+ nie jest wspierane i rzuca wyjątek (przechwytywany po cichu), w takim wypadku wątek (uruchomiony jako tło) może nadal działać, mimo że metoda zwraca już status RunStatus.Timeout. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00140">140</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_run_status_8cs_source.html#l00017">IO_2026_SGGW.Core.Timeout</a>.</p>
+
+</div>
+</div>
+<a id="a99efe7cb78b42e2746a51b38313ffe66" name="a99efe7cb78b42e2746a51b38313ffe66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99efe7cb78b42e2746a51b38313ffe66">&#9670;&#160;</a></span>IsCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IO_2026_SGGW.Core.SolutionRunner.IsCorrect </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>expectedFromXlsx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type</td>          <td class="paramname"><span class="paramname"><em>returnType</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza, czy faktyczny wynik metody jest zgodny z wartością oczekiwaną z klucza. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actual</td><td>Wartość zwrócona przez metodę studenta.</td></tr>
+    <tr><td class="paramname">expectedFromXlsx</td><td>Oczekiwany wynik w postaci tekstowej z klucza.</td></tr>
+    <tr><td class="paramname">returnType</td><td>Typ zwracany metody, decydujący o sposobie porównania.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd><code>true</code>, jeśli wynik jest uznawany za poprawny; w przeciwnym razie <code>false</code>.</dd></dl>
+<p>Reguły porównania: dla <code>null</code> wynik jest poprawny tylko wtedy, gdy oczekiwana wartość jest pusta; tablice porównywane są element po elemencie (po wcześniejszym sprawdzeniu długości); wartości zmiennoprzecinkowe (double/float) porównywane są z tolerancją 1e-6; pozostałe typy porównywane są tekstowo, bez uwzględniania wielkości liter i z przycięciem białych znaków. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00207">207</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_solution_runner_8cs_source.html#l00313">PrepareXlsxInput()</a>.</p>
+
+</div>
+</div>
+<a id="a5998e2de880ef9bb0ce121199334dbd1" name="a5998e2de880ef9bb0ce121199334dbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5998e2de880ef9bb0ce121199334dbd1">&#9670;&#160;</a></span>SplitRespectingBrackets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; string &gt; IO_2026_SGGW.Core.SolutionRunner.SplitRespectingBrackets </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dzieli tekst parametrów po przecinkach, ignorując przecinki znajdujące się wewnątrz nawiasów kwadratowych (czyli wewnątrz tablic). </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Tekstowy zapis listy parametrów.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Lista pojedynczych tokenów-parametrów (jeszcze nieobciętych z białych znaków).</dd></dl>
+<dl class="exception"><dt>Wyjątki</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System.NotImplementedException</td><td>Gdy zagnieżdżenie nawiasów przekracza jeden poziom (tablice wielowymiarowe nie są obsługiwane). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00279">279</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_solution_runner_8cs_source.html#l00075">ParseArgs()</a>.</p>
+
+</div>
+</div>
+<a id="ac5d8ed8db797930c0180d86a214b8d9b" name="ac5d8ed8db797930c0180d86a214b8d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d8ed8db797930c0180d86a214b8d9b">&#9670;&#160;</a></span>PrepareXlsxInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string[] IO_2026_SGGW.Core.SolutionRunner.PrepareXlsxInput </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>xlsxString</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przygotowuje tekst z pliku XLSX reprezentujący tablicę do dalszej konwersji: usuwa zewnętrzne nawiasy kwadratowe i dzieli zawartość po przecinkach, obcinając białe znaki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xlsxString</td><td>Tekstowy zapis tablicy, np. <code>"[1, 2, 3]"</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Tablica tekstowych elementów (np. <code>"1"</code>, <code>"2"</code>, <code>"3"</code>).</dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_solution_runner_8cs_source.html#l00313">313</a> pliku <a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_solution_runner_8cs_source.html#l00207">IsCorrect()</a> i <a class="el" href="_solution_runner_8cs_source.html#l00075">ParseArgs()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li>Core/<a class="el" href="_solution_runner_8cs_source.html">SolutionRunner.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_i_o__2026___s_g_g_w.html">IO_2026_SGGW</a></li><li class="navelem"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html">Core</a></li><li class="navelem"><a href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html">SolutionRunner</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sprawdzanie Kolokwiów: Dokumentacja klasy IO_2026_SGGW.MainForm</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sprawdzanie Kolokwiów<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_i_o__2026___s_g_g_w_1_1_main_form.html','','class_i_o__2026___s_g_g_w_1_1_main_form-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy IO_2026_SGGW.MainForm</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Główne okno aplikacji do sprawdzania kolokwiów.  
+ <a href="#details">Więcej...</a></p>
+<div class="dynheader">
+Diagram dziedziczenia dla IO_2026_SGGW.MainForm</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_i_o__2026___s_g_g_w_1_1_main_form.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a2bf8730f0c138d41de314a63c37af673" id="r_a2bf8730f0c138d41de314a63c37af673"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2bf8730f0c138d41de314a63c37af673">MainForm</a> ()</td></tr>
+<tr class="memdesc:a2bf8730f0c138d41de314a63c37af673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicjalizuje okno: buduje kontrolki (<code>InitializeComponent</code>) i konfiguruje tabelę wyników (SetupGrid).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Metody chronione</h2></td></tr>
+<tr class="memitem:a2f3b5199ca761af654fb992a61b802c0" id="r_a2f3b5199ca761af654fb992a61b802c0"><td class="memItemLeft">override void&#160;</td><td class="memItemRight"><a class="el" href="#a2f3b5199ca761af654fb992a61b802c0">OnHandleCreated</a> (EventArgs e)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:aac982ba69d0d98acf83722943b0d94f2" id="r_aac982ba69d0d98acf83722943b0d94f2"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#aac982ba69d0d98acf83722943b0d94f2">ChangeWindowMessageFilterEx</a> (IntPtr hWnd, uint msg, uint action, IntPtr str)</td></tr>
+<tr class="memitem:a2925e3e8b7e569f526f9d67682b9e54f" id="r_a2925e3e8b7e569f526f9d67682b9e54f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2925e3e8b7e569f526f9d67682b9e54f">button1_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a2925e3e8b7e569f526f9d67682b9e54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje przycisk wyboru klucza XLSX: otwiera okno dialogowe, wczytuje wybrany plik przez AnswerKeyLoader i aktualizuje pasek statusu.  <br /></td></tr>
+<tr class="memitem:a37863552edd424cebd272ad2e1b1abbb" id="r_a37863552edd424cebd272ad2e1b1abbb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a37863552edd424cebd272ad2e1b1abbb">lblStatusFiles_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a37863552edd424cebd272ad2e1b1abbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługa kliknięcia etykiety statusu plików.  <br /></td></tr>
+<tr class="memitem:ae53a2b234fcf38ae70abb0552d840967" id="r_ae53a2b234fcf38ae70abb0552d840967"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae53a2b234fcf38ae70abb0552d840967">listBox1_SelectedIndexChanged</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:ae53a2b234fcf38ae70abb0552d840967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozostałość po wcześniejszej kontrolce listy, obecnie pusta obsługa zdarzenia (bez akcji).  <br /></td></tr>
+<tr class="memitem:aa865a66a94be995b4ab4297dad2dec0e" id="r_aa865a66a94be995b4ab4297dad2dec0e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa865a66a94be995b4ab4297dad2dec0e">panelDrop_DragEnter</a> (object sender, DragEventArgs e)</td></tr>
+<tr class="memdesc:aa865a66a94be995b4ab4297dad2dec0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje wejście przeciąganych plików nad panel upuszczania.  <br /></td></tr>
+<tr class="memitem:a60be45d796546cc5f9754f2e8921704a" id="r_a60be45d796546cc5f9754f2e8921704a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a60be45d796546cc5f9754f2e8921704a">panelDrop_DragLeave</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a60be45d796546cc5f9754f2e8921704a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przywraca białe tło panelu upuszczania po opuszczeniu go przez kursor przeciągania.  <br /></td></tr>
+<tr class="memitem:a404baf3fe233abc4fe21815baeed7cb4" id="r_a404baf3fe233abc4fe21815baeed7cb4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a404baf3fe233abc4fe21815baeed7cb4">panelDrop_DragDrop</a> (object sender, DragEventArgs e)</td></tr>
+<tr class="memdesc:a404baf3fe233abc4fe21815baeed7cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje upuszczenie plików na panel: przywraca tło i przekazuje upuszczone ścieżki do AddCsFiles.  <br /></td></tr>
+<tr class="memitem:a6be3e085e11f0112b58badd3ab2185f7" id="r_a6be3e085e11f0112b58badd3ab2185f7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6be3e085e11f0112b58badd3ab2185f7">AddCsFiles</a> (string[] paths)</td></tr>
+<tr class="memdesc:a6be3e085e11f0112b58badd3ab2185f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dodaje wskazane pliki <code>.cs</code> do listy rozwiązań studentów, pomijając pliki o innym rozszerzeniu oraz już wcześniej dodane (rozpoznawane po ścieżce).  <br /></td></tr>
+<tr class="memitem:a68290710a0aab8260a6e67cce7879ac5" id="r_a68290710a0aab8260a6e67cce7879ac5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a68290710a0aab8260a6e67cce7879ac5">btnWybierzPlikiCs_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a68290710a0aab8260a6e67cce7879ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje wybór plików <code>.cs</code> z okna dialogowego (z możliwością wielokrotnego wyboru) i przekazuje je do AddCsFiles.  <br /></td></tr>
+<tr class="memitem:ae1151cd0cc7f88fbb022144c019c761d" id="r_ae1151cd0cc7f88fbb022144c019c761d"><td class="memItemLeft">async void&#160;</td><td class="memItemRight"><a class="el" href="#ae1151cd0cc7f88fbb022144c019c761d">btnSprawdz_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:ae1151cd0cc7f88fbb022144c019c761d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uruchamia sprawdzanie: waliduje, czy wczytano pliki i klucz, czyści poprzednie wyniki, blokuje UI, wywołuje GradingService.RunAsync, a po zakończeniu pokazuje łączną liczbę punktów i z powrotem odblokowuje kontrolki.  <br /></td></tr>
+<tr class="memitem:a220abb3b296f6b2836bc425a0a9c0b1b" id="r_a220abb3b296f6b2836bc425a0a9c0b1b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a220abb3b296f6b2836bc425a0a9c0b1b">EnableUiControls</a> (bool enabled)</td></tr>
+<tr class="memdesc:a220abb3b296f6b2836bc425a0a9c0b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Włącza lub wyłącza kontrolki interfejsu na czas trwania sprawdzania, aby zapobiec równoległym akcjom.  <br /></td></tr>
+<tr class="memitem:a01a4582ea286a1f66be038e3dbf683dd" id="r_a01a4582ea286a1f66be038e3dbf683dd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a01a4582ea286a1f66be038e3dbf683dd">UpdateStatusBar</a> ()</td></tr>
+<tr class="memdesc:a01a4582ea286a1f66be038e3dbf683dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje pasek statusu liczbą wczytanych plików i nazwą wybranego klucza XLSX.  <br /></td></tr>
+<tr class="memitem:a3075e84b646fff0c08ff9e9e75069394" id="r_a3075e84b646fff0c08ff9e9e75069394"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3075e84b646fff0c08ff9e9e75069394">btnEksportuj_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a3075e84b646fff0c08ff9e9e75069394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje eksport wyników: jeśli istnieją jakiekolwiek wyniki, otwiera okno zapisu i zapisuje je przez ResultsExporter, a następnie opcjonalnie otwiera folder z plikiem w Eksploratorze.  <br /></td></tr>
+<tr class="memitem:a6b19a027b09cf3d8150c21633a7d3fa6" id="r_a6b19a027b09cf3d8150c21633a7d3fa6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6b19a027b09cf3d8150c21633a7d3fa6">MainForm_Load</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a6b19a027b09cf3d8150c21633a7d3fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługa zdarzenia załadowania okna.  <br /></td></tr>
+<tr class="memitem:a09ab6544cc2bda715dc94f7a51a2e441" id="r_a09ab6544cc2bda715dc94f7a51a2e441"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09ab6544cc2bda715dc94f7a51a2e441">SetupCustomUI</a> ()</td></tr>
+<tr class="memdesc:a09ab6544cc2bda715dc94f7a51a2e441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przygotowuje dodatkowe elementy interfejsu: podpowiedzi (tooltipy) dla przycisków i panelu oraz menu kontekstowe wyników.  <br /></td></tr>
+<tr class="memitem:acd15c046f0afbbb63db14862dbe7e1c7" id="r_acd15c046f0afbbb63db14862dbe7e1c7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd15c046f0afbbb63db14862dbe7e1c7">SetupGrid</a> ()</td></tr>
+<tr class="memdesc:acd15c046f0afbbb63db14862dbe7e1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konfiguruje tabelę wyników (<code>DataGridView</code>): definiuje kolumny powiązane z właściwościami ResultRow i ustawia źródło danych na resultsList.  <br /></td></tr>
+<tr class="memitem:aa804fb93569777c28fa9d5172f3d03c7" id="r_aa804fb93569777c28fa9d5172f3d03c7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa804fb93569777c28fa9d5172f3d03c7">dgvResults_CellFormatting</a> (object sender, DataGridViewCellFormattingEventArgs e)</td></tr>
+<tr class="memdesc:aa804fb93569777c28fa9d5172f3d03c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Koloruje wiersze tabeli wyników w zależności od statusu (RunStatus): np.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Statyczne metody prywatne</h2></td></tr>
+<tr class="memitem:af120469bddb811d04724eda6ee1abbd6" id="r_af120469bddb811d04724eda6ee1abbd6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af120469bddb811d04724eda6ee1abbd6">DebugLog</a> (string msg)</td></tr>
+<tr class="memdesc:af120469bddb811d04724eda6ee1abbd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dopisuje wpis diagnostyczny (ze znacznikiem czasu) do pliku <code>io_debug.log</code> na pulpicie.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a0c009454610e0063b64781d94850a124" id="r_a0c009454610e0063b64781d94850a124"><td class="memItemLeft">readonly List&lt; <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html">StudentSolution</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0c009454610e0063b64781d94850a124">studentSolutions</a></td></tr>
+<tr class="memdesc:a0c009454610e0063b64781d94850a124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista wczytanych rozwiązań studentów (plików <code>.cs</code>) oczekujących na sprawdzenie.  <br /></td></tr>
+<tr class="memitem:a3f267ce6dbbcbd19c2f2ca077ba9eb32" id="r_a3f267ce6dbbcbd19c2f2ca077ba9eb32"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a3f267ce6dbbcbd19c2f2ca077ba9eb32">xlsxPath</a></td></tr>
+<tr class="memdesc:a3f267ce6dbbcbd19c2f2ca077ba9eb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ścieżka aktualnie wczytanego pliku klucza XLSX; <code>null</code>, gdy nie wczytano klucza.  <br /></td></tr>
+<tr class="memitem:a3b43e90fbd5d900d77619dc02a523ad3" id="r_a3b43e90fbd5d900d77619dc02a523ad3"><td class="memItemLeft"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html">AnswerKey</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3b43e90fbd5d900d77619dc02a523ad3">answerKey</a></td></tr>
+<tr class="memdesc:a3b43e90fbd5d900d77619dc02a523ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualnie wczytany klucz odpowiedzi; <code>null</code>, gdy nie wczytano klucza.  <br /></td></tr>
+<tr class="memitem:ad5245452ded2049fe45cffaa165012a4" id="r_ad5245452ded2049fe45cffaa165012a4"><td class="memItemLeft">readonly BindingList&lt; <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html">ResultRow</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad5245452ded2049fe45cffaa165012a4">resultsList</a></td></tr>
+<tr class="memdesc:ad5245452ded2049fe45cffaa165012a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kolekcja wyników powiązana z tabelą (<code>DataGridView</code>) jako źródło danych; uzupełniana na bieżąco w trakcie sprawdzania przez GradingService.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Główne okno aplikacji do sprawdzania kolokwiów. </p>
+<p>Łączy interfejs użytkownika z logiką oceniania: wczytanie klucza XLSX, dodawanie plików <code>.cs</code> studentów (przeciąganie lub okno dialogowe), uruchomienie sprawdzania oraz eksport wyników do Excela. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00021">21</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a2bf8730f0c138d41de314a63c37af673" name="a2bf8730f0c138d41de314a63c37af673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf8730f0c138d41de314a63c37af673">&#9670;&#160;</a></span>MainForm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IO_2026_SGGW.MainForm.MainForm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicjalizuje okno: buduje kontrolki (<code>InitializeComponent</code>) i konfiguruje tabelę wyników (SetupGrid). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00037">37</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00417">SetupGrid()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="aac982ba69d0d98acf83722943b0d94f2" name="aac982ba69d0d98acf83722943b0d94f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac982ba69d0d98acf83722943b0d94f2">&#9670;&#160;</a></span>ChangeWindowMessageFilterEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IO_2026_SGGW.MainForm.ChangeWindowMessageFilterEx </td>
+          <td>(</td>
+          <td class="paramtype">IntPtr</td>          <td class="paramname"><span class="paramname"><em>hWnd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>action</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IntPtr</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00045">OnHandleCreated()</a>.</p>
+
+</div>
+</div>
+<a id="a2f3b5199ca761af654fb992a61b802c0" name="a2f3b5199ca761af654fb992a61b802c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f3b5199ca761af654fb992a61b802c0">&#9670;&#160;</a></span>OnHandleCreated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void IO_2026_SGGW.MainForm.OnHandleCreated </td>
+          <td>(</td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00045">45</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="#aac982ba69d0d98acf83722943b0d94f2">ChangeWindowMessageFilterEx()</a>.</p>
+
+</div>
+</div>
+<a id="a2925e3e8b7e569f526f9d67682b9e54f" name="a2925e3e8b7e569f526f9d67682b9e54f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2925e3e8b7e569f526f9d67682b9e54f">&#9670;&#160;</a></span>button1_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.button1_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje przycisk wyboru klucza XLSX: otwiera okno dialogowe, wczytuje wybrany plik przez AnswerKeyLoader i aktualizuje pasek statusu. </p>
+<p>Błędy wczytywania są logowane i pokazywane użytkownikowi w oknie komunikatu.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00065">65</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00031">answerKey</a>, <a class="el" href="_main_form_8cs_source.html#l00100">DebugLog()</a>, <a class="el" href="_answer_key_loader___adrian_k_8cs_source.html#l00034">IO_2026_SGGW.Core.AnswerKeyLoader.Load()</a>, <a class="el" href="_main_form_8cs_source.html#l00293">UpdateStatusBar()</a> i <a class="el" href="_main_form_8cs_source.html#l00028">xlsxPath</a>.</p>
+
+</div>
+</div>
+<a id="af120469bddb811d04724eda6ee1abbd6" name="af120469bddb811d04724eda6ee1abbd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af120469bddb811d04724eda6ee1abbd6">&#9670;&#160;</a></span>DebugLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.DebugLog </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dopisuje wpis diagnostyczny (ze znacznikiem czasu) do pliku <code>io_debug.log</code> na pulpicie. </p>
+<p>Ewentualne błędy zapisu są celowo ignorowane.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Treść komunikatu do zapisania.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00100">100</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00190">AddCsFiles()</a> i <a class="el" href="_main_form_8cs_source.html#l00065">button1_Click()</a>.</p>
+
+</div>
+</div>
+<a id="a37863552edd424cebd272ad2e1b1abbb" name="a37863552edd424cebd272ad2e1b1abbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37863552edd424cebd272ad2e1b1abbb">&#9670;&#160;</a></span>lblStatusFiles_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.lblStatusFiles_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługa kliknięcia etykiety statusu plików. </p>
+<p>Obecnie pusta (brak akcji).</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00115">115</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae53a2b234fcf38ae70abb0552d840967" name="ae53a2b234fcf38ae70abb0552d840967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53a2b234fcf38ae70abb0552d840967">&#9670;&#160;</a></span>listBox1_SelectedIndexChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.listBox1_SelectedIndexChanged </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pozostałość po wcześniejszej kontrolce listy, obecnie pusta obsługa zdarzenia (bez akcji). </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00124">124</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa865a66a94be995b4ab4297dad2dec0e" name="aa865a66a94be995b4ab4297dad2dec0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa865a66a94be995b4ab4297dad2dec0e">&#9670;&#160;</a></span>panelDrop_DragEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.panelDrop_DragEnter </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DragEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje wejście przeciąganych plików nad panel upuszczania. </p>
+<p>Jeśli wśród przeciąganych elementów jest plik <code>.cs</code>, dopuszcza kopiowanie i podświetla panel na zielono; w przeciwnym razie blokuje upuszczenie.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia przeciągania (lista ścieżek oraz ustawiany efekt).</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00135">135</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+</div>
+</div>
+<a id="a60be45d796546cc5f9754f2e8921704a" name="a60be45d796546cc5f9754f2e8921704a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60be45d796546cc5f9754f2e8921704a">&#9670;&#160;</a></span>panelDrop_DragLeave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.panelDrop_DragLeave </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przywraca białe tło panelu upuszczania po opuszczeniu go przez kursor przeciągania. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00167">167</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+</div>
+</div>
+<a id="a404baf3fe233abc4fe21815baeed7cb4" name="a404baf3fe233abc4fe21815baeed7cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404baf3fe233abc4fe21815baeed7cb4">&#9670;&#160;</a></span>panelDrop_DragDrop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.panelDrop_DragDrop </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DragEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje upuszczenie plików na panel: przywraca tło i przekazuje upuszczone ścieżki do AddCsFiles. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia przeciągania zawierające upuszczone ścieżki plików.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00178">178</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00190">AddCsFiles()</a>.</p>
+
+</div>
+</div>
+<a id="a6be3e085e11f0112b58badd3ab2185f7" name="a6be3e085e11f0112b58badd3ab2185f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6be3e085e11f0112b58badd3ab2185f7">&#9670;&#160;</a></span>AddCsFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.AddCsFiles </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>paths</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dodaje wskazane pliki <code>.cs</code> do listy rozwiązań studentów, pomijając pliki o innym rozszerzeniu oraz już wcześniej dodane (rozpoznawane po ścieżce). </p>
+<p>Po dodaniu odświeża pasek statusu.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td>Ścieżki plików do rozważenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00190">190</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00100">DebugLog()</a>, <a class="el" href="_main_form_8cs_source.html#l00024">studentSolutions</a> i <a class="el" href="_main_form_8cs_source.html#l00293">UpdateStatusBar()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00231">btnWybierzPlikiCs_Click()</a> i <a class="el" href="_main_form_8cs_source.html#l00178">panelDrop_DragDrop()</a>.</p>
+
+</div>
+</div>
+<a id="a68290710a0aab8260a6e67cce7879ac5" name="a68290710a0aab8260a6e67cce7879ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68290710a0aab8260a6e67cce7879ac5">&#9670;&#160;</a></span>btnWybierzPlikiCs_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.btnWybierzPlikiCs_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje wybór plików <code>.cs</code> z okna dialogowego (z możliwością wielokrotnego wyboru) i przekazuje je do AddCsFiles. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00231">231</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00190">AddCsFiles()</a>.</p>
+
+</div>
+</div>
+<a id="ae1151cd0cc7f88fbb022144c019c761d" name="ae1151cd0cc7f88fbb022144c019c761d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1151cd0cc7f88fbb022144c019c761d">&#9670;&#160;</a></span>btnSprawdz_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void IO_2026_SGGW.MainForm.btnSprawdz_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uruchamia sprawdzanie: waliduje, czy wczytano pliki i klucz, czyści poprzednie wyniki, blokuje UI, wywołuje GradingService.RunAsync, a po zakończeniu pokazuje łączną liczbę punktów i z powrotem odblokowuje kontrolki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00251">251</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00031">answerKey</a>, <a class="el" href="_main_form_8cs_source.html#l00280">EnableUiControls()</a>, <a class="el" href="_main_form_8cs_source.html#l00409">resultsList</a>, <a class="el" href="_grading_service_8cs_source.html#l00046">IO_2026_SGGW.Core.GradingService.RunAsync()</a> i <a class="el" href="_main_form_8cs_source.html#l00024">studentSolutions</a>.</p>
+
+</div>
+</div>
+<a id="a220abb3b296f6b2836bc425a0a9c0b1b" name="a220abb3b296f6b2836bc425a0a9c0b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220abb3b296f6b2836bc425a0a9c0b1b">&#9670;&#160;</a></span>EnableUiControls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.EnableUiControls </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Włącza lub wyłącza kontrolki interfejsu na czas trwania sprawdzania, aby zapobiec równoległym akcjom. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td><code>true</code>, aby włączyć kontrolki; <code>false</code>, aby je zablokować.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00280">280</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00251">btnSprawdz_Click()</a>.</p>
+
+</div>
+</div>
+<a id="a01a4582ea286a1f66be038e3dbf683dd" name="a01a4582ea286a1f66be038e3dbf683dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a4582ea286a1f66be038e3dbf683dd">&#9670;&#160;</a></span>UpdateStatusBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.UpdateStatusBar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje pasek statusu liczbą wczytanych plików i nazwą wybranego klucza XLSX. </p>
+<p>W razie potrzeby przełącza wykonanie na wątek UI (Control.InvokeRequired). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00293">293</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00293">UpdateStatusBar()</a> i <a class="el" href="_main_form_8cs_source.html#l00028">xlsxPath</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00190">AddCsFiles()</a>, <a class="el" href="_main_form_8cs_source.html#l00065">button1_Click()</a> i <a class="el" href="_main_form_8cs_source.html#l00293">UpdateStatusBar()</a>.</p>
+
+</div>
+</div>
+<a id="a3075e84b646fff0c08ff9e9e75069394" name="a3075e84b646fff0c08ff9e9e75069394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3075e84b646fff0c08ff9e9e75069394">&#9670;&#160;</a></span>btnEksportuj_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.btnEksportuj_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje eksport wyników: jeśli istnieją jakiekolwiek wyniki, otwiera okno zapisu i zapisuje je przez ResultsExporter, a następnie opcjonalnie otwiera folder z plikiem w Eksploratorze. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00310">310</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_results_exporter_8cs_source.html#l00026">IO_2026_SGGW.Core.ResultsExporter.Export()</a> i <a class="el" href="_main_form_8cs_source.html#l00409">resultsList</a>.</p>
+
+</div>
+</div>
+<a id="a6b19a027b09cf3d8150c21633a7d3fa6" name="a6b19a027b09cf3d8150c21633a7d3fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b19a027b09cf3d8150c21633a7d3fa6">&#9670;&#160;</a></span>MainForm_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.MainForm_Load </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługa zdarzenia załadowania okna. </p>
+<p>Obecnie pusta (brak dodatkowej inicjalizacji).</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00345">345</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+</div>
+</div>
+<a id="a09ab6544cc2bda715dc94f7a51a2e441" name="a09ab6544cc2bda715dc94f7a51a2e441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ab6544cc2bda715dc94f7a51a2e441">&#9670;&#160;</a></span>SetupCustomUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.SetupCustomUI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przygotowuje dodatkowe elementy interfejsu: podpowiedzi (tooltipy) dla przycisków i panelu oraz menu kontekstowe wyników. </p>
+<p>Metoda jest niekompletna i obecnie nigdzie nie jest wywoływana (pozostałość po wcześniejszej wersji UI z listą wyników). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00354">354</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+</div>
+</div>
+<a id="acd15c046f0afbbb63db14862dbe7e1c7" name="acd15c046f0afbbb63db14862dbe7e1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd15c046f0afbbb63db14862dbe7e1c7">&#9670;&#160;</a></span>SetupGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.SetupGrid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konfiguruje tabelę wyników (<code>DataGridView</code>): definiuje kolumny powiązane z właściwościami ResultRow i ustawia źródło danych na resultsList. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00417">417</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00409">resultsList</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00037">MainForm()</a>.</p>
+
+</div>
+</div>
+<a id="aa804fb93569777c28fa9d5172f3d03c7" name="aa804fb93569777c28fa9d5172f3d03c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa804fb93569777c28fa9d5172f3d03c7">&#9670;&#160;</a></span>dgvResults_CellFormatting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IO_2026_SGGW.MainForm.dgvResults_CellFormatting </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataGridViewCellFormattingEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Koloruje wiersze tabeli wyników w zależności od statusu (RunStatus): np. </p>
+<p>zielony dla poprawnych, czerwony dla błędnych, pomarańczowy dla przekroczenia limitu czasu.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>Źródło zdarzenia.</td></tr>
+    <tr><td class="paramname">e</td><td>Dane zdarzenia formatowania komórki (zawierają indeks wiersza).</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00472">472</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_main_form_8cs_source.html#l00409">resultsList</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a0c009454610e0063b64781d94850a124" name="a0c009454610e0063b64781d94850a124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c009454610e0063b64781d94850a124">&#9670;&#160;</a></span>studentSolutions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly List&lt;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html">StudentSolution</a>&gt; IO_2026_SGGW.MainForm.studentSolutions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Wartość początkowa:</b><div class="fragment"><div class="line">                                       = <span class="keyword">new</span></div>
+<div class="line">List&lt;StudentSolution&gt;()</div>
+</div><!-- fragment -->
+<p>Lista wczytanych rozwiązań studentów (plików <code>.cs</code>) oczekujących na sprawdzenie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00024">24</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00190">AddCsFiles()</a> i <a class="el" href="_main_form_8cs_source.html#l00251">btnSprawdz_Click()</a>.</p>
+
+</div>
+</div>
+<a id="a3f267ce6dbbcbd19c2f2ca077ba9eb32" name="a3f267ce6dbbcbd19c2f2ca077ba9eb32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f267ce6dbbcbd19c2f2ca077ba9eb32">&#9670;&#160;</a></span>xlsxPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string IO_2026_SGGW.MainForm.xlsxPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ścieżka aktualnie wczytanego pliku klucza XLSX; <code>null</code>, gdy nie wczytano klucza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00028">28</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00065">button1_Click()</a> i <a class="el" href="_main_form_8cs_source.html#l00293">UpdateStatusBar()</a>.</p>
+
+</div>
+</div>
+<a id="a3b43e90fbd5d900d77619dc02a523ad3" name="a3b43e90fbd5d900d77619dc02a523ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b43e90fbd5d900d77619dc02a523ad3">&#9670;&#160;</a></span>answerKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html">AnswerKey</a> IO_2026_SGGW.MainForm.answerKey</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualnie wczytany klucz odpowiedzi; <code>null</code>, gdy nie wczytano klucza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00031">31</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00251">btnSprawdz_Click()</a> i <a class="el" href="_main_form_8cs_source.html#l00065">button1_Click()</a>.</p>
+
+</div>
+</div>
+<a id="ad5245452ded2049fe45cffaa165012a4" name="ad5245452ded2049fe45cffaa165012a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5245452ded2049fe45cffaa165012a4">&#9670;&#160;</a></span>resultsList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly BindingList&lt;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html">ResultRow</a>&gt; IO_2026_SGGW.MainForm.resultsList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Wartość początkowa:</b><div class="fragment"><div class="line">                                     = <span class="keyword">new</span></div>
+<div class="line">BindingList&lt;ResultRow&gt;()</div>
+</div><!-- fragment -->
+<p>Kolekcja wyników powiązana z tabelą (<code>DataGridView</code>) jako źródło danych; uzupełniana na bieżąco w trakcie sprawdzania przez GradingService. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_main_form_8cs_source.html#l00409">409</a> pliku <a class="el" href="_main_form_8cs_source.html">MainForm.cs</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_main_form_8cs_source.html#l00310">btnEksportuj_Click()</a>, <a class="el" href="_main_form_8cs_source.html#l00251">btnSprawdz_Click()</a>, <a class="el" href="_main_form_8cs_source.html#l00472">dgvResults_CellFormatting()</a> i <a class="el" href="_main_form_8cs_source.html#l00417">SetupGrid()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li><a class="el" href="_main_form_8cs_source.html">MainForm.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_i_o__2026___s_g_g_w.html">IO_2026_SGGW</a></li><li class="navelem"><a href="class_i_o__2026___s_g_g_w_1_1_main_form.html">MainForm</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

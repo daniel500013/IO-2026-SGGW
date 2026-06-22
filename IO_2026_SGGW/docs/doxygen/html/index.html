@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sprawdzanie Kolokwiów: Sprawdzanie Kolokwiów</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sprawdzanie Kolokwiów<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Sprawdzanie Kolokwiów </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
+Wprowadzenie</h1>
+<p><b>Sprawdzanie Kolokwiów</b> to aplikacja okienkowa (Windows Forms, .NET 8.0) służąca do <b>automatycznego sprawdzania kolokwiów</b> z programowania w języku C#. Prowadzący wczytuje klucz odpowiedzi z pliku Excel, dodaje pliki źródłowe (<span class="tt">.cs</span>) studentów, a aplikacja kompiluje je w pamięci, uruchamia odpowiednie metody na zestawie przypadków testowych i ocenia wyniki, prezentując je w tabeli oraz umożliwiając eksport do Excela.</p>
+<p>Aplikacja powstaje w ramach przedmiotu <em>Inżynieria Oprogramowania 2026</em> (SGGW) jako praca zespołu projektowego.</p>
+<h1 class="doxsection"><a class="anchor" id="arch_sec"></a>
+Architektura</h1>
+<p>Projekt dzieli się na warstwę interfejsu użytkownika oraz warstwę logiki (przestrzeń nazw <span class="tt"><a class="el" href="namespace_i_o__2026___s_g_g_w_1_1_core.html">IO_2026_SGGW.Core</a></span>):</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Komponent  </th><th class="markdownTableHeadNone">Rola  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html" title="Główne okno aplikacji do sprawdzania kolokwiów.">IO_2026_SGGW.MainForm</a>  </td><td class="markdownTableBodyNone">Interfejs użytkownika: wybór klucza, dodawanie plików, uruchomienie, eksport  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key_loader.html" title="Wczytuje klucz odpowiedzi z pliku Excel (.xlsx) i buduje na jego podstawie obiekt AnswerKey.">IO_2026_SGGW.Core.AnswerKeyLoader</a>  </td><td class="markdownTableBodyNone">Wczytanie klucza odpowiedzi z pliku XLSX  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html" title="Orkiestruje cały proces oceny: kompiluje rozwiązania studentów, odnajduje i uruchamia metody dla kole...">IO_2026_SGGW.Core.GradingService</a>  </td><td class="markdownTableBodyNone">Orkiestracja całego procesu oceny (asynchronicznie)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_compiler.html" title="Kompiluje w pamięci kod źródłowy C# studenta przy użyciu kompilatora Roslyn (Microsoft....">IO_2026_SGGW.Core.SolutionCompiler</a>  </td><td class="markdownTableBodyNone">Kompilacja kodu studenta w pamięci (Roslyn)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html" title="Uruchamia metody ze skompilowanego rozwiązania studenta i porównuje ich wyniki z kluczem.">IO_2026_SGGW.Core.SolutionRunner</a>  </td><td class="markdownTableBodyNone">Wyszukiwanie metod, parsowanie parametrów, wykonanie z limitem czasu, weryfikacja  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_results_exporter.html" title="Eksportuje wyniki oceny do pliku Excel (.xlsx) przy użyciu biblioteki ClosedXML.">IO_2026_SGGW.Core.ResultsExporter</a>  </td><td class="markdownTableBodyNone">Eksport wyników do pliku Excel  </td></tr>
+</table>
+<p>Modele danych: <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html" title="Reprezentuje pojedyncze rozwiązanie studenta: wczytany plik źródłowy .cs wraz z metadanymi potrzebnym...">IO_2026_SGGW.Core.StudentSolution</a>, <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html" title="Klucz odpowiedzi wczytany z pliku Excel: komplet zadań wraz z ich przypadkami testowymi.">IO_2026_SGGW.Core.AnswerKey</a>, <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_task_sheet.html" title="Pojedyncze zadanie z klucza odpowiedzi, odpowiadające jednemu arkuszowi pliku XLSX.">IO_2026_SGGW.Core.TaskSheet</a>, <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_test_case.html" title="Pojedynczy przypadek testowy zadania: surowe (tekstowe) parametry wejściowe oraz oczekiwany wynik,...">IO_2026_SGGW.Core.TestCase</a>, <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html" title="Pojedynczy wiersz wyniku oceny: rezultat uruchomienia jednego przypadku testowego dla jednego student...">IO_2026_SGGW.Core.ResultRow</a> oraz wyliczenie <a class="el" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daef" title="Status wykonania pojedynczego przypadku testowego, ustalany przez GradingService oraz SolutionRunner.">IO_2026_SGGW.Core.RunStatus</a>.</p>
+<h1 class="doxsection"><a class="anchor" id="flow_sec"></a>
+Przepływ przetwarzania</h1>
+<ol type="1">
+<li><b>Wczytanie klucza</b>: użytkownik wybiera plik XLSX, a <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key_loader.html" title="Wczytuje klucz odpowiedzi z pliku Excel (.xlsx) i buduje na jego podstawie obiekt AnswerKey.">IO_2026_SGGW.Core.AnswerKeyLoader</a> buduje obiekt <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html" title="Klucz odpowiedzi wczytany z pliku Excel: komplet zadań wraz z ich przypadkami testowymi.">IO_2026_SGGW.Core.AnswerKey</a>.</li>
+<li><b>Dodanie rozwiązań</b>: pliki <span class="tt">.cs</span> dodawane przez przeciągnięcie lub okno dialogowe trafiają do listy <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html" title="Reprezentuje pojedyncze rozwiązanie studenta: wczytany plik źródłowy .cs wraz z metadanymi potrzebnym...">IO_2026_SGGW.Core.StudentSolution</a>.</li>
+<li><b>Start sprawdzania</b>: <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a4e8090ec96b2150ae9aac274bcd5dd76" title="Asynchronicznie ocenia komplet rozwiązań studentów względem klucza odpowiedzi.">IO_2026_SGGW.Core.GradingService.RunAsync</a> uruchamia przetwarzanie w tle, raportując postęp.</li>
+<li><b>Kompilacja</b>: dla każdego studenta <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_compiler.html" title="Kompiluje w pamięci kod źródłowy C# studenta przy użyciu kompilatora Roslyn (Microsoft....">IO_2026_SGGW.Core.SolutionCompiler</a> kompiluje kod, a błąd kompilacji daje status <a class="el" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1be22fea7a8816a533e7c014a181421e" title="Kod źródłowy studenta nie skompilował się, co dotyczy wszystkich zadań tego studenta (0 punktów).">IO_2026_SGGW.Core.RunStatus.BladKompilacji</a> dla wszystkich zadań.</li>
+<li><b>Wyszukanie metody</b>: <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#ae8a6225de080d594f8d1ed93d770d016" title="Wyszukuje w podzespole metodę odpowiadającą nazwie zadania.">IO_2026_SGGW.Core.SolutionRunner.FindMethod</a> dopasowuje metodę po znormalizowanej nazwie zadania (bez spacji, podkreśleń, bez uwzględniania wielkości liter).</li>
+<li><b>Parsowanie parametrów</b>: <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#a30324f1fa6bf203bd0d06497e44652e2" title="Zamienia tekstowy zapis parametrów z klucza na tablicę argumentów o typach wymaganych przez metodę.">IO_2026_SGGW.Core.SolutionRunner.ParseArgs</a> zamienia tekst z klucza na argumenty właściwych typów (kropka jako separator dziesiętny).</li>
+<li><b>Wykonanie z limitem czasu</b>: <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#af185c9b401c9546d3ff2786f5914fba1" title="Wywołuje metodę na osobnym wątku z ograniczeniem czasu, przechwytując ewentualne wyjątki.">IO_2026_SGGW.Core.SolutionRunner.InvokeWithTimeout</a> wywołuje metodę na osobnym wątku, a przekroczenie czasu daje status <a class="el" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefac85a251cc457840f1e032f1b733e9398" title="Wykonanie przekroczyło dozwolony limit czasu i zostało przerwane (0 punktów).">IO_2026_SGGW.Core.RunStatus.Timeout</a>.</li>
+<li><b>Weryfikacja wyniku</b>: <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#a99efe7cb78b42e2746a51b38313ffe66" title="Sprawdza, czy faktyczny wynik metody jest zgodny z wartością oczekiwaną z klucza.">IO_2026_SGGW.Core.SolutionRunner.IsCorrect</a> porównuje wynik z kluczem (tolerancja 1e-6 dla liczb zmiennoprzecinkowych, porównanie element po elemencie dla tablic).</li>
+<li><b>Prezentacja i eksport</b>: wyniki trafiają do tabeli, a <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_results_exporter.html" title="Eksportuje wyniki oceny do pliku Excel (.xlsx) przy użyciu biblioteki ClosedXML.">IO_2026_SGGW.Core.ResultsExporter</a> może zapisać je do Excela (arkusze "Wyniki" oraz "Podsumowanie").</li>
+</ol>
+<h1 class="doxsection"><a class="anchor" id="format_sec"></a>
+Format klucza odpowiedzi (XLSX)</h1>
+<ul>
+<li>Każdy <b>arkusz</b> pliku to jedno zadanie; nazwa arkusza = nazwa szukanej metody.</li>
+<li><b>Wiersz 1</b> jest nagłówkiem i jest pomijany.</li>
+<li><b>Kolumna B</b> (2): parametry wejściowe przypadku testowego.</li>
+<li><b>Kolumna C</b> (3): oczekiwany wynik.</li>
+<li>Tablice zapisuje się w nawiasach kwadratowych, np. <span class="tt">[1, 2, 3]</span>.</li>
+<li>Separatorem dziesiętnym jest <b>kropka</b> (kultura niezależna od ustawień regionalnych).</li>
+<li>Tablice wielowymiarowe nie są obsługiwane.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="status_sec"></a>
+Statusy wyników</h1>
+<p>Pełny zestaw statusów opisuje wyliczenie <a class="el" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daef" title="Status wykonania pojedynczego przypadku testowego, ustalany przez GradingService oraz SolutionRunner.">IO_2026_SGGW.Core.RunStatus</a>:</p>
+<ul>
+<li><b>Ok</b>: wynik zgodny z kluczem (1 punkt),</li>
+<li><b>Bledny</b>: wynik niezgodny z kluczem (0 punktów),</li>
+<li><b>Timeout</b>: przekroczono limit czasu,</li>
+<li><b>BrakMetody</b>: nie znaleziono metody dla zadania,</li>
+<li><b>Wyjatek</b>: metoda rzuciła wyjątek,</li>
+<li><b>BladKompilacji</b>: kod studenta się nie skompilował,</li>
+<li><b>ZlyFormatParametrow</b>: nie udało się sparsować parametrów.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="build_sec"></a>
+Budowanie i zależności</h1>
+<ul>
+<li>Platforma: <b>.NET 8.0</b> (Windows Forms).</li>
+<li>Biblioteki zewnętrzne:<ul>
+<li><b>ClosedXML</b> 0.102.2: odczyt i zapis plików Excel,</li>
+<li><b>Microsoft.CodeAnalysis.CSharp</b> 4.8.0 (Roslyn): kompilacja kodu w pamięci,</li>
+<li><b>System.Configuration.ConfigurationManager</b> 8.0.0. </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- doc-content -->
+</div><!-- contents -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

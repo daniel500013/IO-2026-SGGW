@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sprawdzanie Kolokwiów: Składowe klas</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sprawdzanie Kolokwiów<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="contents">
+<div class="textblock">Tutaj znajduje się lista wszystkich składowych wraz z odnośnikami do klas, do których dana składowa należy:</div><br/>
+<div class="qindex"><a class="qindex" href="#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="#index_x">X</a><div class="alphasepar"></div><a class="qindex" href="#index_z">Z</a></div>
+
+
+<h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>AddCsFiles()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a6be3e085e11f0112b58badd3ab2185f7">IO_2026_SGGW.MainForm</a></li>
+<li>answerKey&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a3b43e90fbd5d900d77619dc02a523ad3">IO_2026_SGGW.MainForm</a></li>
+<li>Assembly&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_compilation_result.html#a40d7a0fe4578217af637994220dab55c">IO_2026_SGGW.Core.CompilationResult</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>btnEksportuj_Click()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a3075e84b646fff0c08ff9e9e75069394">IO_2026_SGGW.MainForm</a></li>
+<li>btnSprawdz_Click()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#ae1151cd0cc7f88fbb022144c019c761d">IO_2026_SGGW.MainForm</a></li>
+<li>btnWybierzPlikiCs_Click()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a68290710a0aab8260a6e67cce7879ac5">IO_2026_SGGW.MainForm</a></li>
+<li>button1_Click()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a2925e3e8b7e569f526f9d67682b9e54f">IO_2026_SGGW.MainForm</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>ChangeWindowMessageFilterEx()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#aac982ba69d0d98acf83722943b0d94f2">IO_2026_SGGW.MainForm</a></li>
+<li>ColorForStatus()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_results_exporter.html#ad774945b91ad87fd1873ae7f4c1d921f">IO_2026_SGGW.Core.ResultsExporter</a></li>
+<li>Compile()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_compiler.html#af34d624c6242438d0e302c24824cccab">IO_2026_SGGW.Core.SolutionCompiler</a></li>
+<li>compiler&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#ad2b3ce495441c1ca472e0f1e986bb472">IO_2026_SGGW.Core.GradingService</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>DebugLog()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#af120469bddb811d04724eda6ee1abbd6">IO_2026_SGGW.MainForm</a></li>
+<li>dgvResults_CellFormatting()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#aa804fb93569777c28fa9d5172f3d03c7">IO_2026_SGGW.MainForm</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>EmitCompilationFailureForAllTasks()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a58a263767bd0f015d0ab231f393a53f1">IO_2026_SGGW.Core.GradingService</a></li>
+<li>EnableUiControls()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a220abb3b296f6b2836bc425a0a9c0b1b">IO_2026_SGGW.MainForm</a></li>
+<li>ErrorMessage&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_compilation_result.html#a8b4e4430593a6277e01b3f9a7464d373">IO_2026_SGGW.Core.CompilationResult</a>, <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html#addd92f11d51c8bbc5f434ac05cfe5fdf">IO_2026_SGGW.Core.SolutionRunner.RunResult</a></li>
+<li>ExpectedRaw&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_test_case.html#a7bc1663c16fd3ca82797e99e379ec9f6">IO_2026_SGGW.Core.TestCase</a></li>
+<li>Export()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_results_exporter.html#a096370cdc7b1f0014dc34a620df15f77">IO_2026_SGGW.Core.ResultsExporter</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>FilePath&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html#a38cff267882677382679166d2373379f">IO_2026_SGGW.Core.StudentSolution</a></li>
+<li>FindMethod()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#ae8a6225de080d594f8d1ed93d770d016">IO_2026_SGGW.Core.SolutionRunner</a></li>
+<li>FormatValue()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a5853d16517f73c14b0cb2221d0cff5c0">IO_2026_SGGW.Core.GradingService</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>GradeOne()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a7815ab3a79dd17f6c4eda954c787f2ef">IO_2026_SGGW.Core.GradingService</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>InvokeWithTimeout()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#af185c9b401c9546d3ff2786f5914fba1">IO_2026_SGGW.Core.SolutionRunner</a></li>
+<li>IsAcceptableCsFile()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_cs_file_rules.html#a23eb49fc5f595478b8630ec191b3b0b7">IO_2026_SGGW.Core.CsFileRules</a></li>
+<li>IsCorrect()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#a99efe7cb78b42e2746a51b38313ffe66">IO_2026_SGGW.Core.SolutionRunner</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>LastModified&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html#a9deb27b582d2e97daf6bdc4a2062cfcc">IO_2026_SGGW.Core.StudentSolution</a></li>
+<li>lblStatusFiles_Click()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a37863552edd424cebd272ad2e1b1abbb">IO_2026_SGGW.MainForm</a></li>
+<li>listBox1_SelectedIndexChanged()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#ae53a2b234fcf38ae70abb0552d840967">IO_2026_SGGW.MainForm</a></li>
+<li>Load()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key_loader.html#a40722a383de4043c954af93789ec3a51">IO_2026_SGGW.Core.AnswerKeyLoader</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>MainForm()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a2bf8730f0c138d41de314a63c37af673">IO_2026_SGGW.MainForm</a></li>
+<li>MainForm_Load()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a6b19a027b09cf3d8150c21633a7d3fa6">IO_2026_SGGW.MainForm</a></li>
+<li>MakeRow()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a2f35bb483190a56031936f4ee327ad86">IO_2026_SGGW.Core.GradingService</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>Name&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_task_sheet.html#a2738a782fe58863faa1074f759366c82">IO_2026_SGGW.Core.TaskSheet</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>Oczekiwany&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#a9dd46b9ce68a3f09c6917a2c94ac4a50">IO_2026_SGGW.Core.ResultRow</a></li>
+<li>OnHandleCreated()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a2f3b5199ca761af654fb992a61b802c0">IO_2026_SGGW.MainForm</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>panelDrop_DragDrop()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a404baf3fe233abc4fe21815baeed7cb4">IO_2026_SGGW.MainForm</a></li>
+<li>panelDrop_DragEnter()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#aa865a66a94be995b4ab4297dad2dec0e">IO_2026_SGGW.MainForm</a></li>
+<li>panelDrop_DragLeave()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a60be45d796546cc5f9754f2e8921704a">IO_2026_SGGW.MainForm</a></li>
+<li>ParametersRaw&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_test_case.html#a41084acfeeca9a86d3d95d49a1aee53f">IO_2026_SGGW.Core.TestCase</a></li>
+<li>Parametry&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#ae628551645056a41e98f0205a8975e13">IO_2026_SGGW.Core.ResultRow</a></li>
+<li>ParseArgs()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#a30324f1fa6bf203bd0d06497e44652e2">IO_2026_SGGW.Core.SolutionRunner</a></li>
+<li>PrepareXlsxInput()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#ac5d8ed8db797930c0180d86a214b8d9b">IO_2026_SGGW.Core.SolutionRunner</a></li>
+<li>Punkty&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#aeed4ebdea288585ee159da0f32234193">IO_2026_SGGW.Core.ResultRow</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>resultsList&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#ad5245452ded2049fe45cffaa165012a4">IO_2026_SGGW.MainForm</a></li>
+<li>RunAsync()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a4e8090ec96b2150ae9aac274bcd5dd76">IO_2026_SGGW.Core.GradingService</a></li>
+<li>runner&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a26e1718db65ee5e8a2a46847ca8fe538">IO_2026_SGGW.Core.GradingService</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>SetupCustomUI()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a09ab6544cc2bda715dc94f7a51a2e441">IO_2026_SGGW.MainForm</a></li>
+<li>SetupGrid()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#acd15c046f0afbbb63db14862dbe7e1c7">IO_2026_SGGW.MainForm</a></li>
+<li>SourceCode&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html#a4c91d5179dd3e0901b4b94e7857d8084">IO_2026_SGGW.Core.StudentSolution</a></li>
+<li>SplitRespectingBrackets()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner.html#a5998e2de880ef9bb0ce121199334dbd1">IO_2026_SGGW.Core.SolutionRunner</a></li>
+<li>Status&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#a0c442ec2e42c2cd8efd310a1eca83b49">IO_2026_SGGW.Core.ResultRow</a>, <a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html#ac6777e213edda9813d5b8c7afe30b1c6">IO_2026_SGGW.Core.SolutionRunner.RunResult</a></li>
+<li>Student&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#a9905ae2318260f6318f659dd05468744">IO_2026_SGGW.Core.ResultRow</a></li>
+<li>StudentId&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_student_solution.html#aae40b47d60d5ca27419007380e342f29">IO_2026_SGGW.Core.StudentSolution</a></li>
+<li>studentSolutions&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a0c009454610e0063b64781d94850a124">IO_2026_SGGW.MainForm</a></li>
+<li>Success&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_compilation_result.html#a6ee758a9b0e4b39949b23aecc659e99c">IO_2026_SGGW.Core.CompilationResult</a></li>
+<li>SumTestCases()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_grading_service.html#a708e6255351e3cad6a143721c4c23d71">IO_2026_SGGW.Core.GradingService</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>Tasks&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_answer_key.html#a4c9903aa73517791f05dc87ace22bda6">IO_2026_SGGW.Core.AnswerKey</a></li>
+<li>TestCases&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_task_sheet.html#a77983519ce57963032837269c89c7b4e">IO_2026_SGGW.Core.TaskSheet</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>UpdateStatusBar()&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a01a4582ea286a1f66be038e3dbf683dd">IO_2026_SGGW.MainForm</a></li>
+<li>Uzyskany&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#ad4fc89bf3705e98419a113bc3c7437d7">IO_2026_SGGW.Core.ResultRow</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>Value&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_solution_runner_1_1_run_result.html#a99183537a8800c8f667190047647305e">IO_2026_SGGW.Core.SolutionRunner.RunResult</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_x" name="index_x"></a>- x -</h3><ul>
+<li>xlsxPath&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_main_form.html#a3f267ce6dbbcbd19c2f2ca077ba9eb32">IO_2026_SGGW.MainForm</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_z" name="index_z"></a>- z -</h3><ul>
+<li>Zadanie&#160;:&#160;<a class="el" href="class_i_o__2026___s_g_g_w_1_1_core_1_1_result_row.html#a04c948d78829109504112bb2f64d87a2">IO_2026_SGGW.Core.ResultRow</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sprawdzanie Kolokwiów: Plik źródłowy Core/RunStatus.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sprawdzanie Kolokwiów<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Automatyczne sprawdzanie kolokwiów: kompilacja, uruchamianie i ocena rozwiązań studentów w C#</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_run_status_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RunStatus.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_run_status_8cs.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_i_o__2026___s_g_g_w_1_1_core.html">IO_2026_SGGW.Core</a></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daef">    8</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daef">RunStatus</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefaa60852f204ed8028c1c58808b746d115">   11</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefaa60852f204ed8028c1c58808b746d115">Ok</a>,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa773ec314e15dd1604a15859355dd3e4c">   14</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa773ec314e15dd1604a15859355dd3e4c">Bledny</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefac85a251cc457840f1e032f1b733e9398">   17</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefac85a251cc457840f1e032f1b733e9398">Timeout</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa32da97bf4f8ea05aaea71bbe17c0c3a3">   20</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa32da97bf4f8ea05aaea71bbe17c0c3a3">BrakMetody</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1861568be0bca7ae68a8a3842209e7ec">   23</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1861568be0bca7ae68a8a3842209e7ec">Wyjatek</a>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1be22fea7a8816a533e7c014a181421e">   26</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1be22fea7a8816a533e7c014a181421e">BladKompilacji</a>,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefaebe36a09830ea9fd1b6e32e9e3c1cc1e">   29</a></span>        <a class="code hl_enumvalue" href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefaebe36a09830ea9fd1b6e32e9e3c1cc1e">ZlyFormatParametrow</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html">IO_2026_SGGW.Core</a></div><div class="ttdef"><b>Definicja</b> <a href="_answer_key_8cs_source.html#l00003">AnswerKey.cs:4</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daef"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daef">IO_2026_SGGW.Core.RunStatus</a></div><div class="ttdeci">RunStatus</div><div class="ttdoc">Status wykonania pojedynczego przypadku testowego, ustalany przez GradingService oraz SolutionRunner.</div><div class="ttdef"><b>Definicja</b> <a href="#l00008">RunStatus.cs:9</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefa1861568be0bca7ae68a8a3842209e7ec"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1861568be0bca7ae68a8a3842209e7ec">IO_2026_SGGW.Core.RunStatus.Wyjatek</a></div><div class="ttdeci">@ Wyjatek</div><div class="ttdoc">Metoda rzuciła wyjątek w trakcie wykonywania (0 punktów).</div><div class="ttdef"><b>Definicja</b> <a href="#l00023">RunStatus.cs:23</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefa1be22fea7a8816a533e7c014a181421e"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa1be22fea7a8816a533e7c014a181421e">IO_2026_SGGW.Core.RunStatus.BladKompilacji</a></div><div class="ttdeci">@ BladKompilacji</div><div class="ttdoc">Kod źródłowy studenta nie skompilował się, co dotyczy wszystkich zadań tego studenta (0 punktów).</div><div class="ttdef"><b>Definicja</b> <a href="#l00026">RunStatus.cs:26</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefa32da97bf4f8ea05aaea71bbe17c0c3a3"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa32da97bf4f8ea05aaea71bbe17c0c3a3">IO_2026_SGGW.Core.RunStatus.BrakMetody</a></div><div class="ttdeci">@ BrakMetody</div><div class="ttdoc">W rozwiązaniu studenta nie znaleziono metody odpowiadającej nazwie zadania (0 punktów).</div><div class="ttdef"><b>Definicja</b> <a href="#l00020">RunStatus.cs:20</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefa773ec314e15dd1604a15859355dd3e4c"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefa773ec314e15dd1604a15859355dd3e4c">IO_2026_SGGW.Core.RunStatus.Bledny</a></div><div class="ttdeci">@ Bledny</div><div class="ttdoc">Metoda wykonała się poprawnie, ale zwrócony wynik różni się od oczekiwanego (0 punktów).</div><div class="ttdef"><b>Definicja</b> <a href="#l00014">RunStatus.cs:14</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefaa60852f204ed8028c1c58808b746d115"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefaa60852f204ed8028c1c58808b746d115">IO_2026_SGGW.Core.RunStatus.Ok</a></div><div class="ttdeci">@ Ok</div><div class="ttdoc">Metoda wykonała się i zwróciła wynik zgodny z kluczem odpowiedzi (1 punkt).</div><div class="ttdef"><b>Definicja</b> <a href="#l00011">RunStatus.cs:11</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefac85a251cc457840f1e032f1b733e9398"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefac85a251cc457840f1e032f1b733e9398">IO_2026_SGGW.Core.RunStatus.Timeout</a></div><div class="ttdeci">@ Timeout</div><div class="ttdoc">Wykonanie przekroczyło dozwolony limit czasu i zostało przerwane (0 punktów).</div><div class="ttdef"><b>Definicja</b> <a href="#l00017">RunStatus.cs:17</a></div></div>
+<div class="ttc" id="anamespace_i_o__2026___s_g_g_w_1_1_core_html_a8fa8ecafa72d8f4e0275618743a7daefaebe36a09830ea9fd1b6e32e9e3c1cc1e"><div class="ttname"><a href="namespace_i_o__2026___s_g_g_w_1_1_core.html#a8fa8ecafa72d8f4e0275618743a7daefaebe36a09830ea9fd1b6e32e9e3c1cc1e">IO_2026_SGGW.Core.RunStatus.ZlyFormatParametrow</a></div><div class="ttdeci">@ ZlyFormatParametrow</div><div class="ttdoc">Nie udało się sparsować parametrów z klucza do typów wymaganych przez metodę (0 punktów).</div><div class="ttdef"><b>Definicja</b> <a href="#l00029">RunStatus.cs:29</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a href="_run_status_8cs.html">RunStatus.cs</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
