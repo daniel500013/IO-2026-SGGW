@@ -55,6 +55,24 @@ dotnet test IO_2026_SGGW/IO_2026_SGGW.sln
 
 ## Instrukcja obsługi
 
+### Okno główne
+
+Po uruchomieniu aplikacji pojawia się jedno okno z wszystkimi funkcjami:
+
+![Okno główne aplikacji (stan początkowy)](IO_2026_SGGW/s1.png)
+
+| Element | Opis |
+|---------|------|
+| **Panel „Przeciągnij pliki .cs tutaj"** (lewy górny) | Strefa upuszczania plików studentów; kliknięcie otwiera również okno wyboru plików |
+| **„Wybierz plik XLSX"** | Wczytanie pliku z kluczem odpowiedzi |
+| **„Sprawdź"** (zielony) | Uruchomienie sprawdzania |
+| **„Załadowane pliki: N \| XLSX: …"** | Pasek statusu: liczba wczytanych plików `.cs` oraz nazwa wczytanego klucza |
+| **„Timeout (s)"** | Limit czasu na pojedynczą metodę (1–60 s, domyślnie **3**) |
+| **Tabela wyników** | Kolumny: *Student, Zadanie, Parametry, Oczekiwany, Uzyskany, Pkt, Status* |
+| **„Eksportuj do .xlsx"** (czerwony) | Zapis wyników do pliku Excel |
+
+### Krok po kroku
+
 1. **Wczytaj klucz odpowiedzi** - kliknij **„Wybierz plik XLSX"** i wskaż plik `.xlsx` z kluczem (format opisany niżej).
 2. **Dodaj rozwiązania studentów** (`.cs`) na jeden z dwóch sposobów:
    - **przeciągnij i upuść** pliki na panel „Przeciągnij pliki .cs tutaj" (panel podświetla się na zielono, gdy upuszczenie jest dozwolone), lub
@@ -64,6 +82,19 @@ dotnet test IO_2026_SGGW/IO_2026_SGGW.sln
 4. **Uruchom sprawdzanie** - kliknij **„Sprawdź"**. Pasek postępu pokazuje stan; interfejs jest na ten czas zablokowany. Po zakończeniu pojawia się łączna liczba punktów.
 5. **Przejrzyj wyniki** w tabeli (kolumny: *Student, Zadanie, Parametry, Oczekiwany, Uzyskany, Pkt, Status*). Wiersze są kolorowane wg statusu (patrz niżej).
 6. **Wyeksportuj wyniki** - kliknij **„Eksportuj do .xlsx"** i wskaż lokalizację. Domyślna nazwa: `wyniki_RRRR-MM-DD_GG-mm.xlsx` (arkusze „Wyniki" oraz „Podsumowanie"). Po zapisie można od razu otworzyć folder z plikiem.
+
+### Interpretacja wyników
+
+Po sprawdzeniu pasek postępu wypełnia się, a tabela pokazuje wynik każdego przypadku testowego. Wiersze są kolorowane według statusu:
+
+![Wyniki sprawdzania z kolorami statusów](IO_2026_SGGW/s2.png)
+
+Na powyższym przykładzie:
+
+- **zielone wiersze** (`Ok`) - rozwiązania studenta *Kowalski_Jan* zwróciły wartość zgodną z kolumną *Oczekiwany* (po **1 pkt**),
+- **czerwone wiersze** (`Bledny`) - rozwiązania studenta *Kowalczyk_Tomek* zwróciły inną wartość niż oczekiwana, np. `KOLOKWIUM` zamiast `muiwkolok` (**0 pkt**).
+
+Kolumny *Oczekiwany* i *Uzyskany* pozwalają od razu zobaczyć, gdzie wynik się rozjechał. Pełną legendę kolorów i wszystkich statusów znajdziesz w sekcji [Statusy wyników](#statusy-wyników).
 
 ---
 
