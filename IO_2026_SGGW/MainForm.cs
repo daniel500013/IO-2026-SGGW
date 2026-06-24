@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -409,6 +410,13 @@ namespace IO_2026_SGGW
         private readonly BindingList<ResultRow> resultsList = new
             BindingList<ResultRow>();
 
+        
+        private static void EnableDoubleBuffer(DataGridView dgv)
+        {
+            typeof(DataGridView)
+                .GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic)
+                .SetValue(dgv, true, null);
+        }
 
         /// <summary>
         /// Konfiguruje tabelę wyników (<c>DataGridView</c>): definiuje kolumny powiązane z właściwościami
@@ -461,6 +469,7 @@ namespace IO_2026_SGGW
                 HeaderText = "Status", FillWeight = 15
             });
             dgvResults.DataSource = resultsList;
+            EnableDoubleBuffer(dgvResults);
         }
 
         /// <summary>
@@ -473,6 +482,7 @@ namespace IO_2026_SGGW
             DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex < 0 || e.RowIndex >= resultsList.Count) return;
+            if (e.ColumnIndex != 0) return;  
             var row = resultsList[e.RowIndex];
             Color color;
             switch (row.Status)
