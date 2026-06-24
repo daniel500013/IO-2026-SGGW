@@ -122,5 +122,39 @@ namespace IO_2026_SGGW.Core
                 return new CompilationResult { Assembly = Assembly.Load(ms.ToArray()) };
             }
         }
+
+        public string CompileToTempFile(string sourceCode, out string error)
+        {
+            error = null;
+            var forbidden = FindForbiddenApi(sourceCode); // bezpiecznik z Zad.3
+            if (forbidden != null) { error = $"Zabronione API '{forbidden}'."; return null; }
+            var syntaxTree = CSharpSyntaxTree.ParseText(sourceCode);
+            var references = new[]
+            {
+                MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(System.Console).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(System.Linq.Enumerable).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(System.Collections.Generic.List<>).Assembly.Location),
+                MetadataReference.CreateFromFile(Path.Combine(runtimeDir, "System.Runtime.dll"))
+            };
+            var path = Path.Combine(Path.GetTempPath(), "io_" + Guid.NewGuid().ToString("N") + ".dll");
+            var compilation = CSharpCompilation.Create(
+            Path.GetFileNameWithoutExtension(path),
+            new[] { syntaxTree }, references,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+            using (var fs = new FileStream(path, FileMode.Create))
+            {
+                var emit = compilation.Emit(fs);
+                if (!emit.Success)
+                {
+                    error = string.Join("; ", emit.Diagnostics
+                    .Where(d => d.Severity == DiagnosticSeverity.Error)
+                    .Select(d => d.GetMessage()));
+                    return null;
+                }
+            }
+            return path;
+        }
+
     }
 }

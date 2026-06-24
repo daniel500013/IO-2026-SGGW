@@ -38,19 +38,30 @@ namespace IO_2026_SGGW.Core
         /// </remarks>
         public MethodInfo FindMethod(Assembly asm, string taskName)
         {
-            var nameNormalized = taskName.Replace(" ", "").Replace("_", "");
-            foreach (var tpye in asm.GetTypes())
+            var target = Normalize(taskName);
+            MethodInfo prefixMatch = null;
+            foreach (var type in asm.GetTypes())
             {
-                foreach (var method in tpye.GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly))
+                foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Static
+                | BindingFlags.Instance | BindingFlags.DeclaredOnly))
                 {
-                    // Czy Main jest potrzebny? Podobno zalecany.
                     if (method.Name.Equals("Main", StringComparison.OrdinalIgnoreCase)) continue;
-                    if (method.Name.Replace("_", "").Equals(nameNormalized, StringComparison.OrdinalIgnoreCase)) return method;
+                    var name = Normalize(method.Name);
+                    if (name.Equals(target, StringComparison.OrdinalIgnoreCase))
+                        return method; // pełne dopasowanie
+                                       // T2-16: Excel obcina nazwy arkuszy do 31 znaków -> dopuszczamy dopasowanie po prefiksie
+                    if (target.Length >= 31 && name.StartsWith(target, StringComparison.OrdinalIgnoreCase))
+                        prefixMatch = prefixMatch ?? method;
                 }
             }
-
-            return null;
+            return prefixMatch;
         }
+        private static string Normalize(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return "";
+            return s.Trim().Replace(" ", "").Replace("_", "");
+        }
+
 
         /// <summary>
         /// Zamienia tekstowy zapis parametrów z klucza na tablicę argumentów o typach wymaganych przez metodę.
@@ -236,8 +247,81 @@ namespace IO_2026_SGGW.Core
                 }
             }
 
+            if (returnType == typeof(bool))
+            {
+                var exp = expectedFromXlsx.Trim();
+                bool expected;
+                if (exp == "1") expected = true;
+                else if (exp == "0") expected = false;
+                else if (!bool.TryParse(exp, out expected)) return false;
+                return Convert.ToBoolean(actual) == expected;
+            }
+
+
 
             return actual.ToString().Trim().Equals(expectedFromXlsx.Trim(), StringComparison.OrdinalIgnoreCase);
+        }
+
+        public RunResult RunIsolated(string dllPath, string taskName, string paramsRaw, string expectedRaw,
+int timeoutMs)
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = Process.GetCurrentProcess().MainModule.FileName, // ten sam .exe
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true
+            };
+            psi.ArgumentList.Add("--sandbox");
+            psi.ArgumentList.Add(dllPath);
+            psi.ArgumentList.Add(Enc(taskName));
+            psi.ArgumentList.Add(Enc(paramsRaw));
+            psi.ArgumentList.Add(Enc(expectedRaw));
+            using (var proc = Process.Start(psi))
+            {
+                var stdout = proc.StandardOutput.ReadToEndAsync();
+                if (!proc.WaitForExit(timeoutMs))
+                {
+                    try { proc.Kill(entireProcessTree: true); } catch { } // nieskończona pętla niezabijalny wątek
+                return new RunResult { Status = RunStatus.Timeout };
+                }
+                return MapSandboxOutput(stdout.GetAwaiter().GetResult().Trim());
+            }
+        }
+        private static string Enc(string s) =>
+        Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(s ?? ""));
+        private static RunResult MapSandboxOutput(string outp)
+        {
+            if (string.IsNullOrEmpty(outp)) // proces padł (Exit/StackOverflow) bez wyniku
+        return new RunResult
+        {
+            Status = RunStatus.Wyjatek,
+            ErrorMessage = "Proces wykonawczy
+        zakończył się awaryjnie." };
+        if (outp.StartsWith("OK|")) return new RunResult
+        {
+            Status = RunStatus.Ok,
+            Value =
+        outp.Substring(3)
+        };
+            if (outp.StartsWith("BLEDNY|")) return new RunResult
+            {
+                Status = RunStatus.Bledny,
+                Value =
+            outp.Substring(7)
+            };
+            if (outp.StartsWith("WYJATEK|")) return new RunResult
+            {
+                Status = RunStatus.Wyjatek,
+                ErrorMessage = outp.Substring(8)
+            };
+            if (outp.StartsWith("ZLYFORMAT|")) return new RunResult
+            {
+                Status = RunStatus.ZlyFormatParametrow,
+                ErrorMessage = outp.Substring(10)
+            };
+            if (outp == "BRAKMETODY") return new RunResult { Status = RunStatus.BrakMetody };
+            return new RunResult { Status = RunStatus.Wyjatek, ErrorMessage = outp };
         }
 
 

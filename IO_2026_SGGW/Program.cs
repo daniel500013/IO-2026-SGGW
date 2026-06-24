@@ -16,11 +16,14 @@ namespace IO_2026_SGGW
         /// główne okno <see cref="MainForm"/>.
         /// </summary>
         [STAThread]
-        static void Main()
+        static int Main(string[] args) 
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            
+            if (args.Length >= 5 && args[0] == "--sandbox") return IO_2026_SGGW.Core.SandboxHost.Run(args);
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
+                return 0;
         }
     }
 }
