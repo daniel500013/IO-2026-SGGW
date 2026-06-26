@@ -50,37 +50,67 @@ namespace IO_2026_SGGW.Core
 
             return Task.Run(() =>
             {
-                int total = students.Count * SumTestCases(key);
-                int done = 0;
+                int casesPerStudent = SumTestCases(key);
+                int total = students.Count * casesPerStudent;
+                var buffer = new List<ResultRow>(); // Bufor dla batchowania UI
 
-                foreach (var student in students)
+                for (int i = 0; i < students.Count; i++)
                 {
-                    var comp = compiler.Compile(student.SourceCode);
+                    var student = students[i];
+                    int initialDone = i * casesPerStudent;
+                    int done = initialDone;
+                    string dllPath = null;
 
-                    if (!comp.Success)
+                    try
                     {
-                        EmitCompilationFailureForAllTasks(student, key, comp.ErrorMessage, ui, results);
-                        done += SumTestCases(key);
-                        progress?.Report(done * 100 / Math.Max(1, total));
-                        continue;
-                    }
+                        // Kompilacja raz na studenta do pliku tymczasowego
+                        dllPath = compiler.CompileToTempFile(student.SourceCode, out string compileError);
 
-                    foreach (var sheet in key.Tasks)
-                    {
-                        var method = runner.FindMethod(comp.Assembly, sheet.Name);
-
-                        foreach (var tc in sheet.TestCases)
+                        if (dllPath == null)
                         {
-                            var row = (method == null)
-                                ? MakeRow(student, sheet, tc, RunStatus.BrakMetody, 0, "Brak metody " + sheet.Name.Replace(" ", ""))
-                                : GradeOne(student, sheet, tc, method, timeoutMs);
-
-                            ui.Post(_ => results.Add(row), null);
-                            done++;
+                            EmitCompilationFailureForAllTasks(student, key, compileError, buffer);
+                            done += casesPerStudent;
                             progress?.Report(done * 100 / Math.Max(1, total));
+                            continue;
+                        }
+
+                        // Weryfikacja zadań przy użyciu wyizolowanego procesu
+                        foreach (var sheet in key.Tasks)
+                        {
+                            foreach (var tc in sheet.TestCases)
+                            {
+                                var row = GradeOne(student, sheet, tc, dllPath, timeoutMs);
+                                buffer.Add(row);
+                                done++;
+
+                                // Zrzut (Flush) bufora co 50 wyników, zamiast pojedynczo
+                                if (buffer.Count >= 50) FlushBuffer(ui, results, buffer);
+
+                                progress?.Report(done * 100 / Math.Max(1, total));
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Ochrona przed "trucizną"
+                        buffer.Add(new ResultRow { Student = student.StudentId, Zadanie = "BŁĄD KRYTYCZNY", Status = RunStatus.Wyjatek, Uzyskany = ex.Message });
+                        done = initialDone + casesPerStudent;
+                        progress?.Report(done * 100 / Math.Max(1, total));
+                    }
+                    finally
+                    {
+                        FlushBuffer(ui, results, buffer);
+
+                        // Sprzątanie pliku DLL z dysku
+                        if (!string.IsNullOrEmpty(dllPath) && System.IO.File.Exists(dllPath))
+                        {
+                            try { System.IO.File.Delete(dllPath); } catch { }
                         }
                     }
                 }
+
+                // Upewniamy się na koniec, że pasek dobił do 100%
+                progress?.Report(100);
             });
         }
 
@@ -97,31 +127,32 @@ namespace IO_2026_SGGW.Core
         /// Gotowy <see cref="ResultRow"/> z odpowiednim statusem i liczbą punktów: 1 punkt dla
         /// <see cref="RunStatus.Ok"/>, w pozostałych przypadkach 0.
         /// </returns>
-        private ResultRow GradeOne(StudentSolution student, TaskSheet sheet, TestCase tc, MethodInfo method, int timeoutMs)
+        private ResultRow GradeOne(StudentSolution student, TaskSheet sheet, TestCase tc, string dllPath, int timeoutMs)
         {
-            object[] args;
-            try
+            // Wywołanie izolowanego procesu - to on robi parsowanie, wywołanie z limitem i ocenę
+            var run = runner.RunIsolated(dllPath, sheet.Name, tc.ParametersRaw, tc.ExpectedRaw, timeoutMs);
+
+            string uzyskany;
+            switch (run.Status)
             {
-                args = runner.ParseArgs(tc.ParametersRaw, method.GetParameters());
+                case RunStatus.Ok:
+                case RunStatus.Bledny:
+                    // W RunIsolated wartość Value jest już rzutowana na string przez proces dziecka
+                    uzyskany = run.Value as string ?? "";
+                    break;
+                case RunStatus.Timeout:
+                    uzyskany = "Przekroczono limit czasu";
+                    break;
+                case RunStatus.BrakMetody:
+                    uzyskany = "Brak metody " + sheet.Name.Replace(" ", "");
+                    break;
+                default:
+                    uzyskany = run.ErrorMessage ?? "Błąd wykonania";
+                    break;
             }
-            catch (Exception ex)
-            {
-                return MakeRow(student, sheet, tc, RunStatus.ZlyFormatParametrow, 0, ex.Message);
-            }
 
-            var run = runner.InvokeWithTimeout(method, args, timeoutMs);
-
-            if (run.Status == RunStatus.Timeout)
-                return MakeRow(student, sheet, tc, RunStatus.Timeout, 0, "Przekroczono limit czasu");
-
-            if (run.Status == RunStatus.Wyjatek)
-                return MakeRow(student, sheet, tc, RunStatus.Wyjatek, 0, run.ErrorMessage);
-
-            bool correct = runner.IsCorrect(run.Value, tc.ExpectedRaw, method.ReturnType);
-
-            return correct
-                ? MakeRow(student, sheet, tc, RunStatus.Ok, 1, FormatValue(run.Value))
-                : MakeRow(student, sheet, tc, RunStatus.Bledny, 0, FormatValue(run.Value));
+            int punkty = run.Status == RunStatus.Ok ? 1 : 0;
+            return MakeRow(student, sheet, tc, run.Status, punkty, uzyskany);
         }
 
         /// <summary>
@@ -134,14 +165,14 @@ namespace IO_2026_SGGW.Core
         /// <param name="ui">Kontekst synchronizacji UI, przez który dopisywane są wiersze.</param>
         /// <param name="results">Kolekcja wyników powiązana z UI.</param>
         private static void EmitCompilationFailureForAllTasks(StudentSolution student, AnswerKey key,
-            string errorMessage, SynchronizationContext ui, BindingList<ResultRow> results)
+                    string errorMessage, List<ResultRow> buffer)
         {
             foreach (var sheet in key.Tasks)
             {
                 foreach (var tc in sheet.TestCases)
                 {
                     var row = MakeRow(student, sheet, tc, RunStatus.BladKompilacji, 0, errorMessage);
-                    ui.Post(_ => results.Add(row), null);
+                    buffer.Add(row); // Dodajemy do bufora zamiast bezpośrednio powiadamiać UI
                 }
             }
         }
@@ -209,6 +240,21 @@ namespace IO_2026_SGGW.Core
             }
 
             return Convert.ToString(value, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Zrzuca zebrane wyniki do głównej listy asynchronicznie poprzez wątek UI.
+        /// </summary>
+        private static void FlushBuffer(SynchronizationContext ui, BindingList<ResultRow> results, List<ResultRow> buffer)
+        {
+            if (buffer.Count == 0) return;
+            var copy = buffer.ToArray();
+            buffer.Clear();
+
+            ui.Post(_ =>
+            {
+                foreach (var r in copy) results.Add(r);
+            }, null);
         }
     }
 }
