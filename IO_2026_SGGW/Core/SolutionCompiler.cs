@@ -129,6 +129,7 @@ namespace IO_2026_SGGW.Core
             var forbidden = FindForbiddenApi(sourceCode); // bezpiecznik z Zad.3
             if (forbidden != null) { error = $"Zabronione API '{forbidden}'."; return null; }
             var syntaxTree = CSharpSyntaxTree.ParseText(sourceCode);
+            var runtimeDir = System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory();
             var references = new[]
             {
                 MetadataReference.CreateFromFile(typeof(object).Assembly.Location),

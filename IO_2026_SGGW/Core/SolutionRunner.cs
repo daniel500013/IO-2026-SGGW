@@ -272,17 +272,13 @@ int timeoutMs)
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
             };
-            psi.ArgumentList.Add("--sandbox");
-            psi.ArgumentList.Add(dllPath);
-            psi.ArgumentList.Add(Enc(taskName));
-            psi.ArgumentList.Add(Enc(paramsRaw));
-            psi.ArgumentList.Add(Enc(expectedRaw));
+            psi.Arguments = "--sandbox \"" + dllPath + "\" " + Enc(taskName) + " " + Enc(paramsRaw) + " " + Enc(expectedRaw);
             using (var proc = Process.Start(psi))
             {
                 var stdout = proc.StandardOutput.ReadToEndAsync();
                 if (!proc.WaitForExit(timeoutMs))
                 {
-                    try { proc.Kill(entireProcessTree: true); } catch { } // nieskończona pętla niezabijalny wątek
+                    try { proc.Kill(); } catch { } // nieskończona pętla niezabijalny wątek
                 return new RunResult { Status = RunStatus.Timeout };
                 }
                 return MapSandboxOutput(stdout.GetAwaiter().GetResult().Trim());
@@ -296,8 +292,7 @@ int timeoutMs)
         return new RunResult
         {
             Status = RunStatus.Wyjatek,
-            ErrorMessage = "Proces wykonawczy
-        zakończył się awaryjnie." };
+            ErrorMessage = "Proces wykonawczy zakończył się awaryjnie." };
         if (outp.StartsWith("OK|")) return new RunResult
         {
             Status = RunStatus.Ok,
