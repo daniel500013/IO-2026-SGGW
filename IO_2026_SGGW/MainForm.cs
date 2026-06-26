@@ -76,6 +76,8 @@ namespace IO_2026_SGGW
                     answerKey = new AnswerKeyLoader().Load(ofd.FileName);
                     xlsxPath = ofd.FileName;
                     DebugLog($"OK Load: {ofd.FileName} | zadan={answerKey.Tasks.Count}");
+                    MessageBox.Show($"Wczytano klucz XLSX: {Path.GetFileName(ofd.FileName)} ({answerKey.Tasks.Count} zadań).",
+                        "Wczytywanie klucza", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -218,6 +220,9 @@ namespace IO_2026_SGGW
             UpdateStatusBar();
             if (skipped > 0)
                 MessageBox.Show($"Dodano {added} plik(ów). Pominięto {skipped} (foldery / pliki zablokowane / nie.cs).",
+        "Dodawanie plików", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if (added > 0)
+                MessageBox.Show($"Wczytano {added} plik(ów) .cs.",
         "Dodawanie plików", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
