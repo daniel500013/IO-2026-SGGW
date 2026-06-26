@@ -76,6 +76,7 @@ namespace IO_2026_SGGW
                     answerKey = new AnswerKeyLoader().Load(ofd.FileName);
                     xlsxPath = ofd.FileName;
                     DebugLog($"OK Load: {ofd.FileName} | zadan={answerKey.Tasks.Count}");
+                    UpdateStatusBar();
                     MessageBox.Show($"Wczytano klucz XLSX: {Path.GetFileName(ofd.FileName)} ({answerKey.Tasks.Count} zadań).",
                         "Wczytywanie klucza", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

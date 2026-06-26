@@ -116,6 +116,7 @@ namespace IO_2026_SGGW
             //
             // lblStatusFiles
             // 
+            this.lblStatusFiles.AutoSize = true;
             this.lblStatusFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblStatusFiles.ForeColor = System.Drawing.Color.DimGray;
             this.lblStatusFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
