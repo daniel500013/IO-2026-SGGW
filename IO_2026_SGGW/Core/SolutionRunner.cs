@@ -267,7 +267,7 @@ int timeoutMs)
         {
             var psi = new ProcessStartInfo
             {
-                FileName = Process.GetCurrentProcess().MainModule.FileName, // ten sam .exe
+                FileName = typeof(SolutionRunner).Assembly.Location, // exe aplikacji (IO_2026_SGGW.exe), nie host testowy
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
