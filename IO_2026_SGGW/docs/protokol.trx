@@ -1,274 +1,220 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="151a4c4c-3f31-429e-a263-2a8dbf9471d4" name="bakuc@DESKTOP-DV6MF3O 2026-06-22 22:04:13" runUser="DESKTOP-DV6MF3O\bakuc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2026-06-22T22:04:13.9051491+02:00" queuing="2026-06-22T22:04:13.9051494+02:00" start="2026-06-22T22:04:09.7748032+02:00" finish="2026-06-22T22:04:16.1036436+02:00" />
-  <TestSettings name="default" id="a7ab6204-020e-4b58-ad41-3db91d6c3501">
-    <Deployment runDeploymentRoot="bakuc_DESKTOP-DV6MF3O_2026-06-22_22_04_13" />
+<TestRun id="c5634cac-ad4b-4003-904b-f02a00196e98" name="bakuc@DESKTOP-DV6MF3O 2026-06-26 22:24:08" runUser="DESKTOP-DV6MF3O\bakuc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-06-26T22:24:08.1902369+02:00" queuing="2026-06-26T22:24:08.1902372+02:00" start="2026-06-26T22:24:04.7549236+02:00" finish="2026-06-26T22:24:10.5282736+02:00" />
+  <TestSettings name="default" id="43a0b6e6-04b4-47cf-bf41-93dd7af070f0">
+    <Deployment runDeploymentRoot="bakuc_DESKTOP-DV6MF3O_2026-06-26_22_24_08" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="7547477f-8ce2-471d-9dcd-de184302aace" testId="5e4a6cb0-658b-cb66-7471-a6cd3dae01ca" testName="GradingServiceTests.RunAsync_BrakMetody" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0280000" startTime="2026-06-22T22:04:15.5678174+02:00" endTime="2026-06-22T22:04:15.5678174+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7547477f-8ce2-471d-9dcd-de184302aace" />
-    <UnitTestResult executionId="97699e91-5bd6-43c2-959d-5ed6c32a9159" testId="be285b2e-aba9-b732-2cf8-f04930a1c47a" testName="AnswerKeyLoaderTests.Load_ZlaSciezka_RzucaFileNotFound" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-22T22:04:15.2117580+02:00" endTime="2026-06-22T22:04:15.2117580+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97699e91-5bd6-43c2-959d-5ed6c32a9159" />
-    <UnitTestResult executionId="7555c46f-0c57-4f15-928d-cebd3b065fee" testId="2a31128f-7ad8-d81b-2b81-5bd81d5beda3" testName="AnswerKeyLoaderTests.Load_PustyPlik_RzucaInvalidData" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0170000" startTime="2026-06-22T22:04:15.2277593+02:00" endTime="2026-06-22T22:04:15.2277593+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7555c46f-0c57-4f15-928d-cebd3b065fee" />
-    <UnitTestResult executionId="eb3001a4-6cdc-49e0-ad05-7207ec3b36ab" testId="902a117c-58b9-7ef2-ae90-ad603455e3b1" testName="SolutionEngineTests.ParseArgs_TablicaISkalar" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0280000" startTime="2026-06-22T22:04:15.8528298+02:00" endTime="2026-06-22T22:04:15.8528298+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb3001a4-6cdc-49e0-ad05-7207ec3b36ab" />
-    <UnitTestResult executionId="52d8fbe2-9485-41dc-8a58-c76103609ced" testId="d7c3abd7-3e03-9dd1-653c-0dc1f0fcd0f7" testName="SolutionEngineTests.Compile_Linq_Dziala" computerName="DESKTOP-DV6MF3O" duration="00:00:00.1450000" startTime="2026-06-22T22:04:15.8248310+02:00" endTime="2026-06-22T22:04:15.8248310+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52d8fbe2-9485-41dc-8a58-c76103609ced" />
-    <UnitTestResult executionId="f7b14703-51b9-4a36-9f85-cec5fed2869f" testId="bab60611-a1eb-0462-f010-27480103ddb8" testName="CsFileRulesTests.Duplikat_Odrzucony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.3940000" startTime="2026-06-22T22:04:12.7764230+02:00" endTime="2026-06-22T22:04:12.7764230+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f7b14703-51b9-4a36-9f85-cec5fed2869f" />
-    <UnitTestResult executionId="c7ac8afc-efe0-4ce0-988e-8fe7cc1103d6" testId="6f3ccd50-eb73-12ac-52d2-d4c231c7af7e" testName="SolutionEngineTests.FindMethod_NormalizujeNazwe" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0270000" startTime="2026-06-22T22:04:15.6778317+02:00" endTime="2026-06-22T22:04:15.6778317+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7ac8afc-efe0-4ce0-988e-8fe7cc1103d6" />
-    <UnitTestResult executionId="b457b245-f04e-4828-b035-7a59ede3b368" testId="8019fce1-4b2e-5f6e-4428-db0a12b72ab9" testName="AnswerKeyLoaderTests.Load_DwaWiersze_WczytujeOba" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0230000" startTime="2026-06-22T22:04:15.2517575+02:00" endTime="2026-06-22T22:04:15.2517575+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b457b245-f04e-4828-b035-7a59ede3b368" />
-    <UnitTestResult executionId="4942dcee-81e6-49b3-8a68-be1f77c9c4ef" testId="46988673-fbe6-be33-ca74-ec3f925397a7" testName="SolutionEngineTests.ParseArgs_Skalary" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0680000" startTime="2026-06-22T22:04:15.2217562+02:00" endTime="2026-06-22T22:04:15.2217562+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4942dcee-81e6-49b3-8a68-be1f77c9c4ef" />
-    <UnitTestResult executionId="196425af-aa60-4fc7-84e0-bbf558a59c4d" testId="eef41b29-8d17-bb62-e16a-2af848fed3e1" testName="GradingServiceTests.RunAsync_PoprawneRozwiazanie_StatusOk" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0710000" startTime="2026-06-22T22:04:15.6388188+02:00" endTime="2026-06-22T22:04:15.6388188+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="196425af-aa60-4fc7-84e0-bbf558a59c4d" />
-    <UnitTestResult executionId="6c6221c1-ebd4-48a3-8fd0-9c6626f805eb" testId="42d7cfd5-23b4-2ef6-404d-ea8d3ed37d0e" testName="IO_2026_SGGW.Tests.UnitTest1.Test1" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0080000" startTime="2026-06-22T22:04:12.3994375+02:00" endTime="2026-06-22T22:04:12.3994375+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c6221c1-ebd4-48a3-8fd0-9c6626f805eb" />
-    <UnitTestResult executionId="61fd9e1d-73cc-402d-8ad6-eb0b337f30bf" testId="f3d20c6c-200c-bd9d-8d63-896973f31dea" testName="CsFileRulesTests.PlikCs_Akceptowany" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0020000" startTime="2026-06-22T22:04:12.7784197+02:00" endTime="2026-06-22T22:04:12.7784197+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61fd9e1d-73cc-402d-8ad6-eb0b337f30bf" />
-    <UnitTestResult executionId="d2dfc430-c20c-4a3b-a818-9a2d6195a427" testId="6c286822-f09b-78e3-a2e4-7130128057ee" testName="SolutionEngineTests.Invoke_RzucaWyjatek_StatusWyjatek" computerName="DESKTOP-DV6MF3O" duration="00:00:00.1420000" startTime="2026-06-22T22:04:15.3933557+02:00" endTime="2026-06-22T22:04:15.3933557+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2dfc430-c20c-4a3b-a818-9a2d6195a427" />
-    <UnitTestResult executionId="71410e04-3b16-4dc2-afee-3c007153c3ef" testId="c9fa07c4-1ca8-3af9-b3e8-bb1c9c6e8ebc" testName="SolutionEngineTests.IsCorrect_DoubleTolerancja" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-22T22:04:15.8679880+02:00" endTime="2026-06-22T22:04:15.8679880+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71410e04-3b16-4dc2-afee-3c007153c3ef" />
-    <UnitTestResult executionId="1a6c2b23-5e01-46a6-b6e5-0a3faf0ca9c6" testId="935357d4-2472-0f3c-3a59-b8cd6a04dd1d" testName="GradingServiceTests.RunAsync_BladKompilacji_WszystkieWiersze" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0490000" startTime="2026-06-22T22:04:15.5397948+02:00" endTime="2026-06-22T22:04:15.5397948+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a6c2b23-5e01-46a6-b6e5-0a3faf0ca9c6" />
-    <UnitTestResult executionId="67faddc7-b44d-46ee-9649-d2ded98c05f3" testId="c5ac9d66-2bd5-afc7-165e-9a6d89156c6e" testName="SolutionEngineTests.Compile_PoprawnyKod_Sukces" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0310000" startTime="2026-06-22T22:04:15.8979891+02:00" endTime="2026-06-22T22:04:15.8979891+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67faddc7-b44d-46ee-9649-d2ded98c05f3" />
-    <UnitTestResult executionId="3a424177-25eb-4051-bbe4-6f7bd78686db" testId="d76b7acd-0c73-8d7b-4706-099c90383872" testName="SolutionEngineTests.FindMethod_BrakMetody_Null" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0290000" startTime="2026-06-22T22:04:15.2507563+02:00" endTime="2026-06-22T22:04:15.2507563+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a424177-25eb-4051-bbe4-6f7bd78686db" />
-    <UnitTestResult executionId="e8a22a25-03df-44a2-9a95-094ecd3097f9" testId="db305d90-0038-46eb-a8d9-eb851e020e80" testName="GradingServiceTests.RunAsync_Progres_DochodziDo100" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0290000" startTime="2026-06-22T22:04:15.4907983+02:00" endTime="2026-06-22T22:04:15.4907983+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8a22a25-03df-44a2-9a95-094ecd3097f9" />
-    <UnitTestResult executionId="fd59c35b-e799-419b-8c06-3bb18b8791ab" testId="98caae1c-3bb0-1212-3c15-1b41df98ec33" testName="AnswerKeyLoaderTests.Load_KomorkaData_FormatISO" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0450000" startTime="2026-06-22T22:04:15.2967942+02:00" endTime="2026-06-22T22:04:15.2967942+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd59c35b-e799-419b-8c06-3bb18b8791ab">
-      <Output>
-        <ErrorInfo>
-          <Message>Assert.Equal() Failure: Strings differ&#xD;
-           ↓ (pos 0)&#xD;
-Expected: "2026-04-01"&#xD;
-Actual:   "4/1/2026 12:00:00 AM"&#xD;
-           ↑ (pos 0)</Message>
-          <StackTrace>   at AnswerKeyLoaderTests.Load_KomorkaData_FormatISO() in C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\AnswerKeyLoaderTests.cs:line 87</StackTrace>
-        </ErrorInfo>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="b4a94149-72e6-4e2e-89e1-1836d148ef9e" testId="28c3536b-11a6-48e3-e142-89029ced6898" testName="SolutionEngineTests.Invoke_NieskonczonaPetla_Timeout" computerName="DESKTOP-DV6MF3O" duration="00:00:00.2580000" startTime="2026-06-22T22:04:15.6508171+02:00" endTime="2026-06-22T22:04:15.6508171+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4a94149-72e6-4e2e-89e1-1836d148ef9e" />
-    <UnitTestResult executionId="19f4adb2-9d01-4d24-9d49-0fae511f1da6" testId="e14f2821-b19e-9fcd-a144-4fb3b1ce4cbe" testName="AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL" computerName="DESKTOP-DV6MF3O" duration="00:00:02.8270000" startTime="2026-06-22T22:04:15.2097562+02:00" endTime="2026-06-22T22:04:15.2097562+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="19f4adb2-9d01-4d24-9d49-0fae511f1da6">
-      <Output>
-        <ErrorInfo>
-          <Message>Assert.Equal() Failure: Strings differ&#xD;
-            ↓ (pos 1)&#xD;
-Expected: "3.14"&#xD;
-Actual:   "3,14"&#xD;
-            ↑ (pos 1)</Message>
-          <StackTrace>   at AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL() in C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\AnswerKeyLoaderTests.cs:line 71</StackTrace>
-        </ErrorInfo>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="dc3edcf2-5989-491f-a4b9-0c063716a185" testId="6328012a-1c1d-ca73-0a6d-44feab2d2529" testName="SolutionEngineTests.IsCorrect_Tablica" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-22T22:04:15.8258299+02:00" endTime="2026-06-22T22:04:15.8258299+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc3edcf2-5989-491f-a4b9-0c063716a185" />
-    <UnitTestResult executionId="c02485c2-2492-4595-8ee3-2a872e3e39e0" testId="f06344db-965d-07e7-656d-925284693148" testName="SolutionEngineTests.Compile_BlednaSkladnia_Porazka" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0130000" startTime="2026-06-22T22:04:15.8669860+02:00" endTime="2026-06-22T22:04:15.8669860+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c02485c2-2492-4595-8ee3-2a872e3e39e0" />
-    <UnitTestResult executionId="bb25c5d4-e692-40c4-9291-443bf6e156b6" testId="845fb654-4185-179e-d959-97e8d2a57b5f" testName="CsFileRulesTests.FolderZ_cs_wNazwie_Odrzucony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-22T22:04:12.7814205+02:00" endTime="2026-06-22T22:04:12.7814205+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb25c5d4-e692-40c4-9291-443bf6e156b6" />
-    <UnitTestResult executionId="37c7780b-4a68-4ddb-a8e9-d9c92bca3494" testId="b8689911-6dab-7961-47e2-eae27aa50a0b" testName="CsFileRulesTests.PlikTxt_Odrzucony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-22T22:04:12.7804203+02:00" endTime="2026-06-22T22:04:12.7804203+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37c7780b-4a68-4ddb-a8e9-d9c92bca3494" />
-    <UnitTestResult executionId="5085249f-ccb4-4b85-81fd-3c86844bd40c" testId="6fa20571-ae12-4c84-6e5e-3bc3a5c0c622" testName="SolutionEngineTests.IsCorrect_BoolJako1" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-22T22:04:15.6798340+02:00" endTime="2026-06-22T22:04:15.6798340+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5085249f-ccb4-4b85-81fd-3c86844bd40c">
-      <Output>
-        <ErrorInfo>
-          <Message>Assert.True() Failure&#xD;
-Expected: True&#xD;
-Actual:   False</Message>
-          <StackTrace>   at SolutionEngineTests.IsCorrect_BoolJako1() in C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\SolutionEngineTests.cs:line 101</StackTrace>
-        </ErrorInfo>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="0e044d2b-79c9-4668-a52b-828b84cda95d" testId="259b9c14-ba53-e1d3-07b6-f393fad21129" testName="GradingServiceTests.RunAsync_PetlaNieskonczona_NieBlokujePozostalych" computerName="DESKTOP-DV6MF3O" duration="00:00:03.0790000" startTime="2026-06-22T22:04:15.4607943+02:00" endTime="2026-06-22T22:04:15.4607943+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e044d2b-79c9-4668-a52b-828b84cda95d" />
-    <UnitTestResult executionId="6e4f80e2-3a8e-41b8-b427-7902788bbefb" testId="e9c03e5c-6bbe-93e7-a0a9-b3aa0177cae6" testName="SolutionEngineTests.Compile_GrozneApi_Odrzucone" computerName="DESKTOP-DV6MF3O" duration="00:00:02.7210000" startTime="2026-06-22T22:04:15.1647558+02:00" endTime="2026-06-22T22:04:15.1647558+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e4f80e2-3a8e-41b8-b427-7902788bbefb">
-      <Output>
-        <ErrorInfo>
-          <Message>Assert.False() Failure&#xD;
-Expected: False&#xD;
-Actual:   True</Message>
-          <StackTrace>   at SolutionEngineTests.Compile_GrozneApi_Odrzucone() in C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\SolutionEngineTests.cs:line 46</StackTrace>
-        </ErrorInfo>
-      </Output>
-    </UnitTestResult>
+    <UnitTestResult executionId="b66a1f7b-73c7-4b58-8a1d-43a8d3910170" testId="8019fce1-4b2e-5f6e-4428-db0a12b72ab9" testName="AnswerKeyLoaderTests.Load_DwaWiersze_WczytujeOba" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0300000" startTime="2026-06-26T22:24:09.3495694+02:00" endTime="2026-06-26T22:24:09.3495694+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b66a1f7b-73c7-4b58-8a1d-43a8d3910170" />
+    <UnitTestResult executionId="aa2174d9-7e02-4116-ae13-923197e2e422" testId="845fb654-4185-179e-d959-97e8d2a57b5f" testName="CsFileRulesTests.FolderZ_cs_wNazwie_Odrzucony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0020000" startTime="2026-06-26T22:24:07.0068661+02:00" endTime="2026-06-26T22:24:07.0068661+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa2174d9-7e02-4116-ae13-923197e2e422" />
+    <UnitTestResult executionId="7cd28c1a-6651-47a5-b6a9-d9682a72c2c5" testId="935357d4-2472-0f3c-3a59-b8cd6a04dd1d" testName="GradingServiceTests.RunAsync_BladKompilacji_WszystkieWiersze" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0510000" startTime="2026-06-26T22:24:10.2050893+02:00" endTime="2026-06-26T22:24:10.2050893+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7cd28c1a-6651-47a5-b6a9-d9682a72c2c5" />
+    <UnitTestResult executionId="9bd6b1b3-ca34-4db0-a2ed-a0c76c1ba799" testId="be285b2e-aba9-b732-2cf8-f04930a1c47a" testName="AnswerKeyLoaderTests.Load_ZlaSciezka_RzucaFileNotFound" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-26T22:24:09.2991083+02:00" endTime="2026-06-26T22:24:09.2991083+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bd6b1b3-ca34-4db0-a2ed-a0c76c1ba799" />
+    <UnitTestResult executionId="36176cc5-1d8a-42a9-b504-90d751d01935" testId="46988673-fbe6-be33-ca74-ec3f925397a7" testName="SolutionEngineTests.ParseArgs_Skalary" computerName="DESKTOP-DV6MF3O" duration="00:00:02.3570000" startTime="2026-06-26T22:24:09.5040901+02:00" endTime="2026-06-26T22:24:09.5040901+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36176cc5-1d8a-42a9-b504-90d751d01935" />
+    <UnitTestResult executionId="ea64f31e-e43f-4f22-856c-a84f0af9c2e3" testId="eef41b29-8d17-bb62-e16a-2af848fed3e1" testName="GradingServiceTests.RunAsync_PoprawneRozwiazanie_StatusOk" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0670000" startTime="2026-06-26T22:24:10.3310895+02:00" endTime="2026-06-26T22:24:10.3310895+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea64f31e-e43f-4f22-856c-a84f0af9c2e3" />
+    <UnitTestResult executionId="0fc8ea7c-e247-469b-9a81-819dd5c0038b" testId="259b9c14-ba53-e1d3-07b6-f393fad21129" testName="GradingServiceTests.RunAsync_PetlaNieskonczona_NieBlokujePozostalych" computerName="DESKTOP-DV6MF3O" duration="00:00:03.4630000" startTime="2026-06-26T22:24:10.0820871+02:00" endTime="2026-06-26T22:24:10.0820871+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0fc8ea7c-e247-469b-9a81-819dd5c0038b" />
+    <UnitTestResult executionId="d337cc04-ae97-4972-9b5f-c7f2136c4a0b" testId="e9c03e5c-6bbe-93e7-a0a9-b3aa0177cae6" testName="SolutionEngineTests.Compile_GrozneApi_Odrzucone" computerName="DESKTOP-DV6MF3O" duration="00:00:00.5330000" startTime="2026-06-26T22:24:07.1468686+02:00" endTime="2026-06-26T22:24:07.1468686+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d337cc04-ae97-4972-9b5f-c7f2136c4a0b" />
+    <UnitTestResult executionId="81bbdb30-305d-4e4b-b77b-6da9ec80daec" testId="7236388b-d050-81e2-dc13-4db8aed2d09a" testName="ResultsExporterTests.Export_TworzyDwaArkusze_ZNaglowkami" computerName="DESKTOP-DV6MF3O" duration="00:00:02.6700000" startTime="2026-06-26T22:24:09.2891100+02:00" endTime="2026-06-26T22:24:09.2891100+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81bbdb30-305d-4e4b-b77b-6da9ec80daec" />
+    <UnitTestResult executionId="15203930-eb39-4445-9ac5-e00189ddde55" testId="6c286822-f09b-78e3-a2e4-7130128057ee" testName="SolutionEngineTests.Invoke_RzucaWyjatek_StatusWyjatek" computerName="DESKTOP-DV6MF3O" duration="00:00:00.2300000" startTime="2026-06-26T22:24:09.7790872+02:00" endTime="2026-06-26T22:24:09.7790872+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="15203930-eb39-4445-9ac5-e00189ddde55" />
+    <UnitTestResult executionId="d83b1279-47f3-4b20-82d2-7c6a312fc4f7" testId="6fa20571-ae12-4c84-6e5e-3bc3a5c0c622" testName="SolutionEngineTests.IsCorrect_BoolJako1" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-26T22:24:10.1030897+02:00" endTime="2026-06-26T22:24:10.1030897+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d83b1279-47f3-4b20-82d2-7c6a312fc4f7" />
+    <UnitTestResult executionId="17b3b6ef-7322-4e91-b6e8-3eef7d60e0ad" testId="42d7cfd5-23b4-2ef6-404d-ea8d3ed37d0e" testName="IO_2026_SGGW.Tests.UnitTest1.Test1" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0080000" startTime="2026-06-26T22:24:06.6358644+02:00" endTime="2026-06-26T22:24:06.6358644+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="17b3b6ef-7322-4e91-b6e8-3eef7d60e0ad" />
+    <UnitTestResult executionId="612e5642-3bb1-4822-bb30-b50fb5cf7806" testId="9bb5d024-b742-c2fe-2b69-1ba0b258a2be" testName="ResultsExporterTests.Export_PustaLista_NieRzuca" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0080000" startTime="2026-06-26T22:24:09.2981111+02:00" endTime="2026-06-26T22:24:09.2981111+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="612e5642-3bb1-4822-bb30-b50fb5cf7806" />
+    <UnitTestResult executionId="e75223f0-3230-4ff3-bade-dd2dafafbbb0" testId="2a31128f-7ad8-d81b-2b81-5bd81d5beda3" testName="AnswerKeyLoaderTests.Load_PustyPlik_RzucaInvalidData" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0220000" startTime="2026-06-26T22:24:09.3191091+02:00" endTime="2026-06-26T22:24:09.3191091+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e75223f0-3230-4ff3-bade-dd2dafafbbb0" />
+    <UnitTestResult executionId="f60d3fca-ca89-4cf8-b4ad-b00cda340311" testId="28c3536b-11a6-48e3-e142-89029ced6898" testName="SolutionEngineTests.Invoke_NieskonczonaPetla_Timeout" computerName="DESKTOP-DV6MF3O" duration="00:00:00.2440000" startTime="2026-06-26T22:24:10.0240892+02:00" endTime="2026-06-26T22:24:10.0240892+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f60d3fca-ca89-4cf8-b4ad-b00cda340311" />
+    <UnitTestResult executionId="a236fdcd-1d43-4194-bfb4-a02fdfdc76b8" testId="c9fa07c4-1ca8-3af9-b3e8-bb1c9c6e8ebc" testName="SolutionEngineTests.IsCorrect_DoubleTolerancja" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-26T22:24:10.3882511+02:00" endTime="2026-06-26T22:24:10.3882511+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a236fdcd-1d43-4194-bfb4-a02fdfdc76b8" />
+    <UnitTestResult executionId="3a26959b-f3a4-4499-bf5b-a063fec47248" testId="6328012a-1c1d-ca73-0a6d-44feab2d2529" testName="SolutionEngineTests.IsCorrect_Tablica" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0010000" startTime="2026-06-26T22:24:10.3420887+02:00" endTime="2026-06-26T22:24:10.3420887+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a26959b-f3a4-4499-bf5b-a063fec47248" />
+    <UnitTestResult executionId="e9b82b5a-b5b6-4aa2-b645-7975d648647d" testId="6f3ccd50-eb73-12ac-52d2-d4c231c7af7e" testName="SolutionEngineTests.FindMethod_NormalizujeNazwe" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0770000" startTime="2026-06-26T22:24:10.1010897+02:00" endTime="2026-06-26T22:24:10.1010897+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9b82b5a-b5b6-4aa2-b645-7975d648647d" />
+    <UnitTestResult executionId="bbb291f7-941d-46a6-bccf-d10bff51c974" testId="e14f2821-b19e-9fcd-a144-4fb3b1ce4cbe" testName="AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL" computerName="DESKTOP-DV6MF3O" duration="00:00:02.6770000" startTime="2026-06-26T22:24:09.2961097+02:00" endTime="2026-06-26T22:24:09.2961097+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbb291f7-941d-46a6-bccf-d10bff51c974" />
+    <UnitTestResult executionId="2a2ce927-8ec1-4e75-b7fe-1bbea66d47f7" testId="f06344db-965d-07e7-656d-925284693148" testName="SolutionEngineTests.Compile_BlednaSkladnia_Porazka" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0130000" startTime="2026-06-26T22:24:10.3862480+02:00" endTime="2026-06-26T22:24:10.3862480+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a2ce927-8ec1-4e75-b7fe-1bbea66d47f7" />
+    <UnitTestResult executionId="eb2118e3-5e1c-43b0-8a53-f09ff4fd0c7b" testId="b8689911-6dab-7961-47e2-eae27aa50a0b" testName="CsFileRulesTests.PlikTxt_Odrzucony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0020000" startTime="2026-06-26T22:24:07.0058669+02:00" endTime="2026-06-26T22:24:07.0058669+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb2118e3-5e1c-43b0-8a53-f09ff4fd0c7b" />
+    <UnitTestResult executionId="7fe9e2eb-7ab9-4f66-a1e3-cc944f9ca905" testId="3954b141-f5f2-a996-98c7-8f6d6d0d3995" testName="ResultsExporterTests.Export_Podsumowanie_LiczyProcent" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0240000" startTime="2026-06-26T22:24:09.3585691+02:00" endTime="2026-06-26T22:24:09.3585691+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7fe9e2eb-7ab9-4f66-a1e3-cc944f9ca905" />
+    <UnitTestResult executionId="a241228a-e7ec-4a8e-a2c9-db9b24392698" testId="98caae1c-3bb0-1212-3c15-1b41df98ec33" testName="AnswerKeyLoaderTests.Load_KomorkaData_FormatISO" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0210000" startTime="2026-06-26T22:24:09.3705710+02:00" endTime="2026-06-26T22:24:09.3705710+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a241228a-e7ec-4a8e-a2c9-db9b24392698" />
+    <UnitTestResult executionId="7c1881ad-0cf3-4f86-b08c-90fadfa525ca" testId="bab60611-a1eb-0462-f010-27480103ddb8" testName="CsFileRulesTests.Duplikat_Odrzucony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.3810000" startTime="2026-06-26T22:24:06.9998651+02:00" endTime="2026-06-26T22:24:06.9998651+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c1881ad-0cf3-4f86-b08c-90fadfa525ca" />
+    <UnitTestResult executionId="5b142c72-19a1-4513-87e4-4bbf442b5aee" testId="5e4a6cb0-658b-cb66-7471-a6cd3dae01ca" testName="GradingServiceTests.RunAsync_BrakMetody" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0590000" startTime="2026-06-26T22:24:10.2640888+02:00" endTime="2026-06-26T22:24:10.2640888+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b142c72-19a1-4513-87e4-4bbf442b5aee" />
+    <UnitTestResult executionId="d427596d-06ba-4512-b4ba-57c8ca303586" testId="f3d20c6c-200c-bd9d-8d63-896973f31dea" testName="CsFileRulesTests.PlikCs_Akceptowany" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0020000" startTime="2026-06-26T22:24:07.0028675+02:00" endTime="2026-06-26T22:24:07.0028675+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d427596d-06ba-4512-b4ba-57c8ca303586" />
+    <UnitTestResult executionId="6f0164f8-5c45-4eb5-bfb5-c9e85e3dbee4" testId="5ad18702-c746-9466-764c-2db1da967470" testName="ResultsExporterTests.Export_KolorStatusu_Ok_Jasnozielony" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0380000" startTime="2026-06-26T22:24:09.3345200+02:00" endTime="2026-06-26T22:24:09.3345200+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f0164f8-5c45-4eb5-bfb5-c9e85e3dbee4" />
+    <UnitTestResult executionId="13971110-3a6e-4c7c-ac9a-8edde93034d0" testId="902a117c-58b9-7ef2-ae90-ad603455e3b1" testName="SolutionEngineTests.ParseArgs_TablicaISkalar" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0320000" startTime="2026-06-26T22:24:10.3732467+02:00" endTime="2026-06-26T22:24:10.3732467+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="13971110-3a6e-4c7c-ac9a-8edde93034d0" />
+    <UnitTestResult executionId="37fe4dbd-66fe-4c5a-b9cd-2870177ceba1" testId="c5ac9d66-2bd5-afc7-165e-9a6d89156c6e" testName="SolutionEngineTests.Compile_PoprawnyKod_Sukces" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0270000" startTime="2026-06-26T22:24:10.4142472+02:00" endTime="2026-06-26T22:24:10.4142472+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37fe4dbd-66fe-4c5a-b9cd-2870177ceba1" />
+    <UnitTestResult executionId="82913944-a7a5-4d5b-9176-a8d0ebe7ae32" testId="d76b7acd-0c73-8d7b-4706-099c90383872" testName="SolutionEngineTests.FindMethod_BrakMetody_Null" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0450000" startTime="2026-06-26T22:24:09.5490884+02:00" endTime="2026-06-26T22:24:09.5490884+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82913944-a7a5-4d5b-9176-a8d0ebe7ae32" />
+    <UnitTestResult executionId="4d42a80a-f934-4b70-8e46-f5ee1fa4aaa2" testId="db305d90-0038-46eb-a8d9-eb851e020e80" testName="GradingServiceTests.RunAsync_Progres_DochodziDo100" computerName="DESKTOP-DV6MF3O" duration="00:00:00.0710000" startTime="2026-06-26T22:24:10.1540910+02:00" endTime="2026-06-26T22:24:10.1540910+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d42a80a-f934-4b70-8e46-f5ee1fa4aaa2" />
+    <UnitTestResult executionId="4d87b91a-4461-4370-8758-cd8ff8668496" testId="d7c3abd7-3e03-9dd1-653c-0dc1f0fcd0f7" testName="SolutionEngineTests.Compile_Linq_Dziala" computerName="DESKTOP-DV6MF3O" duration="00:00:00.2390000" startTime="2026-06-26T22:24:10.3410893+02:00" endTime="2026-06-26T22:24:10.3410893+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d87b91a-4461-4370-8758-cd8ff8668496" />
   </Results>
   <TestDefinitions>
-    <UnitTest name="AnswerKeyLoaderTests.Load_ZlaSciezka_RzucaFileNotFound" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="be285b2e-aba9-b732-2cf8-f04930a1c47a">
-      <Execution id="97699e91-5bd6-43c2-959d-5ed6c32a9159" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_ZlaSciezka_RzucaFileNotFound" />
+    <UnitTest name="ResultsExporterTests.Export_Podsumowanie_LiczyProcent" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="3954b141-f5f2-a996-98c7-8f6d6d0d3995">
+      <Execution id="7fe9e2eb-7ab9-4f66-a1e3-cc944f9ca905" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="ResultsExporterTests" name="Export_Podsumowanie_LiczyProcent" />
     </UnitTest>
-    <UnitTest name="GradingServiceTests.RunAsync_BladKompilacji_WszystkieWiersze" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="935357d4-2472-0f3c-3a59-b8cd6a04dd1d">
-      <Execution id="1a6c2b23-5e01-46a6-b6e5-0a3faf0ca9c6" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_BladKompilacji_WszystkieWiersze" />
-    </UnitTest>
-    <UnitTest name="AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="e14f2821-b19e-9fcd-a144-4fb3b1ce4cbe">
-      <Execution id="19f4adb2-9d01-4d24-9d49-0fae511f1da6" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_Liczba314_CzytanaZKropka_PodKulturaPL" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.Compile_Linq_Dziala" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="d7c3abd7-3e03-9dd1-653c-0dc1f0fcd0f7">
-      <Execution id="52d8fbe2-9485-41dc-8a58-c76103609ced" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_Linq_Dziala" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.FindMethod_BrakMetody_Null" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="d76b7acd-0c73-8d7b-4706-099c90383872">
-      <Execution id="3a424177-25eb-4051-bbe4-6f7bd78686db" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="FindMethod_BrakMetody_Null" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.Invoke_RzucaWyjatek_StatusWyjatek" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6c286822-f09b-78e3-a2e4-7130128057ee">
-      <Execution id="d2dfc430-c20c-4a3b-a818-9a2d6195a427" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Invoke_RzucaWyjatek_StatusWyjatek" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.ParseArgs_Skalary" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="46988673-fbe6-be33-ca74-ec3f925397a7">
-      <Execution id="4942dcee-81e6-49b3-8a68-be1f77c9c4ef" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="ParseArgs_Skalary" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.Invoke_NieskonczonaPetla_Timeout" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="28c3536b-11a6-48e3-e142-89029ced6898">
-      <Execution id="b4a94149-72e6-4e2e-89e1-1836d148ef9e" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Invoke_NieskonczonaPetla_Timeout" />
-    </UnitTest>
-    <UnitTest name="AnswerKeyLoaderTests.Load_PustyPlik_RzucaInvalidData" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="2a31128f-7ad8-d81b-2b81-5bd81d5beda3">
-      <Execution id="7555c46f-0c57-4f15-928d-cebd3b065fee" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_PustyPlik_RzucaInvalidData" />
-    </UnitTest>
-    <UnitTest name="GradingServiceTests.RunAsync_BrakMetody" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="5e4a6cb0-658b-cb66-7471-a6cd3dae01ca">
-      <Execution id="7547477f-8ce2-471d-9dcd-de184302aace" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_BrakMetody" />
+    <UnitTest name="ResultsExporterTests.Export_PustaLista_NieRzuca" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="9bb5d024-b742-c2fe-2b69-1ba0b258a2be">
+      <Execution id="612e5642-3bb1-4822-bb30-b50fb5cf7806" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="ResultsExporterTests" name="Export_PustaLista_NieRzuca" />
     </UnitTest>
     <UnitTest name="SolutionEngineTests.Compile_BlednaSkladnia_Porazka" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="f06344db-965d-07e7-656d-925284693148">
-      <Execution id="c02485c2-2492-4595-8ee3-2a872e3e39e0" />
+      <Execution id="2a2ce927-8ec1-4e75-b7fe-1bbea66d47f7" />
       <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_BlednaSkladnia_Porazka" />
     </UnitTest>
-    <UnitTest name="SolutionEngineTests.Compile_PoprawnyKod_Sukces" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="c5ac9d66-2bd5-afc7-165e-9a6d89156c6e">
-      <Execution id="67faddc7-b44d-46ee-9649-d2ded98c05f3" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_PoprawnyKod_Sukces" />
-    </UnitTest>
-    <UnitTest name="IO_2026_SGGW.Tests.UnitTest1.Test1" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="42d7cfd5-23b4-2ef6-404d-ea8d3ed37d0e">
-      <Execution id="6c6221c1-ebd4-48a3-8fd0-9c6626f805eb" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="IO_2026_SGGW.Tests.UnitTest1" name="Test1" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.IsCorrect_DoubleTolerancja" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="c9fa07c4-1ca8-3af9-b3e8-bb1c9c6e8ebc">
-      <Execution id="71410e04-3b16-4dc2-afee-3c007153c3ef" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="IsCorrect_DoubleTolerancja" />
-    </UnitTest>
-    <UnitTest name="CsFileRulesTests.PlikCs_Akceptowany" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="f3d20c6c-200c-bd9d-8d63-896973f31dea">
-      <Execution id="61fd9e1d-73cc-402d-8ad6-eb0b337f30bf" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="PlikCs_Akceptowany" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.ParseArgs_TablicaISkalar" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="902a117c-58b9-7ef2-ae90-ad603455e3b1">
-      <Execution id="eb3001a4-6cdc-49e0-ad05-7207ec3b36ab" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="ParseArgs_TablicaISkalar" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.FindMethod_NormalizujeNazwe" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6f3ccd50-eb73-12ac-52d2-d4c231c7af7e">
-      <Execution id="c7ac8afc-efe0-4ce0-988e-8fe7cc1103d6" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="FindMethod_NormalizujeNazwe" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.IsCorrect_Tablica" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6328012a-1c1d-ca73-0a6d-44feab2d2529">
-      <Execution id="dc3edcf2-5989-491f-a4b9-0c063716a185" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="IsCorrect_Tablica" />
-    </UnitTest>
-    <UnitTest name="GradingServiceTests.RunAsync_PetlaNieskonczona_NieBlokujePozostalych" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="259b9c14-ba53-e1d3-07b6-f393fad21129">
-      <Execution id="0e044d2b-79c9-4668-a52b-828b84cda95d" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_PetlaNieskonczona_NieBlokujePozostalych" />
-    </UnitTest>
-    <UnitTest name="GradingServiceTests.RunAsync_PoprawneRozwiazanie_StatusOk" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="eef41b29-8d17-bb62-e16a-2af848fed3e1">
-      <Execution id="196425af-aa60-4fc7-84e0-bbf558a59c4d" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_PoprawneRozwiazanie_StatusOk" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.IsCorrect_BoolJako1" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6fa20571-ae12-4c84-6e5e-3bc3a5c0c622">
-      <Execution id="5085249f-ccb4-4b85-81fd-3c86844bd40c" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="IsCorrect_BoolJako1" />
-    </UnitTest>
-    <UnitTest name="SolutionEngineTests.Compile_GrozneApi_Odrzucone" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="e9c03e5c-6bbe-93e7-a0a9-b3aa0177cae6">
-      <Execution id="6e4f80e2-3a8e-41b8-b427-7902788bbefb" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_GrozneApi_Odrzucone" />
-    </UnitTest>
     <UnitTest name="AnswerKeyLoaderTests.Load_DwaWiersze_WczytujeOba" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="8019fce1-4b2e-5f6e-4428-db0a12b72ab9">
-      <Execution id="b457b245-f04e-4828-b035-7a59ede3b368" />
+      <Execution id="b66a1f7b-73c7-4b58-8a1d-43a8d3910170" />
       <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_DwaWiersze_WczytujeOba" />
     </UnitTest>
-    <UnitTest name="CsFileRulesTests.FolderZ_cs_wNazwie_Odrzucony" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="845fb654-4185-179e-d959-97e8d2a57b5f">
-      <Execution id="bb25c5d4-e692-40c4-9291-443bf6e156b6" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="FolderZ_cs_wNazwie_Odrzucony" />
+    <UnitTest name="CsFileRulesTests.PlikCs_Akceptowany" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="f3d20c6c-200c-bd9d-8d63-896973f31dea">
+      <Execution id="d427596d-06ba-4512-b4ba-57c8ca303586" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="PlikCs_Akceptowany" />
     </UnitTest>
-    <UnitTest name="GradingServiceTests.RunAsync_Progres_DochodziDo100" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="db305d90-0038-46eb-a8d9-eb851e020e80">
-      <Execution id="e8a22a25-03df-44a2-9a95-094ecd3097f9" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_Progres_DochodziDo100" />
+    <UnitTest name="AnswerKeyLoaderTests.Load_ZlaSciezka_RzucaFileNotFound" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="be285b2e-aba9-b732-2cf8-f04930a1c47a">
+      <Execution id="9bd6b1b3-ca34-4db0-a2ed-a0c76c1ba799" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_ZlaSciezka_RzucaFileNotFound" />
     </UnitTest>
-    <UnitTest name="CsFileRulesTests.Duplikat_Odrzucony" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="bab60611-a1eb-0462-f010-27480103ddb8">
-      <Execution id="f7b14703-51b9-4a36-9f85-cec5fed2869f" />
-      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="Duplikat_Odrzucony" />
+    <UnitTest name="SolutionEngineTests.FindMethod_BrakMetody_Null" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="d76b7acd-0c73-8d7b-4706-099c90383872">
+      <Execution id="82913944-a7a5-4d5b-9176-a8d0ebe7ae32" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="FindMethod_BrakMetody_Null" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.Compile_PoprawnyKod_Sukces" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="c5ac9d66-2bd5-afc7-165e-9a6d89156c6e">
+      <Execution id="37fe4dbd-66fe-4c5a-b9cd-2870177ceba1" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_PoprawnyKod_Sukces" />
+    </UnitTest>
+    <UnitTest name="GradingServiceTests.RunAsync_BladKompilacji_WszystkieWiersze" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="935357d4-2472-0f3c-3a59-b8cd6a04dd1d">
+      <Execution id="7cd28c1a-6651-47a5-b6a9-d9682a72c2c5" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_BladKompilacji_WszystkieWiersze" />
+    </UnitTest>
+    <UnitTest name="GradingServiceTests.RunAsync_PoprawneRozwiazanie_StatusOk" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="eef41b29-8d17-bb62-e16a-2af848fed3e1">
+      <Execution id="ea64f31e-e43f-4f22-856c-a84f0af9c2e3" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_PoprawneRozwiazanie_StatusOk" />
     </UnitTest>
     <UnitTest name="AnswerKeyLoaderTests.Load_KomorkaData_FormatISO" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="98caae1c-3bb0-1212-3c15-1b41df98ec33">
-      <Execution id="fd59c35b-e799-419b-8c06-3bb18b8791ab" />
+      <Execution id="a241228a-e7ec-4a8e-a2c9-db9b24392698" />
       <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_KomorkaData_FormatISO" />
     </UnitTest>
+    <UnitTest name="AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="e14f2821-b19e-9fcd-a144-4fb3b1ce4cbe">
+      <Execution id="bbb291f7-941d-46a6-bccf-d10bff51c974" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_Liczba314_CzytanaZKropka_PodKulturaPL" />
+    </UnitTest>
+    <UnitTest name="AnswerKeyLoaderTests.Load_PustyPlik_RzucaInvalidData" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="2a31128f-7ad8-d81b-2b81-5bd81d5beda3">
+      <Execution id="e75223f0-3230-4ff3-bade-dd2dafafbbb0" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="AnswerKeyLoaderTests" name="Load_PustyPlik_RzucaInvalidData" />
+    </UnitTest>
+    <UnitTest name="CsFileRulesTests.Duplikat_Odrzucony" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="bab60611-a1eb-0462-f010-27480103ddb8">
+      <Execution id="7c1881ad-0cf3-4f86-b08c-90fadfa525ca" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="Duplikat_Odrzucony" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.Invoke_NieskonczonaPetla_Timeout" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="28c3536b-11a6-48e3-e142-89029ced6898">
+      <Execution id="f60d3fca-ca89-4cf8-b4ad-b00cda340311" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Invoke_NieskonczonaPetla_Timeout" />
+    </UnitTest>
+    <UnitTest name="ResultsExporterTests.Export_TworzyDwaArkusze_ZNaglowkami" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="7236388b-d050-81e2-dc13-4db8aed2d09a">
+      <Execution id="81bbdb30-305d-4e4b-b77b-6da9ec80daec" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="ResultsExporterTests" name="Export_TworzyDwaArkusze_ZNaglowkami" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.ParseArgs_TablicaISkalar" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="902a117c-58b9-7ef2-ae90-ad603455e3b1">
+      <Execution id="13971110-3a6e-4c7c-ac9a-8edde93034d0" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="ParseArgs_TablicaISkalar" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.ParseArgs_Skalary" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="46988673-fbe6-be33-ca74-ec3f925397a7">
+      <Execution id="36176cc5-1d8a-42a9-b504-90d751d01935" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="ParseArgs_Skalary" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.Compile_Linq_Dziala" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="d7c3abd7-3e03-9dd1-653c-0dc1f0fcd0f7">
+      <Execution id="4d87b91a-4461-4370-8758-cd8ff8668496" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_Linq_Dziala" />
+    </UnitTest>
+    <UnitTest name="GradingServiceTests.RunAsync_BrakMetody" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="5e4a6cb0-658b-cb66-7471-a6cd3dae01ca">
+      <Execution id="5b142c72-19a1-4513-87e4-4bbf442b5aee" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_BrakMetody" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.IsCorrect_Tablica" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6328012a-1c1d-ca73-0a6d-44feab2d2529">
+      <Execution id="3a26959b-f3a4-4499-bf5b-a063fec47248" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="IsCorrect_Tablica" />
+    </UnitTest>
+    <UnitTest name="IO_2026_SGGW.Tests.UnitTest1.Test1" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="42d7cfd5-23b4-2ef6-404d-ea8d3ed37d0e">
+      <Execution id="17b3b6ef-7322-4e91-b6e8-3eef7d60e0ad" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="IO_2026_SGGW.Tests.UnitTest1" name="Test1" />
+    </UnitTest>
     <UnitTest name="CsFileRulesTests.PlikTxt_Odrzucony" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="b8689911-6dab-7961-47e2-eae27aa50a0b">
-      <Execution id="37c7780b-4a68-4ddb-a8e9-d9c92bca3494" />
+      <Execution id="eb2118e3-5e1c-43b0-8a53-f09ff4fd0c7b" />
       <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="PlikTxt_Odrzucony" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.Compile_GrozneApi_Odrzucone" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="e9c03e5c-6bbe-93e7-a0a9-b3aa0177cae6">
+      <Execution id="d337cc04-ae97-4972-9b5f-c7f2136c4a0b" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Compile_GrozneApi_Odrzucone" />
+    </UnitTest>
+    <UnitTest name="CsFileRulesTests.FolderZ_cs_wNazwie_Odrzucony" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="845fb654-4185-179e-d959-97e8d2a57b5f">
+      <Execution id="aa2174d9-7e02-4116-ae13-923197e2e422" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="CsFileRulesTests" name="FolderZ_cs_wNazwie_Odrzucony" />
+    </UnitTest>
+    <UnitTest name="ResultsExporterTests.Export_KolorStatusu_Ok_Jasnozielony" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="5ad18702-c746-9466-764c-2db1da967470">
+      <Execution id="6f0164f8-5c45-4eb5-bfb5-c9e85e3dbee4" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="ResultsExporterTests" name="Export_KolorStatusu_Ok_Jasnozielony" />
+    </UnitTest>
+    <UnitTest name="GradingServiceTests.RunAsync_PetlaNieskonczona_NieBlokujePozostalych" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="259b9c14-ba53-e1d3-07b6-f393fad21129">
+      <Execution id="0fc8ea7c-e247-469b-9a81-819dd5c0038b" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_PetlaNieskonczona_NieBlokujePozostalych" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.IsCorrect_DoubleTolerancja" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="c9fa07c4-1ca8-3af9-b3e8-bb1c9c6e8ebc">
+      <Execution id="a236fdcd-1d43-4194-bfb4-a02fdfdc76b8" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="IsCorrect_DoubleTolerancja" />
+    </UnitTest>
+    <UnitTest name="GradingServiceTests.RunAsync_Progres_DochodziDo100" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="db305d90-0038-46eb-a8d9-eb851e020e80">
+      <Execution id="4d42a80a-f934-4b70-8e46-f5ee1fa4aaa2" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="GradingServiceTests" name="RunAsync_Progres_DochodziDo100" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.IsCorrect_BoolJako1" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6fa20571-ae12-4c84-6e5e-3bc3a5c0c622">
+      <Execution id="d83b1279-47f3-4b20-82d2-7c6a312fc4f7" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="IsCorrect_BoolJako1" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.FindMethod_NormalizujeNazwe" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6f3ccd50-eb73-12ac-52d2-d4c231c7af7e">
+      <Execution id="e9b82b5a-b5b6-4aa2-b645-7975d648647d" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="FindMethod_NormalizujeNazwe" />
+    </UnitTest>
+    <UnitTest name="SolutionEngineTests.Invoke_RzucaWyjatek_StatusWyjatek" storage="c:\users\bakuc\desktop\io-2026-sggw\io_2026_sggw.tests\bin\debug\net472\io_2026_sggw.tests.dll" id="6c286822-f09b-78e3-a2e4-7130128057ee">
+      <Execution id="15203930-eb39-4445-9ac5-e00189ddde55" />
+      <TestMethod codeBase="C:\Users\bakuc\Desktop\IO-2026-SGGW\IO_2026_SGGW.Tests\bin\Debug\net472\IO_2026_SGGW.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/net" className="SolutionEngineTests" name="Invoke_RzucaWyjatek_StatusWyjatek" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="5e4a6cb0-658b-cb66-7471-a6cd3dae01ca" executionId="7547477f-8ce2-471d-9dcd-de184302aace" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="be285b2e-aba9-b732-2cf8-f04930a1c47a" executionId="97699e91-5bd6-43c2-959d-5ed6c32a9159" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="2a31128f-7ad8-d81b-2b81-5bd81d5beda3" executionId="7555c46f-0c57-4f15-928d-cebd3b065fee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="902a117c-58b9-7ef2-ae90-ad603455e3b1" executionId="eb3001a4-6cdc-49e0-ad05-7207ec3b36ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="d7c3abd7-3e03-9dd1-653c-0dc1f0fcd0f7" executionId="52d8fbe2-9485-41dc-8a58-c76103609ced" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="bab60611-a1eb-0462-f010-27480103ddb8" executionId="f7b14703-51b9-4a36-9f85-cec5fed2869f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="6f3ccd50-eb73-12ac-52d2-d4c231c7af7e" executionId="c7ac8afc-efe0-4ce0-988e-8fe7cc1103d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="8019fce1-4b2e-5f6e-4428-db0a12b72ab9" executionId="b457b245-f04e-4828-b035-7a59ede3b368" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="46988673-fbe6-be33-ca74-ec3f925397a7" executionId="4942dcee-81e6-49b3-8a68-be1f77c9c4ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="eef41b29-8d17-bb62-e16a-2af848fed3e1" executionId="196425af-aa60-4fc7-84e0-bbf558a59c4d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="42d7cfd5-23b4-2ef6-404d-ea8d3ed37d0e" executionId="6c6221c1-ebd4-48a3-8fd0-9c6626f805eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="f3d20c6c-200c-bd9d-8d63-896973f31dea" executionId="61fd9e1d-73cc-402d-8ad6-eb0b337f30bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="6c286822-f09b-78e3-a2e4-7130128057ee" executionId="d2dfc430-c20c-4a3b-a818-9a2d6195a427" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="c9fa07c4-1ca8-3af9-b3e8-bb1c9c6e8ebc" executionId="71410e04-3b16-4dc2-afee-3c007153c3ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="935357d4-2472-0f3c-3a59-b8cd6a04dd1d" executionId="1a6c2b23-5e01-46a6-b6e5-0a3faf0ca9c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="c5ac9d66-2bd5-afc7-165e-9a6d89156c6e" executionId="67faddc7-b44d-46ee-9649-d2ded98c05f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="d76b7acd-0c73-8d7b-4706-099c90383872" executionId="3a424177-25eb-4051-bbe4-6f7bd78686db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="db305d90-0038-46eb-a8d9-eb851e020e80" executionId="e8a22a25-03df-44a2-9a95-094ecd3097f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="98caae1c-3bb0-1212-3c15-1b41df98ec33" executionId="fd59c35b-e799-419b-8c06-3bb18b8791ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="28c3536b-11a6-48e3-e142-89029ced6898" executionId="b4a94149-72e6-4e2e-89e1-1836d148ef9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="e14f2821-b19e-9fcd-a144-4fb3b1ce4cbe" executionId="19f4adb2-9d01-4d24-9d49-0fae511f1da6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="6328012a-1c1d-ca73-0a6d-44feab2d2529" executionId="dc3edcf2-5989-491f-a4b9-0c063716a185" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="f06344db-965d-07e7-656d-925284693148" executionId="c02485c2-2492-4595-8ee3-2a872e3e39e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="845fb654-4185-179e-d959-97e8d2a57b5f" executionId="bb25c5d4-e692-40c4-9291-443bf6e156b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="b8689911-6dab-7961-47e2-eae27aa50a0b" executionId="37c7780b-4a68-4ddb-a8e9-d9c92bca3494" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="6fa20571-ae12-4c84-6e5e-3bc3a5c0c622" executionId="5085249f-ccb4-4b85-81fd-3c86844bd40c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="259b9c14-ba53-e1d3-07b6-f393fad21129" executionId="0e044d2b-79c9-4668-a52b-828b84cda95d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="e9c03e5c-6bbe-93e7-a0a9-b3aa0177cae6" executionId="6e4f80e2-3a8e-41b8-b427-7902788bbefb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8019fce1-4b2e-5f6e-4428-db0a12b72ab9" executionId="b66a1f7b-73c7-4b58-8a1d-43a8d3910170" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="845fb654-4185-179e-d959-97e8d2a57b5f" executionId="aa2174d9-7e02-4116-ae13-923197e2e422" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="935357d4-2472-0f3c-3a59-b8cd6a04dd1d" executionId="7cd28c1a-6651-47a5-b6a9-d9682a72c2c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be285b2e-aba9-b732-2cf8-f04930a1c47a" executionId="9bd6b1b3-ca34-4db0-a2ed-a0c76c1ba799" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="46988673-fbe6-be33-ca74-ec3f925397a7" executionId="36176cc5-1d8a-42a9-b504-90d751d01935" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eef41b29-8d17-bb62-e16a-2af848fed3e1" executionId="ea64f31e-e43f-4f22-856c-a84f0af9c2e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="259b9c14-ba53-e1d3-07b6-f393fad21129" executionId="0fc8ea7c-e247-469b-9a81-819dd5c0038b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9c03e5c-6bbe-93e7-a0a9-b3aa0177cae6" executionId="d337cc04-ae97-4972-9b5f-c7f2136c4a0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7236388b-d050-81e2-dc13-4db8aed2d09a" executionId="81bbdb30-305d-4e4b-b77b-6da9ec80daec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c286822-f09b-78e3-a2e4-7130128057ee" executionId="15203930-eb39-4445-9ac5-e00189ddde55" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6fa20571-ae12-4c84-6e5e-3bc3a5c0c622" executionId="d83b1279-47f3-4b20-82d2-7c6a312fc4f7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="42d7cfd5-23b4-2ef6-404d-ea8d3ed37d0e" executionId="17b3b6ef-7322-4e91-b6e8-3eef7d60e0ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9bb5d024-b742-c2fe-2b69-1ba0b258a2be" executionId="612e5642-3bb1-4822-bb30-b50fb5cf7806" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a31128f-7ad8-d81b-2b81-5bd81d5beda3" executionId="e75223f0-3230-4ff3-bade-dd2dafafbbb0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28c3536b-11a6-48e3-e142-89029ced6898" executionId="f60d3fca-ca89-4cf8-b4ad-b00cda340311" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c9fa07c4-1ca8-3af9-b3e8-bb1c9c6e8ebc" executionId="a236fdcd-1d43-4194-bfb4-a02fdfdc76b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6328012a-1c1d-ca73-0a6d-44feab2d2529" executionId="3a26959b-f3a4-4499-bf5b-a063fec47248" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f3ccd50-eb73-12ac-52d2-d4c231c7af7e" executionId="e9b82b5a-b5b6-4aa2-b645-7975d648647d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e14f2821-b19e-9fcd-a144-4fb3b1ce4cbe" executionId="bbb291f7-941d-46a6-bccf-d10bff51c974" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f06344db-965d-07e7-656d-925284693148" executionId="2a2ce927-8ec1-4e75-b7fe-1bbea66d47f7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8689911-6dab-7961-47e2-eae27aa50a0b" executionId="eb2118e3-5e1c-43b0-8a53-f09ff4fd0c7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3954b141-f5f2-a996-98c7-8f6d6d0d3995" executionId="7fe9e2eb-7ab9-4f66-a1e3-cc944f9ca905" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="98caae1c-3bb0-1212-3c15-1b41df98ec33" executionId="a241228a-e7ec-4a8e-a2c9-db9b24392698" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bab60611-a1eb-0462-f010-27480103ddb8" executionId="7c1881ad-0cf3-4f86-b08c-90fadfa525ca" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e4a6cb0-658b-cb66-7471-a6cd3dae01ca" executionId="5b142c72-19a1-4513-87e4-4bbf442b5aee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f3d20c6c-200c-bd9d-8d63-896973f31dea" executionId="d427596d-06ba-4512-b4ba-57c8ca303586" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ad18702-c746-9466-764c-2db1da967470" executionId="6f0164f8-5c45-4eb5-bfb5-c9e85e3dbee4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="902a117c-58b9-7ef2-ae90-ad603455e3b1" executionId="13971110-3a6e-4c7c-ac9a-8edde93034d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5ac9d66-2bd5-afc7-165e-9a6d89156c6e" executionId="37fe4dbd-66fe-4c5a-b9cd-2870177ceba1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d76b7acd-0c73-8d7b-4706-099c90383872" executionId="82913944-a7a5-4d5b-9176-a8d0ebe7ae32" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db305d90-0038-46eb-a8d9-eb851e020e80" executionId="4d42a80a-f934-4b70-8e46-f5ee1fa4aaa2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7c3abd7-3e03-9dd1-653c-0dc1f0fcd0f7" executionId="4d87b91a-4461-4370-8758-cd8ff8668496" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
     <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
   </TestLists>
-  <ResultSummary outcome="Failed">
-    <Counters total="28" executed="28" passed="24" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  <ResultSummary outcome="Completed">
+    <Counters total="32" executed="32" passed="32" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <Output>
       <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET Framework 4.8.9310.0)&#xD;
-[xUnit.net 00:00:01.76]   Discovering: IO_2026_SGGW.Tests&#xD;
-[xUnit.net 00:00:01.83]   Discovered:  IO_2026_SGGW.Tests&#xD;
-[xUnit.net 00:00:01.84]   Starting:    IO_2026_SGGW.Tests&#xD;
-[xUnit.net 00:00:04.71]       Assert.False() Failure&#xD;
-[xUnit.net 00:00:04.71]       Expected: False&#xD;
-[xUnit.net 00:00:04.71]       Actual:   True&#xD;
-[xUnit.net 00:00:04.71]       Stack Trace:&#xD;
-[xUnit.net 00:00:04.71]         SolutionEngineTests.cs(46,0): at SolutionEngineTests.Compile_GrozneApi_Odrzucone()&#xD;
-[xUnit.net 00:00:04.76]       Assert.Equal() Failure: Strings differ&#xD;
-[xUnit.net 00:00:04.76]                   ↓ (pos 1)&#xD;
-[xUnit.net 00:00:04.76]       Expected: "3.14"&#xD;
-[xUnit.net 00:00:04.76]       Actual:   "3,14"&#xD;
-[xUnit.net 00:00:04.76]                   ↑ (pos 1)&#xD;
-[xUnit.net 00:00:04.76]       Stack Trace:&#xD;
-[xUnit.net 00:00:04.76]         AnswerKeyLoaderTests.cs(71,0): at AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL()&#xD;
-[xUnit.net 00:00:04.84]       Assert.Equal() Failure: Strings differ&#xD;
-[xUnit.net 00:00:04.84]                  ↓ (pos 0)&#xD;
-[xUnit.net 00:00:04.84]       Expected: "2026-04-01"&#xD;
-[xUnit.net 00:00:04.84]       Actual:   "4/1/2026 12:00:00 AM"&#xD;
-[xUnit.net 00:00:04.84]                  ↑ (pos 0)&#xD;
-[xUnit.net 00:00:04.84]       Stack Trace:&#xD;
-[xUnit.net 00:00:04.84]         AnswerKeyLoaderTests.cs(87,0): at AnswerKeyLoaderTests.Load_KomorkaData_FormatISO()&#xD;
-[xUnit.net 00:00:05.23]       Assert.True() Failure&#xD;
-[xUnit.net 00:00:05.23]       Expected: True&#xD;
-[xUnit.net 00:00:05.23]       Actual:   False&#xD;
-[xUnit.net 00:00:05.23]       Stack Trace:&#xD;
-[xUnit.net 00:00:05.23]         SolutionEngineTests.cs(101,0): at SolutionEngineTests.IsCorrect_BoolJako1()&#xD;
-[xUnit.net 00:00:05.45]   Finished:    IO_2026_SGGW.Tests&#xD;
+[xUnit.net 00:00:01.25]   Discovering: IO_2026_SGGW.Tests&#xD;
+[xUnit.net 00:00:01.31]   Discovered:  IO_2026_SGGW.Tests&#xD;
+[xUnit.net 00:00:01.32]   Starting:    IO_2026_SGGW.Tests&#xD;
+[xUnit.net 00:00:05.20]   Finished:    IO_2026_SGGW.Tests&#xD;
 </StdOut>
     </Output>
-    <RunInfos>
-      <RunInfo computerName="DESKTOP-DV6MF3O" outcome="Error" timestamp="2026-06-22T22:04:15.1614736+02:00">
-        <Text>[xUnit.net 00:00:04.71]     SolutionEngineTests.Compile_GrozneApi_Odrzucone [FAIL]</Text>
-      </RunInfo>
-      <RunInfo computerName="DESKTOP-DV6MF3O" outcome="Error" timestamp="2026-06-22T22:04:15.2104475+02:00">
-        <Text>[xUnit.net 00:00:04.76]     AnswerKeyLoaderTests.Load_Liczba314_CzytanaZKropka_PodKulturaPL [FAIL]</Text>
-      </RunInfo>
-      <RunInfo computerName="DESKTOP-DV6MF3O" outcome="Error" timestamp="2026-06-22T22:04:15.2973345+02:00">
-        <Text>[xUnit.net 00:00:04.84]     AnswerKeyLoaderTests.Load_KomorkaData_FormatISO [FAIL]</Text>
-      </RunInfo>
-      <RunInfo computerName="DESKTOP-DV6MF3O" outcome="Error" timestamp="2026-06-22T22:04:15.6799145+02:00">
-        <Text>[xUnit.net 00:00:05.23]     SolutionEngineTests.IsCorrect_BoolJako1 [FAIL]</Text>
-      </RunInfo>
-    </RunInfos>
   </ResultSummary>
 </TestRun>
