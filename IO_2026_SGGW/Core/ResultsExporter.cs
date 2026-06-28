@@ -9,7 +9,8 @@ namespace IO_2026_SGGW.Core
     /// <remarks>
     /// Tworzony plik zawiera dwa arkusze: "Wyniki" ze szczegółowym wykazem wszystkich przypadków testowych
     /// (z kolorowaniem komórki statusu) oraz "Podsumowanie" z procentem dla każdego zadania osobno
-    /// (zielony przy 100%, czerwony przy 0%, żółty pośrodku) oraz wynikiem ogólnym ("Całość") dla każdego studenta.
+    /// (zielony przy 100%, czerwony przy 0%, żółty pośrodku) oraz wynikiem ogólnym ("Całość") dla każdego studenta,
+    /// z wierszem "Procent zadania" na dole uśredniającym każdą kolumnę.
     /// </remarks>
     public class ResultsExporter
     {
@@ -23,6 +24,7 @@ namespace IO_2026_SGGW.Core
         /// a komórka statusu jest kolorowana przez <see cref="ColorForStatus"/>. Arkusz "Podsumowanie" grupuje
         /// wiersze po studencie i dla każdego zadania wylicza procent zdanych przypadków (komórka zielona przy
         /// 100%, czerwona przy 0%, żółta pośrodku) oraz wynik ogólny "Całość" (suma punktów / liczba przypadków).
+        /// Ostatni wiersz "Procent zadania" zawiera średnią z procentów w każdej kolumnie.
         /// </remarks>
         public void Export(IList<ResultRow> rows, string path)
         {
@@ -63,6 +65,10 @@ namespace IO_2026_SGGW.Core
                 summary.Cell(1, colPct).Value = "Całość";
                 summary.Range(1, 1, 1, colPct).Style.Font.Bold = true;
                 int sr = 2;
+                var taskPctSum = new double[zadania.Count];
+                var taskPctCount = new int[zadania.Count];
+                double caloscSum = 0;
+                int caloscCount = 0;
                 foreach (var grp in rows.GroupBy(x => x.Student))
                 {
                     summary.Cell(sr, 1).Value = grp.Key;
@@ -76,16 +82,32 @@ namespace IO_2026_SGGW.Core
                             continue;
                         }
                         int passed = caseRows.Sum(x => x.Punkty);
-                        cell.Value = (double)passed / caseRows.Count;
+                        double pct = (double)passed / caseRows.Count;
+                        cell.Value = pct;
                         cell.Style.NumberFormat.Format = "0.00%";
                         cell.Style.Fill.BackgroundColor = ColorForScore(passed, caseRows.Count);
+                        taskPctSum[i] += pct;
+                        taskPctCount[i]++;
                     }
                     int total = grp.Count();
                     int sum = grp.Sum(x => x.Punkty);
-                    summary.Cell(sr, colPct).Value = total > 0 ? (double)sum / total : 0;
+                    double calosc = total > 0 ? (double)sum / total : 0;
+                    summary.Cell(sr, colPct).Value = calosc;
                     summary.Cell(sr, colPct).Style.NumberFormat.Format = "0.00%";
+                    caloscSum += calosc;
+                    caloscCount++;
                     sr++;
                 }
+                summary.Cell(sr, 1).Value = "Procent zadania";
+                for (int i = 0; i < zadania.Count; i++)
+                {
+                    var cell = summary.Cell(sr, 2 + i);
+                    cell.Value = taskPctCount[i] > 0 ? taskPctSum[i] / taskPctCount[i] : 0;
+                    cell.Style.NumberFormat.Format = "0.00%";
+                }
+                summary.Cell(sr, colPct).Value = caloscCount > 0 ? caloscSum / caloscCount : 0;
+                summary.Cell(sr, colPct).Style.NumberFormat.Format = "0.00%";
+                summary.Range(sr, 1, sr, colPct).Style.Font.Bold = true;
                 summary.Columns().AdjustToContents();
                 wb.SaveAs(path);
             }
