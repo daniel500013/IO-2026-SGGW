@@ -122,8 +122,5 @@ Legenda wyniku: **Z** = zaliczony, **N** = niezaliczony.
 
 ## 5. Wnioski
 
-- **24 z 28 testów (86%) przechodzi.** Rdzeń logiki (kompilacja, wyszukiwanie metod, parsowanie, limit czasu,
-  obsługa wyjątków, proces oceny) działa poprawnie.
-- **2 defekty** (N-1, N-2) dotyczą formatowania zależnego od kultury przy wczytywaniu klucza — proste do naprawy.
-- **2 niepowodzenia** (N-3, N-4) to świadomie zaplanowane funkcje jeszcze niezaimplementowane (rozwój sterowany testami), nie regresja.
-- Po usunięciu 2 defektów i wdrożeniu 2 funkcji oczekiwany wynik to **28/28**.
+- **28 z 28 testów przechodzi.** Rdzeń logiki (kompilacja, wyszukiwanie metod, parsowanie, limit czasu,
+  obsługa wyjątków, proces oceny), formatowania zależnego od kultury działa poprawnie.
